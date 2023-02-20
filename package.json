@@ -8,7 +8,7 @@
 		"node": "^12.17.0 || ^14.13 || >=16.0.0",
 		"pnpm": ">=3"
 	},
-	"packageManager" : "pnpm@7.26.0",
+	"packageManager": "pnpm@7.26.0",
 	"scripts": {
 		"scripts": "pnpm pes",
 		"start": "echo 'Dev: pnpm pes dev \nBuild: pnpm pes build'",
@@ -71,5 +71,8 @@
 	"funding": {
 		"type": "individual",
 		"url": "https://pigeonposse.com/?popup=donate"
+	},
+	"dependencies": {
+		"wikipediaplus": "link:"
 	}
 }
