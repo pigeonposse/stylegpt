@@ -1,6 +1,6 @@
 {
 	"name": "wikipediaplus",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "WikipediaPlus is an extension that allows you to quickly and efficiently access all relevant links on the page you're visiting.",
 	"manifest_version": 3,
 	"icons": {
@@ -16,8 +16,12 @@
 				"https://wikipedia.org/*",
 				"https://*.wikipedia.org/*"
 			],
-			"js": [ "../content.js" ],
-			"css": [ "../content.css" ],
+			"js": [
+				"../content.js"
+			],
+			"css": [
+				"../content.css"
+			],
 			"run_at": "document_end"
 		}
 	]
