@@ -41,6 +41,15 @@ jobs:
           pnpm install
           pnpm build
 
+
+      #########################################################################
+      # GET PKG INFO
+      #########################################################################
+      - name: Get package info
+        id: package
+        uses: codex-team/action-nodejs-package-info@v1.1
+
+
       #########################################################################
       # GITHUB RELEASE
       #########################################################################
@@ -48,7 +57,8 @@ jobs:
         uses: johnwbyrd/update-release@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./dist/comp/chrome/*.zip ./dist/comp/firefox/*.zip
+          files: dist/comp/chrome/${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip dist/comp/firefox/${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+
 
       #########################################################################
       # CHROME
@@ -64,6 +74,7 @@ jobs:
           client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
           client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
+
 
       #########################################################################
       # FIREFOX
