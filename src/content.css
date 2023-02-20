@@ -1,0 +1,93 @@
+
+.slides {
+	box-sizing: border-box;
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	border-bottom: 1px solid #a2a9b1;
+	padding: 9px 0;
+}
+
+.slides::-webkit-scrollbar-track,
+.slides::-webkit-scrollbar-thumb,
+.slides::-webkit-scrollbar {
+	display: none;
+}
+
+
+.slides::-webkit-scrollbar-track,
+.slides::-webkit-scrollbar-thumb,
+.slides::-webkit-scrollbar {
+	display: none;
+}
+
+.slides > div {
+	scroll-snap-align: start;
+	flex-shrink: 0;
+	height: 30px;
+	margin: 0 3px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 12px;
+}
+
+
+.slides a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	background: #0645ad;
+	color: #fff;
+	border-radius: 20px;
+	padding: 0 15px;
+	outline: none;
+}
+
+.slides a:active {
+	background: #faa700 !important;
+	color: #fff;
+	text-decoration: none;
+}
+
+.slides a:focus,
+.slides a:hover {
+	background: #0645adb0;
+	color: #fff;
+	text-decoration: none;
+}
+
+.slides a::selection {
+	background: transparent;
+}
+
+.slides a::selection {
+	background: transparent;
+}
+
+.slides a:visited {
+	color: #fff;
+	background: #800080;
+	text-decoration: none;
+}
+
+.slides a:visited:hover {
+	background: #800080c7;
+	text-decoration: none;
+}
+/* Don't need button navigation */
+@supports (scroll-snap-type) {
+	.slider > a {
+		display: none;
+	}
+}
+

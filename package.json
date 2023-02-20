@@ -1,0 +1,72 @@
+{
+	"private": true,
+	"name": "W+",
+	"description": "Wikipedia+ browser extension package.",
+	"type": "module",
+	"engines": {
+		"node": "^12.17.0 || ^14.13 || >=16.0.0",
+		"pnpm": ">=3"
+	},
+	"scripts": {
+		"scripts": "pnpm pes",
+		"start": "echo 'Dev: pnpm pes dev \nBuild: pnpm pes build'"
+	},
+	"devDependencies": {
+		"@parcel/config-webextension": "^2.6.2",
+		"@pigeon-posse/eslint-config": "^1.0.1",
+		"@pigeon-posse/pkg-extended-scripts": "^0.3.0",
+		"browserslist": "^4.21.5",
+		"eslint": "^8.32.0",
+		"eslint-plugin-align-assignments": "^1.1.2",
+		"eslint-plugin-align-import": "^1.0.0",
+		"eslint-plugin-html": "^7.1.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-jsdoc": "^39.6.4",
+		"eslint-plugin-json": "^3.1.0",
+		"eslint-plugin-promise": "^6.1.1",
+		"parcel": "^2.6.2",
+		"rimraf": "^4.1.2",
+		"stylelint": "^14.9.1",
+		"web-ext": "^7.5.0"
+	},
+	"browserslist": [
+		"last 1 Chrome version",
+		"last 1 Firefox version"
+	],
+	"webExt": {
+		"sourceDir": "dist",
+		"run": {
+			"startUrl": [
+				"https://es.wikipedia.org/wiki/Columbidae"
+			]
+		}
+	},
+	"@parcel/bundler-default": {
+		"minBundles": 10000000
+	},
+	"homepage": "https://pigeonposse.com/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pigeonposse/wikipediaplus"
+	},
+	"author": {
+		"name": "Angelo",
+		"email": "angelo@pigeonposse.com",
+		"url": "https://pigeonposse.com"
+	},
+	"contributors": [
+		{
+			"name": "Alejo",
+			"email": "alejo@pigeonposse.com",
+			"url": "https://pigeonposse.com"
+		}
+	],
+	"license": {
+		"type": "GPL-3.0",
+		"url": "https://github.com/pigeonposse/wikipediaplus/LICENSE"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/?popup=donate"
+	}
+}
