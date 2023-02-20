@@ -7,9 +7,7 @@
 			],
 			"out": [
 				"src/chrome/manifest.json",
-				"src/firefox/manifest.json",
-				"dist/chrome/manifest.json",
-				"dist/firefox/manifest.json"
+				"src/firefox/manifest.json"
 			]
 		}
 	},
@@ -25,7 +23,8 @@
 	    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
 	},
 	"github": {
-		"release": true
+		"release": true,
+		"assets": [ "dist/comp/*.zip" ]
 	},
 	"npm": {
 		"release": false
