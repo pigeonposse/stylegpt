@@ -6,6 +6,8 @@ name: Publish
 
 on:
   push:
+    tags:
+      - '*'
     branches:
       - main
 
@@ -14,7 +16,9 @@ jobs:
 
     name: Publish web extensions (Chrome & firefox) and release in github
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      
     ###########################################################################
     # STEPS
     ###########################################################################
@@ -53,6 +57,11 @@ jobs:
       #########################################################################
       # GITHUB RELEASE
       #########################################################################
+      - name: Create Github release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "dist/comp/*.zip"
+          bodyFile: "CHANGELOG.md"
       # - name: Release
       #   uses: meeDamian/github-release@2.0
       #   with:
@@ -62,6 +71,22 @@ jobs:
       #     files: >
       #       release-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}-firefox:dist/firefox
       #       release-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}-chrome:dist/chrome
+
+      #########################################################################
+      # FIREFOX
+      #########################################################################
+      - name: Upload & release FIREFOX extension
+        uses: trmcnvn/firefox-addon@v1
+        with:
+          # uuid is only necessary when updating an existing addon,
+          # omitting it will create a new addon
+          uuid: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
+          xpi: build/comp/firefox/*.xpi
+          manifest: build/firefox/manifest.json
+          # get keys in:
+          # https://addons.mozilla.org/en-US/developers/addon/api/key/
+          api-key: ${{ secrets.FIREFOX_API_KEY }}
+          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
 
 
       #########################################################################
@@ -78,23 +103,6 @@ jobs:
           client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
           client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
-
-
-      #########################################################################
-      # FIREFOX
-      #########################################################################
-      - name: Upload & release FIREFOX extension
-        uses: trmcnvn/firefox-addon@v1
-        with:
-          # uuid is only necessary when updating an existing addon,
-          # omitting it will create a new addon
-          uuid: ' {a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
-          xpi: build/comp/firefox/*.xpi
-          manifest: build/firefox/manifest.json
-          # get keys in:
-          # https://addons.mozilla.org/en-US/developers/addon/api/key/
-          api-key: ${{ secrets.FIREFOX_API_KEY }}
-          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
 
 
 ############################################################################### 
