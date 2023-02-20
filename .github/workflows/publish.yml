@@ -1,0 +1,85 @@
+###############################################################################
+# PLBLISH CHROME EXTENSION AND FIREFOX EXTENSION
+###############################################################################
+
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    name: Publish web extensions (Chrome & firefox) and release in github
+    runs-on: ubuntu-latest
+
+    ###########################################################################
+    # STEPS
+    ###########################################################################
+
+    steps:
+
+      #########################################################################
+      # INIT & BUILD PKG
+      #########################################################################
+      - name: checks-out repository
+        uses: actions/checkout@v3
+
+      # - name: Install node
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: 16
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+
+      - name: Install pkg dependencies
+        run: |
+          pnpm install
+          pnpm build
+
+      #########################################################################
+      # GITHUB RELEASE
+      #########################################################################
+      - name: Update release
+        uses: johnwbyrd/update-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./dist/comp/chrome/*.zip ./dist/comp/firefox/*.zip
+
+      #########################################################################
+      # CHROME
+      #########################################################################
+      - name: Upload & release CHROME extension
+        uses: mnao305/chrome-extension-upload@v4.0.1
+        with:
+          file-path: dist/comp/chrome/*.zip
+          # id of the extension in chrome
+          extension-id: nnkleafalbcmeamobndfmcjhphipnnaj
+          # instructions to get secrets: 
+          # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
+          client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
+          client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
+          refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
+
+      #########################################################################
+      # FIREFOX
+      #########################################################################
+      - name: Upload & release FIREFOX extension
+        uses: trmcnvn/firefox-addon@v1
+        with:
+          # uuid is only necessary when updating an existing addon,
+          # omitting it will create a new addon
+          uuid: ' {a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
+          xpi: build/comp/firefox/*.xpi
+          manifest: build/firefox/manifest.json
+          # get keys in:
+          # https://addons.mozilla.org/en-US/developers/addon/api/key/
+          api-key: ${{ secrets.FIREFOX_API_KEY }}
+          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+
+
+############################################################################### 

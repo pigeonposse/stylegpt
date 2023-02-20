@@ -1,6 +1,6 @@
 {
-	"name": "Wikipedia +",
-	"version": "1.0.0",
+	"name": "Wikipedia Plus",
+	"version": "1.1.0",
 	"description": "WikipediaPlus is an extension that allows you to quickly and efficiently access all relevant links on the page you're visiting.",
 	"manifest_version": 2,
 	"icons": {
