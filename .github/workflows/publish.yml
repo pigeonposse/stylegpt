@@ -53,12 +53,17 @@ jobs:
       #########################################################################
       # GITHUB RELEASE
       #########################################################################
+      - name: Set enviroment for github-release
+        run: |
+          echo ::set-env name=RELEASE_TAG::"${{ steps.package.outputs.version }}"
+          echo ::set-env name=RELEASE_NAME::"$GITHUB_WORKFLOW"
+
       - name: Release
         uses: meeDamian/github-release@2.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ steps.package.outputs.version }}
-          name: ${{ steps.package.outputs.name }}
+          tag: ${{ env.RELEASE_TAG }}
+          name: ${{ env.RELEASE_NAME }}
           files: >
             release-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}-firefox:dist/comp/firefox-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}.zip
             release-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}-chrome:dist/comp/chrome-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}.zip
