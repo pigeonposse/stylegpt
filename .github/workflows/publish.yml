@@ -56,7 +56,7 @@ jobs:
       - name: Set enviroment for github-release
         run: |
           echo ::set-env name=RELEASE_TAG::"${{ steps.package.outputs.version }}"
-          echo ::set-env name=RELEASE_NAME::"$GITHUB_WORKFLOW"
+          echo ::set-env name=RELEASE_NAME::"${{ steps.package.outputs.name }}"
 
       - name: Release
         uses: meeDamian/github-release@2.0
@@ -65,8 +65,8 @@ jobs:
           tag: ${{ env.RELEASE_TAG }}
           name: ${{ env.RELEASE_NAME }}
           files: >
-            release-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}-firefox:dist/comp/firefox-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}.zip
-            release-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}-chrome:dist/comp/chrome-${{ steps.package.outputs.name }}-v${{ steps.package.outputs.version }}.zip
+            release-${{ env.RELEASE_NAME }}-${{ env.RELEASE_TAG }}-firefox:dist/firefox
+            release-${{ env.RELEASE_NAME }}-${{ env.RELEASE_TAG }}-chrome:dist/chrome
 
 
       #########################################################################
