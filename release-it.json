@@ -1,0 +1,19 @@
+{
+	"requireCleanWorkingDir": false,
+	"git": {
+		"requireBranch" : "main",
+		"commitMessage": "chore: release v${version}"
+	},
+	"hooks": {
+		"before:init": [ "pnpm lint-fix"],
+	    "after:bump": "pnpm auto-changelog -p",
+	    "after:git:release": "echo After git push, before github release",
+	    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+	},
+	"github": {
+		"release": true
+	},
+	"npm": {
+		"release": false
+	}
+}

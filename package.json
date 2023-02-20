@@ -12,12 +12,16 @@
 	"scripts": {
 		"scripts": "pnpm pes",
 		"start": "echo 'Dev: pnpm pes dev \nBuild: pnpm pes build'",
-		"build": "pnpm pes build"
+		"build": "pnpm pes build",
+		"lint": "pnpm pes lint",
+		"lint-fix": "pnpm pes lint-fix",
+		"release": "pnpm release-it"
 	},
 	"devDependencies": {
 		"@parcel/config-webextension": "^2.6.2",
 		"@pigeon-posse/eslint-config": "^1.0.1",
 		"@pigeon-posse/pkg-extended-scripts": "^0.3.0",
+		"auto-changelog": "^2.4.0",
 		"browserslist": "^4.21.5",
 		"eslint": "^8.32.0",
 		"eslint-plugin-align-assignments": "^1.1.2",
@@ -28,6 +32,7 @@
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
 		"parcel": "^2.6.2",
+		"release-it": "^15.6.0",
 		"rimraf": "^4.1.2",
 		"stylelint": "^14.9.1",
 		"web-ext": "^7.5.0"
@@ -68,11 +73,11 @@
 		"type": "GPL-3.0",
 		"url": "https://github.com/pigeonposse/wikipediaplus/LICENSE"
 	},
+	"bugs": {
+		"url": "https://github.com/pigeonposse/wikipediaplus/issues"
+	},
 	"funding": {
 		"type": "individual",
 		"url": "https://pigeonposse.com/?popup=donate"
-	},
-	"dependencies": {
-		"wikipediaplus": "link:"
 	}
 }
