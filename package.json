@@ -21,6 +21,7 @@
 		"@parcel/config-webextension": "^2.6.2",
 		"@pigeon-posse/eslint-config": "^1.0.1",
 		"@pigeon-posse/pkg-extended-scripts": "^0.3.0",
+		"@release-it/bumper": "^4.0.2",
 		"auto-changelog": "^2.4.0",
 		"browserslist": "^4.21.5",
 		"eslint": "^8.32.0",

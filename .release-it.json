@@ -1,4 +1,18 @@
 {
+	"plugins": {
+		"@release-it/bumper": {
+			"in": [
+				"src/chrome/manifest.json",
+				"src/firefox/manifest.json"
+			],
+			"out": [
+				"src/chrome/manifest.json",
+				"src/firefox/manifest.json",
+				"dist/chrome/manifest.json",
+				"dist/firefox/manifest.json"
+			]
+		}
+	},
 	"requireCleanWorkingDir": false,
 	"git": {
 		"requireBranch" : "main",
