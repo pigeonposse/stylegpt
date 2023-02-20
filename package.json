@@ -2,7 +2,7 @@
 	"private": true,
 	"name": "wikipediaplus",
 	"description": "Wikipedia+ browser extension package.",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"type": "module",
 	"engines": {
 		"node": "^12.17.0 || ^14.13 || >=16.0.0",
