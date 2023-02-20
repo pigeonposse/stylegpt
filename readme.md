@@ -42,7 +42,7 @@ DEVELOPED BY PIGEONPOSSE
 
 # Wikipedia Plus _Browser extension_
 
-![HEADER Wikipedia Plus](docs/header.png)
+![HEADER Wikipedia Plus](docs/banner.png)
 
 WikipediaPlus is the perfect tool to enhance your browsing experience on Wikipedia. This extension allows you to quickly and efficiently access all relevant links on the page you're visiting. With its interactive banner, you can easily explore all links without interruptions. With WikipediaPlus, you can save time and increase productivity while learning and discovering new information on Wikipedia.
 
