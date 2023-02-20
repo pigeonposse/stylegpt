@@ -70,7 +70,7 @@ jobs:
       - name: Upload & release CHROME extension
         uses: mnao305/chrome-extension-upload@v4.0.1
         with:
-          file-path: dist/comp/chrome/*.zip
+          file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
           # id of the extension in chrome
           extension-id: nnkleafalbcmeamobndfmcjhphipnnaj
           # instructions to get secrets: 
