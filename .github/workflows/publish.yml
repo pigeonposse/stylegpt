@@ -81,7 +81,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/comp/*.zip"
-          body: >
+          body: |
             🧩 View changelog at: https://github.com/pigeonposse/wikipediaplus/blob/main/CHANGELOG.md
             📜 View license: https://github.com/pigeonposse/wikipediaplus/blob/main/LICENSE
 
@@ -90,29 +90,30 @@ jobs:
       # FIREFOX
       #########################################################################
 
-      - name: "Sign FIREFOX extension"
+      - name: Upload FIREFOX extension
         id: web-ext-sign
         uses: kewisch/action-web-ext@v1
         with:
           cmd: sign
-          source: dist/comp/firefox/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+          source: dist/firefox
           # channel: listed
           apiKey: ${{ secrets.FIREFOX_API_KEY }}
           apiSecret: ${{ secrets.FIREFOX_API_SECRET }}
+          id: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
           timeout: 900000
 
-      - name: Upload FIREFOX extension
-        uses: trmcnvn/firefox-addon@v1
-        with:
-          # uuid is only necessary when updating an existing addon,
-          # omitting it will create a new addon
-          uuid: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
-          xpi: ${{ steps.web-ext-sign.outputs.target }}
-          manifest: dist/firefox/manifest.json
-          # get keys in:
-          # https://addons.mozilla.org/en-US/developers/addon/api/key/
-          api-key: ${{ secrets.FIREFOX_API_KEY }}
-          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+      # - name: Upload FIREFOX extension
+      #   uses: trmcnvn/firefox-addon@v1
+      #   with:
+      #     # uuid is only necessary when updating an existing addon,
+      #     # omitting it will create a new addon
+      #     uuid: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
+      #     xpi: ${{ steps.web-ext-sign.outputs.target }}
+      #     manifest: dist/firefox/manifest.json
+      #     # get keys in:
+      #     # https://addons.mozilla.org/en-US/developers/addon/api/key/
+      #     api-key: ${{ secrets.FIREFOX_API_KEY }}
+      #     api-secret: ${{ secrets.FIREFOX_API_SECRET }}
 
 
       #########################################################################
