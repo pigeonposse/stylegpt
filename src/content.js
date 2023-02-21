@@ -39,7 +39,7 @@ async function init() {
 		if ( links[i].href != '' && links[i].innerText != '' ) {
 
 			btn.setAttribute( 'title', links[i].innerText )
-			btn.innerHTML = links[i].innerText
+			btn.innerText = links[i].innerText
 
 			div.appendChild( btn )
 			container.appendChild( div )
