@@ -45,9 +45,9 @@ jobs:
       # IF IS IN MAIN BRANCH
       #########################################################################
 
-      - name: Exit if not on MAIN branch
-        if: endsWith(github.ref, 'main') == false
-        run: exit -1
+      # - name: Exit if not on MAIN branch
+      #   if: endsWith(github.ref, 'main') == false
+      #   run: exit -1
 
 
       #########################################################################

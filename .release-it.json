@@ -18,6 +18,7 @@
 	"hooks": {
 		"before:init": [ "git push", "pnpm lint-fix" ],
 	    "after:bump": "pnpm auto-changelog -p",
+	    "after:git:release": "echo After git push, before github release",
 	    "after:release": "Github action is now releasing: ${name} v${version} to ${repo.repository}. Check if all is ok 🌈🤖"
 	},
 	"github": {
