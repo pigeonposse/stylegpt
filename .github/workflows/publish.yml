@@ -99,7 +99,7 @@ jobs:
           # channel: listed
           apiKey: ${{ secrets.FIREFOX_API_KEY }}
           apiSecret: ${{ secrets.FIREFOX_API_SECRET }}
-          id: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
+          # id: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
           timeout: 900000
 
       # - name: Upload FIREFOX extension
