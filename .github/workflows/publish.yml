@@ -81,8 +81,8 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "dist/comp/*.zip"
-          bodyFile: "CHANGELOG.md"
-          
+          body: "🧩 View changelog at: https://github.com/pigeonposse/wikipediaplus/blob/main/CHANGELOG.md"
+
       # - name: Release
       #   uses: meeDamian/github-release@2.0
       #   with:
@@ -103,8 +103,8 @@ jobs:
           # uuid is only necessary when updating an existing addon,
           # omitting it will create a new addon
           uuid: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
-          xpi: build/comp/firefox/*.xpi
-          manifest: build/firefox/manifest.json
+          xpi: dist/comp/firefox/*.xpi
+          manifest: dist/firefox/manifest.json
           # get keys in:
           # https://addons.mozilla.org/en-US/developers/addon/api/key/
           api-key: ${{ secrets.FIREFOX_API_KEY }}
