@@ -90,18 +90,6 @@ jobs:
       # FIREFOX
       #########################################################################
 
-      # - name: Upload FIREFOX extension
-      #   id: web-ext-sign
-      #   uses: kewisch/action-web-ext@v1
-      #   with:
-      #     cmd: sign
-      #     source: dist/firefox
-      #     channel: listed
-      #     apiKey: ${{ secrets.FIREFOX_API_KEY }}
-      #     apiSecret: ${{ secrets.FIREFOX_API_SECRET }}
-      #     # id: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
-      #     timeout: 900000
-
       - name: Upload FIREFOX extension
         uses: trmcnvn/firefox-addon@v1
         with:
@@ -121,16 +109,25 @@ jobs:
       #########################################################################
 
       - name: Upload CHROME extension
-        uses: mnao305/chrome-extension-upload@v4.0.1
+        uses: Klemensas/chrome-extension-upload-action@$VERSION
         with:
-          file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
-          # id of the extension in chrome
-          extension-id: nnkleafalbcmeamobndfmcjhphipnnaj
-          # instructions to get secrets: 
-          # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
-          client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
-          client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
-          refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
+          refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
+          client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
+          client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
+          file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
+          app-id: 'nnkleafalbcmeamobndfmcjhphipnnaj'
+          publish: true
+          
+        # uses: mnao305/chrome-extension-upload@v4.0.1
+        # with:
+        #   file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+        #   # id of the extension in chrome
+        #   extension-id: nnkleafalbcmeamobndfmcjhphipnnaj
+        #   # instructions to get secrets: 
+        #   # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
+        #   client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
+        #   client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
+        #   refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
 
 
 ############################################################################### 
