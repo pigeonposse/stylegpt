@@ -2,7 +2,7 @@
 const pkg = require( './package.json' )
 
 const topics = pkg.keywords.join( ',' )
-console.log( topics )
+
 module.exports = {
 	'plugins' : {
 		'@release-it/bumper' : {
