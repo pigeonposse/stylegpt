@@ -2,7 +2,7 @@
 	"private": true,
 	"name": "wikipediaplus",
 	"description": "📚🧩 WikipediaPlus is an extension that allows you to quickly and efficiently access all relevant links on the page you're visiting. 🐦🌈",
-	"version": "1.1.12",
+	"version": "1.1.13",
 	"type": "module",
 	"engines": {
 		"node": "^12.17.0 || ^14.13 || >=16.0.0",
