@@ -7,12 +7,12 @@ module.exports = {
 	'plugins' : {
 		'@release-it/bumper' : {
 			'in' : [
-				'src/chrome/manifest.json',
-				'src/firefox/manifest.json',
+				'src/man/chrome/manifest.json',
+				'src/man/firefox/manifest.json',
 			],
 			'out' : [
-				'src/chrome/manifest.json',
-				'src/firefox/manifest.json',
+				'src/man/chrome/manifest.json',
+				'src/man/firefox/manifest.json',
 			],
 		},
 	},
