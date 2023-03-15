@@ -32,7 +32,7 @@ DEVELOPED BY PIGEONPOSSE
 
  -->
 
-# styleGPT _Browser extension_
+# styleGPT - _Browser extension_
 
 ![HEADER](docs/banner.png)
 
