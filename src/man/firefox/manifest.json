@@ -9,11 +9,6 @@
 	"permissions": [
 		"storage"
 	],
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}"
-		}
-	},
 	"content_scripts": [
 		{
 			"matches": [
