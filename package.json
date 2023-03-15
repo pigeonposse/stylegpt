@@ -1,8 +1,8 @@
 {
 	"private": true,
-	"name": "wikipediaplus",
-	"description": "📚🧩 WikipediaPlus is an extension that allows you to quickly and efficiently access all relevant links on the page you're visiting. 🐦🌈",
-	"version": "1.1.14",
+	"name": "styleGPT",
+	"description": "🤖🧩 styleGPT is an extension that change style from chatGPT web. 🐦🌈",
+	"version": "0.0.0",
 	"type": "module",
 	"engines": {
 		"node": "^12.17.0 || ^14.13 || >=16.0.0",
@@ -12,10 +12,27 @@
 	"scripts": {
 		"scripts": "pnpm pes",
 		"start": "echo 'Dev: pnpm pes dev \nBuild: pnpm pes build'",
-		"build": "pnpm pes build",
-		"lint": "pnpm pes lint",
-		"lint-fix": "pnpm pes lint-fix",
-		"release": "pnpm release-it"
+		"release": "pnpm release-it",
+		"rm-all": "rimraf dist",
+		"rm:c": "rimraf dist/chrome",
+		"rm:f": "rimraf dist/firefox",
+		"lint": "run-p lint:**",
+		"lint:js": "eslint src --ext .js",
+		"lint-fix": "run-p lint-fix:**",
+		"lint-fix:js": "eslint src --ext .js --fix",
+		"dev": "run-p dev:c",
+		"dev:c": "pnpm rm:c & pnpm build:c:man && run-p watch-c:**",
+		"dev:f": "pnpm rm:f & pnpm build:f:man & run-p watch-f:**",
+		"watch-c:parcel": "parcel watch src/man/chrome/manifest.json --dist-dir dist/chrome --no-cache --no-hmr --no-content-hash",
+		"watch-c:web-ext": "web-ext run -t chromium --source-dir ./dist/chrome",
+		"watch-f:parcel": "parcel watch src/man/firefox/manifest.json --dist-dir dist/firefox --no-cache --no-hmr --no-content-hash",
+		"watch-f:web-ext": "web-ext run -t firefox-desktop --source-dir ./dist/firefox",
+		"build": "pnpm lint-fix && pnpm rm-all && run-s build:c:** && run-s build:f:**",
+		"build:c:man": "parcel build src/man/chrome/manifest.json --dist-dir dist/chrome --no-content-hash --no-source-maps --no-cache --detailed-report 0",
+		"build:c:comp": "web-ext build --source-dir=./dist/chrome --artifacts-dir=dist/comp --filename=chrome-{name}-{version}.zip",
+		"build:f:man": "parcel build src/man/firefox/manifest.json --dist-dir dist/firefox --no-content-hash --no-source-maps --no-cache --detailed-report 0",
+		"build:f:comp": "web-ext build --source-dir=./dist/firefox --artifacts-dir=dist/comp --filename=firefox-{name}-{version}.zip",
+		"coverage": "browserslist --coverage"
 	},
 	"keywords": [
 		"javascript",
@@ -23,29 +40,31 @@
 		"firefox-extension",
 		"browser-extension",
 		"extension",
-		"wiki",
-		"wikipedia",
+		"chatGPT",
+		"openai",
+		"ai",
+		"web",
 		"npm"
 	],
 	"devDependencies": {
-		"@parcel/config-webextension": "^2.6.2",
+		"@parcel/config-webextension": "^2.8.3",
 		"@pigeon-posse/eslint-config": "^1.0.1",
 		"@pigeon-posse/pkg-extended-scripts": "^0.3.0",
 		"@release-it/bumper": "^4.0.2",
 		"auto-changelog": "^2.4.0",
 		"browserslist": "^4.21.5",
-		"eslint": "^8.32.0",
+		"eslint": "^8.36.0",
 		"eslint-plugin-align-assignments": "^1.1.2",
 		"eslint-plugin-align-import": "^1.0.0",
 		"eslint-plugin-html": "^7.1.0",
 		"eslint-plugin-import": "^2.27.5",
-		"eslint-plugin-jsdoc": "^39.6.4",
+		"eslint-plugin-jsdoc": "^39.9.1",
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
-		"parcel": "^2.6.2",
-		"release-it": "^15.6.0",
-		"rimraf": "^4.1.2",
-		"stylelint": "^14.9.1",
+		"npm-run-all": "^4.1.5",
+		"parcel": "^2.8.3",
+		"release-it": "^15.8.0",
+		"rimraf": "^4.4.0",
 		"web-ext": "^7.5.0"
 	},
 	"browserslist": [
@@ -56,7 +75,7 @@
 		"sourceDir": "dist",
 		"run": {
 			"startUrl": [
-				"https://es.wikipedia.org/wiki/Columbidae"
+				"https://chat.openai.com/"
 			]
 		}
 	},
@@ -66,7 +85,7 @@
 	"homepage": "https://pigeonposse.com/",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pigeonposse/wikipediaplus"
+		"url": "https://github.com/pigeonposse/stylegpt"
 	},
 	"author": {
 		"name": "Angelo",
@@ -82,10 +101,10 @@
 	],
 	"license": {
 		"type": "GPL-3.0",
-		"url": "https://github.com/pigeonposse/wikipediaplus/LICENSE"
+		"url": "https://github.com/pigeonposse/stylegpt/LICENSE"
 	},
 	"bugs": {
-		"url": "https://github.com/pigeonposse/wikipediaplus/issues"
+		"url": "https://github.com/pigeonposse/stylegpt/issues"
 	},
 	"funding": {
 		"type": "individual",

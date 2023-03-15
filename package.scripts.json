@@ -1,9 +1,9 @@
 {
 	"lint": "pnpm pes lint:css pnpm pes lint:js",
-	"lint:css": "stylelint src/**/*.css",
+	// "lint:css": "stylelint src/**/*.css",
 	"lint:js": "eslint src --ext .js",
 	"lint-fix": "pnpm pes lint-fix:css pnpm pes lint-fix:js",
-	"lint-fix:css": "stylelint src/**/*.css --fix",
+	// "lint-fix:css": "stylelint src/**/*.css --fix",
 	"lint-fix:js": "eslint src --ext .js --fix",
 	"rm-dist": "rimraf dist",
 	"rm-c": "rimraf dist/chrome",

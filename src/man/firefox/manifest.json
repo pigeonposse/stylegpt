@@ -1,0 +1,32 @@
+{
+	"name": "styleGPT",
+	"version": "0.0.0",
+	"description": "",
+	"manifest_version": 2,
+	"icons": {
+		"96": "../../assets/img/icon-96.png"
+	},
+	"permissions": [
+		"storage"
+	],
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}"
+		}
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://chat.openai.com/chat",
+				"https://chat.openai.com/chat/*"
+			],
+			"js": [
+				"../../content.js"
+			],
+			"css": [
+				"../../content.css"
+			],
+			"run_at": "document_end"
+		}
+	]
+}

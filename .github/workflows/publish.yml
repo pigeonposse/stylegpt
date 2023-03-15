@@ -73,48 +73,48 @@ jobs:
         uses: codex-team/action-nodejs-package-info@v1.1
 
 
-      #########################################################################
-      # CHROME
-      #########################################################################
+      # #########################################################################
+      # # CHROME
+      # #########################################################################
 
-      - name: Upload CHROME extension
-        uses: Klemensas/chrome-extension-upload-action@v1.3
-        with:
-          refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
-          client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
-          client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
-          file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
-          app-id: 'nnkleafalbcmeamobndfmcjhphipnnaj'
-          publish: true
+      # - name: Upload CHROME extension
+      #   uses: Klemensas/chrome-extension-upload-action@v1.3
+      #   with:
+      #     refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
+      #     client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
+      #     client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
+      #     file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
+      #     app-id: 'nnkleafalbcmeamobndfmcjhphipnnaj'
+      #     publish: true
           
-        # uses: mnao305/chrome-extension-upload@v4.0.1
-        # with:
-        #   file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
-        #   # id of the extension in chrome
-        #   extension-id: nnkleafalbcmeamobndfmcjhphipnnaj
-        #   # instructions to get secrets: 
-        #   # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
-        #   client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
-        #   client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
-        #   refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
+      #   # uses: mnao305/chrome-extension-upload@v4.0.1
+      #   # with:
+      #   #   file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+      #   #   # id of the extension in chrome
+      #   #   extension-id: nnkleafalbcmeamobndfmcjhphipnnaj
+      #   #   # instructions to get secrets: 
+      #   #   # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
+      #   #   client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
+      #   #   client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
+      #   #   refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
 
 
-      #########################################################################
-      # FIREFOX
-      #########################################################################
+      # #########################################################################
+      # # FIREFOX
+      # #########################################################################
 
-      - name: Upload FIREFOX extension
-        uses: trmcnvn/firefox-addon@v1
-        with:
-          # uuid is only necessary when updating an existing addon,
-          # omitting it will create a new addon
-          uuid: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
-          xpi: dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
-          manifest: dist/firefox/manifest.json
-          # get keys in:
-          # https://addons.mozilla.org/en-US/developers/addon/api/key/
-          api-key: ${{ secrets.FIREFOX_API_KEY }}
-          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+      # - name: Upload FIREFOX extension
+      #   uses: trmcnvn/firefox-addon@v1
+      #   with:
+      #     # uuid is only necessary when updating an existing addon,
+      #     # omitting it will create a new addon
+      #     uuid: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
+      #     xpi: dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+      #     manifest: dist/firefox/manifest.json
+      #     # get keys in:
+      #     # https://addons.mozilla.org/en-US/developers/addon/api/key/
+      #     api-key: ${{ secrets.FIREFOX_API_KEY }}
+      #     api-secret: ${{ secrets.FIREFOX_API_SECRET }}
 
 
       #########################################################################
@@ -126,8 +126,8 @@ jobs:
         with:
           artifacts: "dist/comp/*.zip"
           body: |
-            🧩 View changelog at: https://github.com/pigeonposse/wikipediaplus/blob/main/CHANGELOG.md
-            📜 View license: https://github.com/pigeonposse/wikipediaplus/blob/main/LICENSE
+            🧩 View changelog at: https://github.com/pigeonposse/styleGPT/blob/main/CHANGELOG.md
+            📜 View license: https://github.com/pigeonposse/styleGPT/blob/main/LICENSE
 
 
 ############################################################################### 

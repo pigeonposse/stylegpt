@@ -30,7 +30,6 @@ module.exports = {
 	    	'echo \'Github action is now releasing: ${name} v${version} to ${repo.repository}.\n Check if all is ok 🌈🤖\n https://github.com/${repo.repository}/actions\'',
 	    ],
 	},
-
 	'github' : {
 		'release' : false,
 	},

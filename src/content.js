@@ -5,52 +5,61 @@
  *
  * @version 1.0.0
  */
-async function init() {
 
-	var links, container, btn, div, title, content, i
+import * as core  from './core/main'
+import * as utils from './utils/_main'
 
-	content = document.querySelector( '#bodyContent' )
+const init = async () => {
 
-	if ( !content ) return
+	/**
+	 * BTN.
+	 *
+	 * @todo - Hacer que no se vean los btns en el preload
+	 * 		 - crear observer que observe "form > div", ya que los btns se ocultan cuando entras a un chat con info.
+	 */
+	utils.html.btnSection()
 
-	links = content.querySelectorAll( 'p > a' )
+	/**
+	 * SETTINGS.
+	 *
+	 */
+	core.settings.html( utils )
+	core.settings.funct( utils )
 
-	if ( !links ) return
+	/**
+	 * DARKMODE.
+	 *
+	 * @todo - Cambiar icono de manera más organica.
+	 *  	 - Organizar el código de "functs".
+	 */
+	core.darkMode.html( utils )
+	core.darkMode.funct( utils )
 
-	container = document.createElement( 'div' )
-	container.classList.add( 'pigeon-w-container' )
-	container.classList.add( 'slides' )
-	container.classList.add( 'vector-body' )
+	/**
+	 * NEW CHAT.
+	 *
+	 * @todo - Crear boton para añadir nuevo chat. Misma funcionalidad que darkmode.
+	 */
+	core.newChat.html( utils )
+	core.newChat.funct( utils )
 
-	if ( content.previousElementSibling.id == 'firstHeading' ) {
+	/**
+	 * STYLES.
+	 *
+	 * @todo - Piquito en container (?).
+	 */
+	core.styles.html( utils )
+	core.styles.funct( utils )
 
-		container.setAttribute( 'style', 'padding-top:0' )
+	/**
+	 * COPY RES (?).
+	 *
+	 * @todo - Tal vez no se implemente, motivo: complicado
+	 * 		 - crear observer que observe cambios reales.
+	 */
+	// core.copyRes.funct( utils )
 
-	}
-
-	for ( i = 0; i < links.length; i++ ) {
-
-		div = document.createElement( 'div' )
-		div.setAttribute( 'class', 'slides-' + 1 )
-
-		btn = document.createElement( 'a' )
-		btn.setAttribute( 'href', links[i].href )
-
-		if ( links[i].href != '' && links[i].innerText != '' ) {
-
-			btn.setAttribute( 'title', links[i].innerText )
-			btn.innerText = links[i].innerText
-
-			div.appendChild( btn )
-			container.appendChild( div )
-
-		}
-
-	}
-
-	title = document.querySelector( 'h1' )
-
-	if ( title && title.innerText != '' ) content.before( container )
+	utils.svg.dinamicColor()
 
 }
 
