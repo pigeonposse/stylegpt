@@ -45,7 +45,7 @@ DEVELOPED BY PIGEONPOSSE
 🧩 Download links:
 
 - [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
-- [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=flat-square)](https://chrome.google.com/webstore/detail/pigeonposse/)
+- [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=flat-square)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
 
 ## 👨‍💻 Development
 
