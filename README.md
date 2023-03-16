@@ -47,9 +47,35 @@ DEVELOPED BY PIGEONPOSSE
 - [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
 - [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=flat-square)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
 
-## Demo
+## ⚙️ Usage
 
-[![View Demo](https://img.shields.io/badge/View%20demo-grey?style=flat-square)](https://youtu.be/UN1hu4e-VmM)
+1. Go to https://chat.openai.com/chat
+2. You will see a right menu on page
+
+| ![Explanation](docs/demo/explanation.png) | ![Explanation 1](docs/demo/explanation-1.png) |
+| ------------------------- | ------------------------- |
+
+
+### Demo
+
+[![View Demo image](docs/demo/video-capture.png)](https://youtu.be/UN1hu4e-VmM)
+<!-- [![View Demo](https://img.shields.io/badge/View%20demo-grey?style=flat-square)](https://youtu.be/UN1hu4e-VmM) -->
+
+### Change chat styles
+
+![GIF chat styles](docs/demo/chat-styles.gif)
+
+### Hide/Show Sidebar
+
+![GIF Sidebar](docs/demo/sidebar.gif)
+
+### New chat button
+
+![GIF New chat](docs/demo/new-chat.gif)
+
+### Dark mode button
+
+![GIF Dark mode](docs/demo/dark-mode.gif)
 
 ## 👨‍💻 Development
 
