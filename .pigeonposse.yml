@@ -1,0 +1,24 @@
+
+###############################################################################
+# FOR PIGEONPOSSE USAGE
+###############################################################################
+
+web:
+  
+  - id: "{{package.name}}"
+    name: "{{package.name}}"
+    type: "browser-extension"
+    subtypes:
+      - Chromiun
+      - Chrome
+      - Firefox
+    version: "{{package.version}}"
+    description: "{{package.description}}"
+    homepage: "{{package.homepage}}"
+    repo: "https://github.com/pigeonposse/{{package.name}}"
+    logo: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/logo.png"
+    banner: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/header.png"
+    status: "coming-soon"
+
+
+###############################################################################
