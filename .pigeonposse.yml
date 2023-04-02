@@ -16,9 +16,10 @@ web:
     description: "{{package.description}}"
     homepage: "{{package.homepage}}"
     repo: "https://github.com/pigeonposse/{{package.name}}"
+    license: "{package.license.url}}"
     logo: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/logo.png"
     banner: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/header.png"
-    status: "coming-soon"
+    status: "active"
 
 
 ###############################################################################
