@@ -117,18 +117,6 @@ jobs:
     #     file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
     #     app-id: 'khoggafmiibmeihpkpbkllkkdfhmokoj'
     #     publish: true
-    
-    - name: Upload CHROME extension   
-      uses: mnao305/chrome-extension-upload@v4.0.1
-      with:
-        file-path: dist/comp/chrome-stylegpt-${{ steps.package.outputs.version }}.zip
-        # id of the extension in chrome
-        extension-id: khoggafmiibmeihpkpbkllkkdfhmokoj
-        # instructions to get secrets: 
-        # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
-        client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
-        client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
-        refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
 
 
 ############################################################################### 
