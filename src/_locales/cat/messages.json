@@ -1,0 +1,130 @@
+{
+	"name": {
+		"message": "styleGPT",
+		"description": "El nom de la extensió"
+	},
+	"description": {
+		"message": "🤖🧩 styleGPT és una extensió que canvia l'estil de la interfície web de chatGPT 🐦🌈",
+		"description": "Descripció de la extensió."
+	},
+	"donate": {
+		"message": "Donar",
+		"description": "Enllaços per a donacions"
+	},
+	"contribute": {
+		"message": "Contribuir",
+		"description": "Enllaços per a contribuir"
+	},
+	"review": {
+		"message": "Resenya",
+		"description": "Enllaços per a ressenyes"
+	},
+	"newChatLink": {
+		"message": "Obrir nou xat",
+		"description": "Enllaços per a un nou xat"
+	},
+	"notificationActivated": {
+		"message": "Hola! Actualment <b>styleGPT</b> està habilitat.",
+		"description": "Notificacions emergents - Missatge d'activació de l'extensió."
+	},
+	"notificationNotMatch": {
+		"message": "No estàs a la pàgina de chatGPT.",
+		"description": "Notificacions emergents - Missatge que la pàgina web de chatGPT no coincideix."
+	},
+	"notificationGeneralError_title": {
+		"message": "Atenció!",
+		"description": "Notificacions emergents - Missatge d'error general."
+	},
+	"notificationGeneralError_subtitle": {
+		"message": "StyleGpt no s'està mostrant.",
+		"description": "Notificacions emergents - Missatge d'error general."
+	},
+	"notificationGeneralError_text": {
+		"message": "Això pot ser degut a diverses raons:",
+		"description": "Notificacions emergents - Missatge d'error general."
+	},
+	"notificationGeneralError_reason1": {
+		"message": "<b>Falsa alarma</b>: si és així, refrescar la pàgina hauria de solucionar-ho. Comprova-ho!",
+		"description": "Notificacions emergents - Missatge d'error general."
+	},
+	"notificationGeneralError_reason2": {
+		"message": "<b>Error causat per OpenAI.com</b>: StyleGpt es va crear a partir de la pàgina de chat GPT i si canvia dràsticament, StyleGpt ja no serà visible fins que s'actualitzi. Si aquest és el problema, hauràs d'esperar a que s'actualitzi StyleGpt.",
+		"description": "Notificacions emergents - Missatge d'error general."
+	},
+	"stylesSection_fontDefault": {
+		"message": "Per defecte",
+		"description": "Títol de la secció de font predeterminada"
+	},
+	"stylesSection_userText": {
+		"message": "Text de l'usuari",
+		"description": "Títol de la secció de text de l'usuari"
+	},
+	"stylesSection_userColor": {
+		"message": "Color de text de l'usuari",
+		"description": "Títol de la secció de color de text de l'usuari"
+	},
+	"stylesSection_userFont": {
+		"message": "Tipus de lletra de l'usuari",
+		"description": "Títol de la secció de tipus de lletra de l'usuari"
+	},
+	"stylesSection_userBgColor": {
+		"message": "Color de fons de l'usuari",
+		"description": "Títol de la secció de color de fons de l'usuari"
+	},
+	"stylesSection_aiText": {
+		"message": "Text de l'IA",
+		"description": "Títol de la secció de text de l'IA"
+	},
+	"stylesSection_aiFont": {
+		"message": "Tipus de lletra de l'IA",
+		"description": "Títol de la secció de tipus de lletra de l'IA"
+	},
+	"stylesSection_aiColor": {
+		"message": "Color de text de l'IA",
+		"description": "Títol de la secció de color de text de l'IA"
+	},
+	"stylesSection_aiBgColor": {
+		"message": "Color de fons de l'IA",
+		"description": "Títol de la secció de color de fons de l'IA"
+	},
+	"stylesSection_chatBgColor": {
+		"message": "Color de fons",
+		"description": "Títol de la secció de color de fons del xat"
+	},
+	"stylesSection_chatBgImg": {
+		"message": "Imatge de fons",
+		"description": "Títol de la secció d'imatge de fons del xat"
+	},
+	"stylesSection_chatBgImg_placeholder": {
+		"message": "Afegiu un enllaç d'imatge...",
+		"description": "Títol de la secció de marcador de posició de la imatge de fons del xat"
+	},
+	"stylesSection_chatBgImgPosition": {
+		"message": "Posició de fons",
+		"description": "Títol de la secció de posició d'imatge de fons del xat"
+	},
+	"stylesSection_chatBgImgPosition_cover": {
+		"message": "Cobrir",
+		"description": "Opció Cobrir de la posició d'imatge de fons del xat"
+	},
+	"stylesSection_chatBgImgPosition_contain": {
+		"message": "Contenir",
+		"description": "Opció Contenir de la posició d'imatge de fons del xat"
+	},
+	"stylesSection_showStyles": {
+		"message": "Amagar/Mostrar",
+		"description": "Títol del botó per amagar/Mostrar opcions d'estil"
+	},
+	"stylesSection_showStyles_hide": {
+		"message": "Amagar",
+		"description": "Títol del botó per amagar opcions d'estil"
+	},
+	"stylesSection_showStyles_show": {
+		"message": "Veure",
+		"description": "Títol del botó per veure les opcions d'estil"
+	},
+	"stylesSection_reset": {
+		"message": "Restablir",
+		"description": "Títol del botó per reiniciar les opcions d'estil"
+	}
+}

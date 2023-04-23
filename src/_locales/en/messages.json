@@ -1,0 +1,130 @@
+{
+	"name": {
+		"message": "styleGPT",
+		"description": "The name of my extension"
+	},
+	"description": {
+		"message": "🤖🧩 styleGPT is an extension that change style from chatGPT web 🐦🌈",
+		"description": "Description of the extension."
+	},
+	"donate": {
+		"message": "Donate",
+		"description": "For donate Links"
+	},
+	"contribute": {
+		"message": "Contribute",
+		"description": "For contribute Links."
+	},
+	"review": {
+		"message": "Review",
+		"description": "For review Links."
+	},
+	"newChatLink": {
+		"message": "Open new chat",
+		"description": "For new chat Links."
+	},
+	"notificationActivated": {
+		"message": "Hi, currently <b>styleGPT</b> is enabled!!",
+		"description": "Popup notifications - Activate Ext message."
+	},
+	"notificationNotMatch": {
+		"message": "You are not in chatGPT page.",
+		"description": "Popup notifications - chatGPT web not match message."
+	},
+	"notificationGeneralError_title": {
+		"message": "Attention!",
+		"description": "Popup notifications - General error part message."
+	},
+	"notificationGeneralError_subtitle": {
+		"message": "StyleGpt is not displaying.",
+		"description": "Popup notifications - General error part message."
+	},
+	"notificationGeneralError_text": {
+		"message": "This could be due to several reasons:",
+		"description": "Popup notifications - General error part message."
+	},
+	"notificationGeneralError_reason1": {
+		"message": "<b>False alarm</b>: if so, refreshing the page should solve it. Check it out!",
+		"description": "Popup notifications - General error part message."
+	},
+	"notificationGeneralError_reason2": {
+		"message": "<b>Error caused by OpenAI.com</b>: StyleGpt is created from the GPT chat page and if it changes drastically, StyleGpt will no longer be visible until updated. If this is the issue, you'll have to wait for StyleGpt to be updated.",
+		"description": "Popup notifications - General error part message."
+	},
+	"stylesSection_fontDefault": {
+		"message": "Default",
+		"description": "Title of the default font section"
+	},
+	"stylesSection_userText": {
+		"message": "Text User",
+		"description": "Title of the user text section"
+	},
+	"stylesSection_userColor": {
+		"message": "Text color User",
+		"description": "Title of the user text color section"
+	},
+	"stylesSection_userFont": {
+		"message": "Text font User",
+		"description": "Title of the user text font section"
+	},
+	"stylesSection_userBgColor": {
+		"message": "Background color User",
+		"description": "Title of the user background color section"
+	},
+	"stylesSection_aiText": {
+		"message": "Text AI",
+		"description": "Title of the AI text section"
+	},
+	"stylesSection_aiFont": {
+		"message": "Text font AI",
+		"description": "Title of the AI text font section"
+	},
+	"stylesSection_aiColor": {
+		"message": "Text color AI",
+		"description": "Title of the AI text color section"
+	},
+	"stylesSection_aiBgColor": {
+		"message": "Background color AI",
+		"description": "Title of the AI background color section"
+	},
+	"stylesSection_chatBgColor": {
+		"message": "Background color",
+		"description": "Title of the chat background color section"
+	},
+	"stylesSection_chatBgImg": {
+		"message": "Background image",
+		"description": "Title of the chat background image section"
+	},
+	"stylesSection_chatBgImg_placeholder": {
+		"message": "Add image link...",
+		"description": "Title of the chat background image placeholder section"
+	},
+	"stylesSection_chatBgImgPosition": {
+		"message": "Background position",
+		"description": "Title of the chat background image position"
+	},
+	"stylesSection_chatBgImgPosition_cover": {
+		"message": "Cover",
+		"description": "Cover option of the chat background image position"
+	},
+	"stylesSection_chatBgImgPosition_contain": {
+		"message": "Contain",
+		"description": "Contain option of the chat background image position"
+	},
+	"stylesSection_showStyles": {
+		"message": "Hide/View",
+		"description": "Title of the button to hide/View style options"
+	},
+	"stylesSection_showStyles_hide": {
+		"message": "Hide",
+		"description": "Title of the button to hide style options"
+	},
+	"stylesSection_showStyles_show": {
+		"message": "View",
+		"description": "Alternative title of the button to show style options"
+	},
+	"stylesSection_reset": {
+		"message": "Reset",
+		"description": "Title of the button to reset style options"
+	}
+}

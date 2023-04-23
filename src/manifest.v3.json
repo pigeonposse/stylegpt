@@ -1,0 +1,47 @@
+{
+	"name": "__MSG_name__",
+	"version": "1.0.0",
+	"description": "__MSG_description__",
+	"manifest_version": 3,
+	"default_locale": "en",
+	"author": "PigeonPosse Collective",
+	"homepage_url": "https://pigeonposse.com",
+	"icons": {
+		"16": "./assets/img/icon-16.png",
+		"32": "./assets/img/icon-32.png",
+		"48": "./assets/img/icon-48.png",
+		"96": "./assets/img/icon-96.png",
+		"128": "./assets/img//icon-128.png"
+	},
+	"action": {
+		"default_popup": "./popup/popup.html"
+	},
+	"background": {
+		"service_worker": "./background/background.js"
+	},
+	"permissions": [
+		"storage",
+		"activeTab"
+	],
+	"host_permissions": [
+		"http://*/*", 
+		"https://*/*"
+	],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://chat.openai.com/*"
+			],
+			"js": [
+				"./content/content.js"
+			],
+			"css": [
+				"./content/content.css"
+			],
+			"run_at": "document_end"
+		}
+	]
+}

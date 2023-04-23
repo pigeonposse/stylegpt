@@ -4,6 +4,8 @@
  * @description Returns the extension object & if it is not an extension returns false.
  */
 
+/*eslint-disable */
+
 const isBrowser = ( object ) => {
 	
 	if( object && object.storage && object.storage.sync ) return true
@@ -12,7 +14,22 @@ const isBrowser = ( object ) => {
 
 }
 
-/*eslint-disable */
+export const isChromium = () => {
+
+	if( isBrowser( chrome ) ) return true
+
+	return false
+
+}
+
+export const isFirefox = () => {
+
+	if( isBrowser( browser ) ) return true
+
+	return false
+
+}
+
 export const extension = () => {
 
 	if( chrome ) {
@@ -34,3 +51,5 @@ export const extension = () => {
 	return false
 	
 }
+
+export const brwsr = extension()

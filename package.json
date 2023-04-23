@@ -9,29 +9,40 @@
 		"pnpm": ">=3"
 	},
 	"packageManager": "pnpm@7.26.0",
+	"src": [
+		"package.json"
+	],
 	"scripts": {
 		"scripts": "pnpm pes",
 		"start": "echo 'Dev: pnpm pes dev \nBuild: pnpm pes build'",
-		"release": "pnpm release-it",
+		"release": "node .utils/release.js",
 		"rm-all": "rimraf dist",
 		"rm:c": "rimraf dist/chrome",
+		"rm:cv2": "rimraf dist/chrome-mv2",
 		"rm:f": "rimraf dist/firefox",
 		"lint": "run-p lint:**",
 		"lint:js": "eslint src --ext .js",
 		"lint-fix": "run-p lint-fix:**",
 		"lint-fix:js": "eslint src --ext .js --fix",
-		"dev": "run-p dev:c",
+		"dev": "pnpm dev:f",
 		"dev:c": "pnpm rm:c & pnpm build:c:man && run-p watch-c:**",
+		"dev:cv2": "pnpm rm:cv2 & pnpm build:cv2:man && run-p watch-cv2:**",
 		"dev:f": "pnpm rm:f & pnpm build:f:man & run-p watch-f:**",
-		"watch-c:parcel": "parcel watch src/man/chrome/manifest.json --dist-dir dist/chrome --no-cache --no-hmr --no-content-hash",
+		"watch-cv2:parcel": "parcel watch src/manifest.json --dist-dir dist/chrome-mv2 --no-cache --no-hmr --no-content-hash",
+		"watch-cv2:web-ext": "web-ext run -t chromium --source-dir ./dist/chrome-mv2",
+		"watch-c:parcel": "parcel watch src/manifest.v3.json --dist-dir dist/chrome --no-cache --no-hmr --no-content-hash",
 		"watch-c:web-ext": "web-ext run -t chromium --source-dir ./dist/chrome",
-		"watch-f:parcel": "parcel watch src/man/firefox/manifest.json --dist-dir dist/firefox --no-cache --no-hmr --no-content-hash",
-		"watch-f:web-ext": "web-ext run -t firefox-desktop --source-dir ./dist/firefox",
+		"watch-f:parcel": "parcel watch src/manifest.json --dist-dir dist/firefox --no-cache --no-hmr --no-content-hash",
+		"watch-f:web-ext": "web-ext run --source-dir ./dist/firefox",
 		"old-build": "pnpm lint-fix && pnpm rm-all && run-s build:c:** && run-s build:f:**",
-		"build": "pnpm pes build",
-		"build:c:man": "parcel build src/man/chrome/manifest.json --dist-dir dist/chrome --no-content-hash --no-source-maps --no-cache --detailed-report 0",
+		"prebuild-c": "mv src/manifest.json src/manifest_temp.json && cp src/manifest.v3.json src/manifest.json || true",
+		"postbuild-c": "mv src/manifest.json src/manifest.v3.json && mv src/manifest_temp.json src/manifest.json || true",
+		"build": "pnpm lint-fix && pnpm rm-all && run-s build:c:** && run-s build:cv2:** && run-s build:f:**",
+		"build:cv2:man": "parcel build src/manifest.json --dist-dir dist/chrome-mv2 --no-content-hash --no-source-maps --no-cache --detailed-report 0",
+		"build:cv2:comp": "web-ext build --source-dir=./dist/chrome-mv2 --artifacts-dir=dist/comp --filename=chrome-mv2-{name}-{version}.zip",
+		"build:c:man": "pnpm prebuild-c && parcel build src/manifest.json --dist-dir dist/chrome --no-content-hash --no-source-maps --no-cache --detailed-report 0 && pnpm postbuild-c",
 		"build:c:comp": "web-ext build --source-dir=./dist/chrome --artifacts-dir=dist/comp --filename=chrome-{name}-{version}.zip",
-		"build:f:man": "parcel build src/man/firefox/manifest.json --dist-dir dist/firefox --no-content-hash --no-source-maps --no-cache --detailed-report 0",
+		"build:f:man": "parcel build src/manifest.json --dist-dir dist/firefox --no-content-hash --no-source-maps --no-cache --detailed-report 0",
 		"build:f:comp": "web-ext build --source-dir=./dist/firefox --artifacts-dir=dist/comp --filename=firefox-{name}-{version}.zip",
 		"coverage": "browserslist --coverage"
 	},
@@ -57,7 +68,7 @@
 		"@release-it/bumper": "^4.0.2",
 		"auto-changelog": "^2.4.0",
 		"browserslist": "^4.21.5",
-		"eslint": "^8.36.0",
+		"eslint": "^8.39.0",
 		"eslint-plugin-align-assignments": "^1.1.2",
 		"eslint-plugin-align-import": "^1.0.0",
 		"eslint-plugin-html": "^7.1.0",
@@ -65,11 +76,12 @@
 		"eslint-plugin-jsdoc": "^39.9.1",
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
+		"inquirer": "^9.1.5",
 		"npm-run-all": "^4.1.5",
 		"parcel": "^2.8.3",
-		"release-it": "^15.8.0",
-		"rimraf": "^4.4.0",
-		"web-ext": "^7.5.0"
+		"release-it": "^15.10.1",
+		"rimraf": "^4.4.1",
+		"web-ext": "^7.6.1"
 	},
 	"browserslist": [
 		"last 1 Chrome version",
@@ -85,6 +97,17 @@
 	},
 	"@parcel/bundler-default": {
 		"minBundles": 10000000
+	},
+	"extra": {
+		"path": {
+			"releaseIt": ".release-it.json"
+		},
+		"chatWebMatch": "/chat\\.openai\\.com/",
+		"chatPage": "https://chat.openai.com/",
+		"store": {
+			"chrome": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
+			"firefox": "https://addons.mozilla.org/es/firefox/addon/stylegpt/"
+		}
 	},
 	"homepage": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
 	"repository": {

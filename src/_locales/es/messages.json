@@ -1,0 +1,130 @@
+{
+	"name": {
+		"message": "styleGPT",
+		"description": "El nombre de mi extensión"
+	},
+	"description": {
+		"message": "🤖🧩 styleGPT es una extensión que cambia el estilo de la interfaz web de chatGPT 🐦🌈",
+		"description": "Descripción de la extensión."
+	},
+	"donate": {
+		"message": "Donar",
+		"description": "Enlaces para donaciones"
+	},
+	"contribute": {
+		"message": "Contribuir",
+		"description": "Enlaces para contribuir"
+	},
+	"review": {
+		"message": "Reseña",
+		"description": "Enlaces para reseñas"
+	},
+	"newChatLink": {
+		"message": "Abrir nuevo chat",
+		"description": "Enlaces para un nuevo chat"
+	},
+	"notificationActivated": {
+		"message": "¡Hola! Actualmente <b>styleGPT</b> está habilitado.",
+		"description": "Notificaciones emergentes - Mensaje de activación de la extensión."
+	},
+	"notificationNotMatch": {
+		"message": "No estás en la página de chatGPT.",
+		"description": "Notificaciones emergentes - Mensaje de que la página web de chatGPT no coincide."
+	},
+	"notificationGeneralError_title": {
+		"message": "¡Atención!",
+		"description": "Notificaciones emergentes - Mensaje de error general."
+	},
+	"notificationGeneralError_subtitle": {
+		"message": "StyleGpt no se está mostrando.",
+		"description": "Notificaciones emergentes - Mensaje de error general."
+	},
+	"notificationGeneralError_text": {
+		"message": "Esto puede ser debido a varias razones:",
+		"description": "Notificaciones emergentes - Mensaje de error general."
+	},
+	"notificationGeneralError_reason1": {
+		"message": "<b>Falsa alarma</b>: si es así, refrescar la página debería solucionarlo. ¡Compruébalo!",
+		"description": "Notificaciones emergentes - Mensaje de error general."
+	},
+	"notificationGeneralError_reason2": {
+		"message": "<b>Error causado por OpenAI.com</b>: StyleGpt se creó a partir de la página de chat GPT y si cambia drásticamente, StyleGpt ya no será visible hasta que se actualice. Si este es el problema, tendrás que esperar a que se actualice StyleGpt.",
+		"description": "Notificaciones emergentes - Mensaje de error general."
+	},
+	"stylesSection_fontDefault": {
+		"message": "Por defecto",
+		"description": "Título de la sección de fuente predeterminada"
+	},
+	"stylesSection_userText": {
+		"message": "Texto del usuario",
+		"description": "Título de la sección de texto de usuario"
+	},
+	"stylesSection_userColor": {
+		"message": "Color de texto del usuario",
+		"description": "Título de la sección de color de texto de usuario"
+	},
+	"stylesSection_userFont": {
+		"message": "Fuente de texto del usuario",
+		"description": "Título de la sección de fuente de texto de usuario"
+	},
+	"stylesSection_userBgColor": {
+		"message": "Color de fondo del usuario",
+		"description": "Título de la sección de color de fondo del usuario"
+	},
+	"stylesSection_aiText": {
+		"message": "Texto de la IA",
+		"description": "Título de la sección de texto de la IA"
+	},
+	"stylesSection_aiFont": {
+		"message": "Fuente de texto de la IA",
+		"description": "Título de la sección de fuente de texto de la IA"
+	},
+	"stylesSection_aiColor": {
+		"message": "Color de texto de la IA",
+		"description": "Título de la sección de color de texto de la IA"
+	},
+	"stylesSection_aiBgColor": {
+		"message": "Color de fondo de la IA",
+		"description": "Título de la sección de color de fondo de la IA"
+	},
+	"stylesSection_chatBgColor": {
+		"message": "Color de fondo del chat",
+		"description": "Título de la sección de color de fondo del chat"
+	},
+	"stylesSection_chatBgImg": {
+		"message": "Imagen de fondo del chat",
+		"description": "Título de la sección de imagen de fondo del chat"
+	},
+	"stylesSection_chatBgImg_placeholder": {
+		"message": "Agregar enlace...",
+		"description": "Título de la sección de marcador de posición de imagen de fondo del chat"
+	},
+	"stylesSection_chatBgImgPosition": {
+		"message": "Posición de la imagen de fondo",
+		"description": "Título de la sección de posición de imagen de fondo del chat"
+	},
+	"stylesSection_chatBgImgPosition_cover": {
+		"message": "Cubrir",
+		"description": "Opción de cubrir la posición de la imagen de fondo del chat"
+	},
+	"stylesSection_chatBgImgPosition_contain": {
+		"message": "Contener",
+		"description": "Opción de contener la posición de la imagen de fondo del chat"
+	},
+	"stylesSection_showStyles": {
+		"message": "Ocultar/Ver",
+		"description": "Título del botón para ocultar/ver opciones de estilo"
+	},
+	"stylesSection_showStyles_hide": {
+		"message": "Ocultar",
+		"description": "Título del botón para ocultar opciones de estilo"
+	},
+	"stylesSection_showStyles_show": {
+		"message": "Ver",
+		"description": "Título alternativo del botón para ver opciones de estilo"
+	},
+	"stylesSection_reset": {
+		"message": "Restablecer",
+		"description": "Título del botón para restablecer opciones de estilo"
+	}
+}

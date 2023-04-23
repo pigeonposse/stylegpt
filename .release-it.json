@@ -1,0 +1,37 @@
+{
+    "plugins": {
+        "@release-it/bumper": {
+            "in": [
+                "src/manifest.json",
+                "src/manifest.v3.json"
+            ],
+            "out": [
+                "src/manifest.json",
+                "src/manifest.v3.json"
+            ]
+        }
+    },
+    "git": {
+        "requireBranch": "main",
+        "commitMessage": "Release v${version}"
+    },
+    "hooks": {
+        "before:init": [
+            "git push",
+            "pnpm lint-fix"
+        ],
+        "after:bump": "pnpm auto-changelog -p",
+        "after:git:release": "echo 'After git push, before github release'",
+        "after:release": [
+            "gh repo edit https://github.com/pigeonposse/stylegpt -d \"🤖🧩 styleGPT is an extension that change style from chatGPT web. 🐦🌈\"",
+            "gh repo edit https://github.com/pigeonposse/stylegpt --add-topic javascript,chrome-extension,firefox-extension,browser-extension,extension,chat-gpt,gpt,gpt4,open-ai,openai,ai,web,npm",
+            "echo 'Github action is now releasing: styleGPT v${version} to https://github.com/pigeonposse/stylegpt.\n Check if all is ok 🌈🤖\n https://github.com/pigeonposse/stylegpt/actions'"
+        ]
+    },
+    "github": {
+        "release": false
+    },
+    "npm": {
+        "release": false
+    }
+}
