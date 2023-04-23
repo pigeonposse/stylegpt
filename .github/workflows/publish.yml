@@ -96,7 +96,7 @@ jobs:
         # uuid is only necessary when updating an existing addon,
         # omitting it will create a new addon
         uuid: '{8f0f11ab-1cc1-4db9-81a3-251de69235d9}'
-        xpi: dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip.toLowerCase()
+        xpi: dist/comp/firefox-stylegpt-${{ steps.package.outputs.version }}.zip
         manifest: dist/firefox/manifest.json
         # get keys in:
         # https://addons.mozilla.org/en-US/developers/addon/api/key/
@@ -121,7 +121,7 @@ jobs:
     - name: Upload CHROME extension   
       uses: mnao305/chrome-extension-upload@v4.0.1
       with:
-        file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip.toLowerCase()
+        file-path: dist/comp/chrome-stylegpt-${{ steps.package.outputs.version }}.zip
         # id of the extension in chrome
         extension-id: khoggafmiibmeihpkpbkllkkdfhmokoj
         # instructions to get secrets: 
