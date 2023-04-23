@@ -18,7 +18,8 @@
     "hooks": {
         "before:init": [
             "git push",
-            "pnpm lint-fix"
+            "pnpm lint-fix",
+            "pnpm build"
         ],
         "after:bump": "pnpm auto-changelog -p",
         "after:git:release": "echo 'After git push, before github release'",

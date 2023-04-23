@@ -34,99 +34,100 @@ jobs:
 
     steps:
 
-      #########################################################################
-      # INIT & BUILD PKG
-      #########################################################################
-      - name: checks-out repository
-        uses: actions/checkout@v3
+    #########################################################################
+    # INIT & BUILD PKG
+    #########################################################################
+    
+    - name: "Checks-out repository"
+      uses: actions/checkout@v3
 
 
-      #########################################################################
-      # IF IS IN MAIN BRANCH
-      #########################################################################
+    #########################################################################
+    # IF IS IN MAIN BRANCH
+    #########################################################################
 
-      # - name: Exit if not on MAIN branch
-      #   if: endsWith(github.ref, 'main') == false
-      #   run: exit -1
-
-
-      #########################################################################
-      # BUILD PKG
-      #########################################################################
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
-
-      - name: Install pkg dependencies
-        run: |
-          pnpm install
-          pnpm build
+    # - name: Exit if not on MAIN branch
+    #   if: endsWith(github.ref, 'main') == false
+    #   run: exit -1
 
 
-      #########################################################################
-      # GET PKG INFO
-      #########################################################################
+    #########################################################################
+    # BUILD PKG
+    #########################################################################
 
-      - name: Get package info
-        id: package
-        uses: codex-team/action-nodejs-package-info@v1.1
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      id: pnpm-install
 
-      # #########################################################################
-      # # FIREFOX
-      # #########################################################################
-
-      - name: Upload FIREFOX extension
-        uses: trmcnvn/firefox-addon@v1
-        with:
-          # uuid is only necessary when updating an existing addon,
-          # omitting it will create a new addon
-          uuid: '{8f0f11ab-1cc1-4db9-81a3-251de69235d9}'
-          xpi: dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
-          manifest: dist/firefox/manifest.json
-          # get keys in:
-          # https://addons.mozilla.org/en-US/developers/addon/api/key/
-          api-key: ${{ secrets.FIREFOX_API_KEY }}
-          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+    - name: Install pkg dependencies
+      run: |
+        pnpm install
+        pnpm build
 
 
-      #########################################################################
-      # GITHUB RELEASE
-      #########################################################################
+    #########################################################################
+    # GET PKG INFO
+    #########################################################################
 
-      - name: Create Github release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "dist/comp/*.zip"
-          body: |
-            🧩 View changelog at: https://github.com/pigeonposse/styleGPT/blob/main/CHANGELOG.md
-            📜 View license: https://github.com/pigeonposse/styleGPT/blob/main/LICENSE
+    - name: Get package info
+      id: package
+      uses: codex-team/action-nodejs-package-info@v1.1
+
+    # #########################################################################
+    # # FIREFOX
+    # #########################################################################
+
+    - name: Upload FIREFOX extension
+      uses: trmcnvn/firefox-addon@v1
+      with:
+        # uuid is only necessary when updating an existing addon,
+        # omitting it will create a new addon
+        uuid: '{8f0f11ab-1cc1-4db9-81a3-251de69235d9}'
+        xpi: dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+        manifest: dist/firefox/manifest.json
+        # get keys in:
+        # https://addons.mozilla.org/en-US/developers/addon/api/key/
+        api-key: ${{ secrets.FIREFOX_API_KEY }}
+        api-secret: ${{ secrets.FIREFOX_API_SECRET }}
 
 
-      # #########################################################################
-      # # CHROME
-      # #########################################################################
+    #########################################################################
+    # GITHUB RELEASE
+    #########################################################################
 
-      # - name: Upload CHROME extension
-      #   uses: Klemensas/chrome-extension-upload-action@v1.3
-      #   with:
-      #     refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
-      #     client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
-      #     client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
-      #     file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
-      #     app-id: 'khoggafmiibmeihpkpbkllkkdfhmokoj'
-      #     publish: true
-      
-       - name: Upload CHROME extension   
-        uses: mnao305/chrome-extension-upload@v4.0.1
-        with:
-          file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
-          # id of the extension in chrome
-          extension-id: khoggafmiibmeihpkpbkllkkdfhmokoj
-          # instructions to get secrets: 
-          # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
-          client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
-          client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
-          refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
+    - name: Create Github release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "dist/comp/*.zip"
+        body: |
+          🧩 View changelog at: https://github.com/pigeonposse/styleGPT/blob/main/CHANGELOG.md
+          📜 View license: https://github.com/pigeonposse/styleGPT/blob/main/LICENSE
+
+
+    # #########################################################################
+    # # CHROME
+    # #########################################################################
+
+    # - name: Upload CHROME extension
+    #   uses: Klemensas/chrome-extension-upload-action@v1.3
+    #   with:
+    #     refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
+    #     client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
+    #     client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
+    #     file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
+    #     app-id: 'khoggafmiibmeihpkpbkllkkdfhmokoj'
+    #     publish: true
+    
+    - name: Upload CHROME extension   
+      uses: mnao305/chrome-extension-upload@v4.0.1
+      with:
+        file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+        # id of the extension in chrome
+        extension-id: khoggafmiibmeihpkpbkllkkdfhmokoj
+        # instructions to get secrets: 
+        # https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md
+        client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
+        client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
+        refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }} 
 
 ############################################################################### 
