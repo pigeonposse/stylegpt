@@ -107,16 +107,17 @@ jobs:
       # # CHROME
       # #########################################################################
 
-      - name: Upload CHROME extension
-        uses: Klemensas/chrome-extension-upload-action@v1.3
-        with:
-          refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
-          client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
-          client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
-          file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
-          app-id: 'khoggafmiibmeihpkpbkllkkdfhmokoj'
-          publish: true
-          
+      # - name: Upload CHROME extension
+      #   uses: Klemensas/chrome-extension-upload-action@v1.3
+      #   with:
+      #     refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
+      #     client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
+      #     client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
+      #     file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
+      #     app-id: 'khoggafmiibmeihpkpbkllkkdfhmokoj'
+      #     publish: true
+      
+       - name: Upload CHROME extension   
         uses: mnao305/chrome-extension-upload@v4.0.1
         with:
           file-path: dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
