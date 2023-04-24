@@ -18,16 +18,16 @@ html {
     --pigeon-success-color: #359960;
     --pigeon-error-color: #b93440;
     --pigeon-radius: 10px;
+	min-width: 300px;
+	max-width: 500px;
+	max-height: 650px;
+	width: auto;
 }
 body {
 	font-family: var(--pigeon-font-family);
 	background: var(--pigeon-bg-color);
 	color: var(--pigeon-text-color);
 	padding: 20px 20px;
-	width: auto;
-	min-width: 300px;
-	max-width: 500px;
-	max-height: 650px;
 	border-style: solid;
 	border-width: 5px;
 	border-image: var(--pigeon-border-gradient);
@@ -124,6 +124,7 @@ p, a {
 	padding: 0px 10px;
 	border-radius: 5px;
 }
+
 .notification .info {
 	border-color: var(--pigeon-info-color);
 }
@@ -136,7 +137,7 @@ p, a {
 .notification {
 	margin: 30px 0;
 }
-.notification div {
+.notification > div {
 	border-left: 5px solid black;
 	width: 100%;
 	background: var(--pigeon-bg-color-2);
@@ -146,8 +147,16 @@ p, a {
 .notification a {
 	text-decoration: revert;
 	font-size: 12px;
+
+}
+.notification .error-title,
+.notification a {
+	margin:0 4px;
 }
 .notification ul {
     margin-block-start: 2px;
-    padding: 0 0 0 20px;
+    padding: 3px 10px 3px 20px;
+}
+.notification li {
+	margin: 5px;
 }

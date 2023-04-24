@@ -15,6 +15,7 @@ import { waitForSelector }                         from './waitForSelector'
 import { url }                                     from './url'
 import { string }                                  from './string'
 import { pkg }                                     from './pkg'
+import { HtmlParser }                              from './htmlParser'
 
 export {
 	observer,
@@ -29,4 +30,5 @@ export {
 	waitForSelector,
 	url,
 	pkg,
+	HtmlParser,
 }

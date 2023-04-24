@@ -24,7 +24,7 @@
 		"description": "For new chat Links."
 	},
 	"notificationActivated": {
-		"message": "Hi, currently <b>styleGPT</b> is enabled!!",
+		"message": "Hey there! <b>styleGPT</b> is currently active!",
 		"description": "Popup notifications - Activate Ext message."
 	},
 	"notificationNotMatch": {

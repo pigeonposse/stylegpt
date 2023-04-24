@@ -28,16 +28,23 @@ export class Core {
 
 	async menuSection(){
 
-		let selector, content, waitMain
+		let selector, waitMain, div1, div2
 		
 		selector = document.body 
 		waitMain = await this.utils.waitForSelector( 'main' )
 		
 		if ( !waitMain ) throw 'No main HTML displayed'
 
-		content = `<div id="${data.menuSection}" class="${data.menuSection}"><div id="${data.menuBtnSection}"></div></div>`
+		div1 = document.createElement( 'div' )
+		div1.setAttribute( 'id', data.menuSection )
+		div1.setAttribute( 'class', data.menuSection )
 
-		selector.insertAdjacentHTML( 'beforeend', content )
+		div2 = document.createElement( 'div' )
+		div2.setAttribute( 'id', data.menuBtnSection )
+
+		div1.appendChild( div2 )
+
+		selector.appendChild( div1 )
 	
 	}
 

@@ -31,19 +31,52 @@ export class HtmlSuper {
 	
 	}
 
-	createSection( id, data, customClass = '' ){
+	getPathDValue( pathTag ) {
+
+		const pattern = /d="(.+?)"/
+		const matches = pathTag.match( pattern )
+		if ( matches ) {
+
+			return matches[1]
 		
-		let res
+		} else {
 
-		res  = `<div class="${id} ${customClass}">`
-		res += data
-		res += '</div>'
-
-		return res
+			return ''
+		
+		}
 
 	}
 
-	section( data = '', customClass = '' ){
+	createSection( id, data, customClass = '' ){
+
+		let div 
+
+		div = document.createElement( 'div' )
+		div.setAttribute( 'class', `${id} ${customClass}` )
+		
+		if ( Array.isArray( data ) ) {
+
+			for ( let i = 0; i < data.length; i++ ) {
+
+				if ( data[i] ) {
+
+					div.appendChild( data[i] )
+				
+				}
+			
+			}
+		
+		} else if ( data ) {
+
+			div.appendChild( data )
+		
+		}
+		
+		return div
+
+	}
+
+	section( data = false, customClass = '' ){
 
 		return this.createSection(
 			this.menuClases.section,
@@ -53,7 +86,7 @@ export class HtmlSuper {
 	
 	}
 
-	parentGroup( data = '', customClass = '' ){
+	parentGroup( data = false, customClass = '' ){
 
 		return this.createSection(
 			this.menuClases.parentGroup,
@@ -63,7 +96,7 @@ export class HtmlSuper {
 	
 	}
 
-	group( data = '', customClass = '' ){
+	group( data = false, customClass = '' ){
 
 		return this.createSection(
 			this.menuClases.group,

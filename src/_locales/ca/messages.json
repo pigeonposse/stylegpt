@@ -96,7 +96,7 @@
 		"description": "Títol de la secció d'imatge de fons del xat"
 	},
 	"stylesSection_chatBgImg_placeholder": {
-		"message": "Afegiu un enllaç d'imatge...",
+		"message": "Enllaç d'imatge...",
 		"description": "Títol de la secció de marcador de posició de la imatge de fons del xat"
 	},
 	"stylesSection_chatBgImgPosition": {

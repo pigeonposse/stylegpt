@@ -18,7 +18,7 @@ export class MenuCore {
 
 	_btn( data ) {
 
-		let selector, args
+		let selector, args, html
 	
 		if ( !data ) return
 
@@ -35,13 +35,15 @@ export class MenuCore {
 		
 		if ( !selector ) return
 
-		selector.insertAdjacentHTML( 'beforeend', this.html.menuIcon( args ) )
+		html = this.html.menuBtn( args )
+
+		selector.appendChild( html )
 
 	}
 	
 	_menu( data ) {
 
-		let selector
+		let selector, html
 
 		if ( !data ) return
 
@@ -51,7 +53,9 @@ export class MenuCore {
 		
 		if ( !selector ) return
 
-		selector.insertAdjacentHTML( 'beforeend', this.html.menu( data ) )
+		html = this.html.menu( data )
+		
+		selector.appendChild( html )
 	
 	}
 

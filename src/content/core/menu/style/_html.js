@@ -14,22 +14,20 @@ export class StyleHtml extends StyleSuper {
 
 		let select, inputColor, title, group
 
-		select = this.html.select( {
+		select     = this.html.select( {
 			id    : argsSel.id,
 			title : argsSel.title,
 			opts  : argsSel.opts,
 		} )
-		
 		inputColor = this.html.inputColor( {
-			id      : argsColor.id,
-			title   : argsColor.title,
-			noTitle : true,
+			id    : argsColor.id,
+			title : argsColor.title,
 		} )
-
+		
 		title = this.html.title( titleName )
-		group = this.html.group( select + inputColor, 'options' )
+		group = this.html.group( [ select, inputColor ], 'options' )
 
-		return this.html.section( title + group )
+		return this.html.section( [ title, group ] )
 	
 	}
 
@@ -37,13 +35,13 @@ export class StyleHtml extends StyleSuper {
 
 		let res
 
-		res = ''
+		res = []
 		
 		Object.values( args ).forEach( v => {
 
 			if ( !v.type || v.type !== 'btn' ) return
 
-			res += this.html.group( this.html.btn( v ) )
+			res.push( this.html.group( this.html.btn( v ) ) )
 		
 		} )
 		
@@ -53,28 +51,39 @@ export class StyleHtml extends StyleSuper {
 
 	_sectionImgBg( dataUrl, dataSelect, dataColor ) {
 
-		let inputUrl, select, titleSelect, inputColor
+		let inputUrl, select, inputColor
 		
-		titleSelect = this.html.title( dataSelect.title )
+		select = [
+			this.html.title( dataSelect.title ),
+			this.html.select( {
+				id    : dataSelect.id,
+				title : dataSelect.title,
+				opts  : dataSelect.opts,
+			} ),
+		]
 		
-		select = this.html.select( {
-			id    : dataSelect.id,
-			title : dataSelect.title,
-			opts  : dataSelect.opts,
-		} )
-		
-		inputUrl = this.html.inputUrl( {
-			id          : dataUrl.id,
-			placeholder : dataUrl.placeholder,
-			title       : dataUrl.title,
-		} )
+		inputUrl = [
+			this.html.title( dataUrl.title ),
+			this.html.inputUrl( {
+				id          : dataUrl.id,
+				placeholder : dataUrl.placeholder,
+				title       : dataUrl.title,
+			} ),
+		]
 
-		inputColor = this.html.inputColor( {
-			id    : dataColor.id,
-			title : dataColor.title,
-		} )
+		inputColor = [
+			this.html.title( dataColor.title ),
+			this.html.inputColor( {
+				id    : dataColor.id,
+				title : dataColor.title,
+			} ),
+		]
 
-		return this.html.section( inputUrl ) + this.html.section( titleSelect + select ) + this.html.section( inputColor )
+		return [
+			this.html.section( inputUrl ), 
+			this.html.section( select ), 
+			this.html.section( inputColor ),
+		]
 
 	}
 
@@ -82,17 +91,26 @@ export class StyleHtml extends StyleSuper {
 
 		let inputAiColor, inputColor
 
-		inputColor = this.html.inputColor( {
-			id    : dataUser.id,
-			title : dataUser.title,
-		} )
+		inputColor = [
+			this.html.title( dataUser.title ),
+			this.html.inputColor( {
+				id    : dataUser.id,
+				title : dataUser.title,
+			} ),
+		]
 
-		inputAiColor = this.html.inputColor( {
-			id    : dataAi.id,
-			title : dataAi.title,
-		} )
+		inputAiColor = [
+			this.html.title( dataAi.title ),
+			this.html.inputColor( {
+				id    : dataAi.id,
+				title : dataAi.title,
+			} ),
+		]
 
-		return this.html.section( inputColor ) + this.html.section( inputAiColor )
+		return [
+			this.html.section( inputColor ),
+			this.html.section( inputAiColor ),
+		]
 	
 	}
 	
@@ -102,37 +120,37 @@ export class StyleHtml extends StyleSuper {
 
 		id = this.data.sectionID
 
-		txtContent  = this._sectionText( 
-			this.data.group.user.title,
-			this.data.section.userFont,
-			this.data.section.userColor,
-		)
-		txtContent += this._sectionText( 
-			this.data.group.ai.title,
-			this.data.section.aiFont,
-			this.data.section.aiColor,
-		)
-
-		txtContent += this.html.line()
-
-		txtContent += this._sectionBgColor(
-			this.data.section.userBgColor,
-			this.data.section.aiBgColor,
-		)
-
-		txtContent += this.html.line()
-
-		txtContent += this._sectionImgBg(
-			this.data.section.chatBgImg,
-			this.data.section.chatBgImgPosition,
-			this.data.section.chatBgColor,
-		)
+		txtContent = [
+			this._sectionText( 
+				this.data.group.user.title,
+				this.data.section.userFont,
+				this.data.section.userColor,
+			),
+			this._sectionText( 
+				this.data.group.ai.title,
+				this.data.section.aiFont,
+				this.data.section.aiColor,
+			),
+			this.html.line(),
+			this._sectionBgColor(
+				this.data.section.userBgColor,
+				this.data.section.aiBgColor,
+			),
+			this.html.line(),
+			this._sectionImgBg(
+				this.data.section.chatBgImg,
+				this.data.section.chatBgImgPosition,
+				this.data.section.chatBgColor,
+			),
+		]
 
 		bgContent = this._sectionBtns( this.data.section )
 
-		content  = this.html.parentGroup( txtContent )
-		content += this.html.parentGroup( bgContent )
-		
+		content = [
+			this.html.parentGroup( txtContent.flat() ),
+			this.html.parentGroup( bgContent ),
+		]
+
 		this._menu( {
 			id      : id,
 			content : content,

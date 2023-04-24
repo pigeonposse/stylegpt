@@ -37,11 +37,6 @@ DEVELOPED BY PIGEONPOSSE
 [![HEADER](docs/banner.png)](https://youtu.be/UN1hu4e-VmM)
 
 
-<!-- ![PIC Wikipedia Plus](docs/pic-2.png)
-
-| ![PIC Wikipedia Plus](docs/pic-1.png) | ![PIC Wikipedia Plus](docs/pic-3.png) |
-| ------------------------- | ------------------------- | -->
-
 🧩 Download links:
 
 - [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
