@@ -20,10 +20,12 @@
     "hooks": {
         "before:init": [
             "git push",
-            "pnpm lint-fix",
+            "pnpm lint-fix"
+        ],
+        "after:bump": [
+            "pnpm auto-changelog -p",
             "pnpm readme"
         ],
-        "after:bump": "pnpm auto-changelog -p",
         "after:git:release": "echo 'After git push, before github release'",
         "after:release": [
             "gh repo edit https://github.com/pigeonposse/stylegpt -d \"🤖🧩 styleGPT is an extension that change style from chatGPT web. 🐦🌈\"",
