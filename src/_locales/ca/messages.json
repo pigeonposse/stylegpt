@@ -100,16 +100,16 @@
 		"description": "Títol de la secció de marcador de posició de la imatge de fons del xat"
 	},
 	"stylesSection_chatBgImgPosition": {
-		"message": "Posició de fons",
-		"description": "Títol de la secció de posició d'imatge de fons del xat"
+		"message": "Volum de fons",
+		"description": "Títol de la secció de volum d'imatge de fons del xat"
 	},
 	"stylesSection_chatBgImgPosition_cover": {
 		"message": "Cobrir",
-		"description": "Opció Cobrir de la posició d'imatge de fons del xat"
+		"description": "Opció Cobrir de la volum d'imatge de fons del xat"
 	},
 	"stylesSection_chatBgImgPosition_contain": {
 		"message": "Contenir",
-		"description": "Opció Contenir de la posició d'imatge de fons del xat"
+		"description": "Opció Contenir de la volum d'imatge de fons del xat"
 	},
 	"stylesSection_showStyles": {
 		"message": "Amagar/Mostrar",

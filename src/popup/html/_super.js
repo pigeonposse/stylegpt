@@ -52,7 +52,7 @@ export class HtmlSuper {
 				name : '🐦 ' + this.utils.brwsr.i18n.getMessage( 'contribute' ), 
 			},
 			{ 
-				href : utils.isChromium() ? this.pkg.extra.store.chrome : this.pkg.extra.store.firefox, 
+				href : this.utils.isChromium() ? this.pkg.extra.store.chrome : this.pkg.extra.store.firefox, 
 				name : '⭐️ ' + this.utils.brwsr.i18n.getMessage( 'review' ), 
 			},
 		]

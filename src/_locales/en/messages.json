@@ -100,16 +100,16 @@
 		"description": "Title of the chat background image placeholder section"
 	},
 	"stylesSection_chatBgImgPosition": {
-		"message": "Background position",
-		"description": "Title of the chat background image position"
+		"message": "Background size",
+		"description": "Title of the chat background image size"
 	},
 	"stylesSection_chatBgImgPosition_cover": {
 		"message": "Cover",
-		"description": "Cover option of the chat background image position"
+		"description": "Cover option of the chat background image size"
 	},
 	"stylesSection_chatBgImgPosition_contain": {
 		"message": "Contain",
-		"description": "Contain option of the chat background image position"
+		"description": "Contain option of the chat background image size"
 	},
 	"stylesSection_showStyles": {
 		"message": "Hide/View",

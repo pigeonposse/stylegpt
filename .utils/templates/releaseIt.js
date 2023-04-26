@@ -18,12 +18,14 @@ const data = {
 	'plugins' : {
 		'@release-it/bumper' : {
 			'in' : [
-				'src/manifest.json',
-				'src/manifest.v3.json',
+				'src/man/chrome/manifest.json',
+				'src/man/chrome-mv2/manifest.json',
+				'src/man/firefox/manifest.json',
 			],
 			'out' : [
-				'src/manifest.json',
-				'src/manifest.v3.json',
+				'src/man/chrome/manifest.json',
+				'src/man/chrome-mv2/manifest.json',
+				'src/man/firefox/manifest.json',
 			],
 		},
 	},
@@ -32,7 +34,7 @@ const data = {
 		'commitMessage' : `Release ${ver}`,
 	},
 	'hooks' : {
-		'before:init'       : [ 'git push', 'pnpm lint-fix' ],
+		'before:init'       : [ 'git push', 'pnpm lint-fix', 'pnpm readme' ],
 	    'after:bump'        : 'pnpm auto-changelog -p',
 	    'after:git:release' : 'echo \'After git push, before github release\'',
 	    'after:release'     : [

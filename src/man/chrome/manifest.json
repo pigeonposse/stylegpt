@@ -1,9 +1,11 @@
 {
-	"name": "__MSG_extensionName__",
-	"version": "1.0.0",
-	"description": "__MSG_extensionDescription__",
 	"manifest_version": 3,
-	"default_locale" : "en",
+	"version": "1.1.10",
+	"name": "__MSG_name__",
+	"description": "__MSG_description__",
+	"author": "PigeonPosse Collective",
+	"homepage_url": "https://pigeonposse.com",
+	"default_locale": "en",
 	"icons": {
 		"16": "../../assets/img/icon-16.png",
 		"32": "../../assets/img/icon-32.png",
@@ -17,23 +19,29 @@
 	"background": {
 		"service_worker": "../../background/background.js"
 	},
-	"permissions": [
-		"storage",
-		"activeTab"
-	],
 	"content_scripts": [
 		{
-			"matches": [
-				"https://chat.openai.com/",
-				"https://chat.openai.com/*"
-			],
 			"js": [
 				"../../content/content.js"
 			],
 			"css": [
 				"../../content/content.css"
 			],
+			"matches": [
+				"https://chat.openai.com/*"
+			],
 			"run_at": "document_end"
 		}
-	]
+	],
+	"permissions": [
+		"storage",
+		"activeTab"
+	],
+	"host_permissions": [
+		"http://*/*",
+		"https://*/*"
+	],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+	}
 }

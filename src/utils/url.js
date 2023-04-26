@@ -9,12 +9,13 @@
 const exists = async ( url ) => {
 
 	try {
-
-		if ( typeof url !== 'string' ) return false
-		if ( !url.startsWith( 'https://' ) && !url.startsWith( 'http://' ) ) return false
+		
+		if ( !is( url ) ) return false
 		
 		const res = await fetch( url )
-		if ( res.ok ) return true
+
+		if ( res.status >= 200 && res.status < 300 ) return true
+		
 		return false
 	
 	}catch( e ){
@@ -24,6 +25,54 @@ const exists = async ( url ) => {
 	}
 
 }
+
+const is = ( value ) => {
+
+	try {
+
+		new URL( value )
+		
+		return true
+			
+	} catch ( error ) {
+
+		return false
+			
+	}
+
+}
+
+const isProtocol = ( value, protocol = 'https' ) => {
+
+	if ( is( value ) && value.startsWith( protocol + '://' ) ) return true
+
+	return false
+
+}
+
+const isHttp = ( value ) => {
+
+	return isProtocol( value, 'http' )
+
+}
+
+const isHttps = ( value ) => {
+
+	return isProtocol( value, 'https' )
+
+}
+
+const isHttpOrHttps = ( value ) => {
+
+	return isProtocol( value, 'https' ) || isProtocol( value, 'http' )
+
+}
+
 export const url = {
 	exists,
+	is,
+	isHttp,
+	isHttps,
+	isProtocol,
+	isHttpOrHttps,
 }

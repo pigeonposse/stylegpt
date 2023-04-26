@@ -92,26 +92,49 @@ export class OnInputEventSection extends StylesTagSection {
 
 		sel.addEventListener( 'change', async ( e ) => {
 			
-			const existsURL = await this.utils.url.exists( e.target.value )
+			let existsURL, inputValue, correctProtocol
 
-			if ( e.target.value != '' && !existsURL ) {
-
-				sel.classList.remove( 'success' )
-				sel.classList.add( 'error' )
+			inputValue = e.target.value
 			
-			}else if( e.target.value != '' ){
+			if( inputValue === '' || inputValue.trim() === '' ){
 
-				sel.classList.add( 'success' )
-				sel.classList.remove( 'error' )			
+				if( sel.classList.contains( 'success' ) ) sel.classList.remove( 'success' )
+				if( sel.classList.contains( 'error' ) ) sel.classList.remove( 'error' )			
+				
+				inputValue = ''
 			
 			}else {
 
-				sel.classList.remove( 'success' )
-				sel.classList.remove( 'error' )	
-			
-			}
+				correctProtocol = this.utils.url.isHttpOrHttps( inputValue )
+				
+				if ( correctProtocol ) {
 
-			await this._changeData( k, e.target.value )
+					existsURL = await this.utils.url.exists( inputValue )
+				
+					if ( existsURL ) {
+
+						if( !sel.classList.contains( 'success' ) ) sel.classList.add( 'success' )
+						if( sel.classList.contains( 'error' ) ) sel.classList.remove( 'error' )
+				
+					}else {
+
+						if( sel.classList.contains( 'success' ) ) sel.classList.remove( 'success' )
+						if( !sel.classList.contains( 'error' ) ) sel.classList.add( 'error' )
+				
+					}
+				
+				}else {
+
+					if( sel.classList.contains( 'success' ) ) sel.classList.remove( 'success' )
+					if( !sel.classList.contains( 'error' ) ) sel.classList.add( 'error' )	
+					
+				}
+
+			}
+			
+			// console.log( correctProtocol, existsURL, inputValue )
+
+			await this._changeData( k, inputValue )
 
 		} )
 

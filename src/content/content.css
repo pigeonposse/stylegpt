@@ -172,13 +172,13 @@ html.light body:not(.pigeon-styles) .group.w-full.text-gray-800.dark\:text-gray-
     font-size: 15px;
 }
 
-.pigeon-menu-container-group input.error {
-    box-shadow: 0 0 2px 1px var(--pigeon-error-color);
+.pigeon-url.error {
+    box-shadow: 0 0 2px 1px var(--pigeon-error-color) !important;
 }
-.pigeon-menu-container-group input.success {
-    box-shadow: 0 0 2px 1px var(--pigeon-success-color);
+.pigeon-url.success {
+    box-shadow: 0 0 2px 1px var(--pigeon-success-color) !important;
 }
-.pigeon-menu-container-group input:focus {
+.pigeon-menu-container-section input:focus {
 	box-shadow: 0 0 2px 1px var(--pigeon-info-color);
 }
 .pigeon-menu-container-group.select {

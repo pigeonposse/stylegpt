@@ -11,9 +11,7 @@ import * as utils from '../utils/_main'
 
 const init = async () => {
 	
-	let keyStorage, error
-	
-	keyStorage = 'pigeon-error'
+	let error
 
 	try {
 
@@ -29,15 +27,14 @@ const init = async () => {
 	}catch( e ){
 
 		console.log( e )
+		
+		utils.brwsr.runtime.sendMessage( { error: 'StyleGPT Error: ' + e } )
+
 		error = true
 
 	}finally{
 
-		await utils.storage.set( keyStorage, error )
-		
-		// let getStorage
-		// getStorage = await utils.storage.get( keyStorage )
-		// console.log( error, getStorage )
+		await utils.storage.set( utils.pkg.extra.errorId, error )
 
 	}
 

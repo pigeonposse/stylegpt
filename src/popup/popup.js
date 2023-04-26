@@ -18,7 +18,7 @@ document.addEventListener( 'DOMContentLoaded', async () => {
 
 	await html.addNotActivated()
 
-	contentErr = await utils.storage.get( 'pigeon-error' )
+	contentErr = await utils.storage.get( utils.pkg.extra.errorId )
 
 	if ( contentErr ) await html.addNotError()
 

@@ -2,12 +2,14 @@
     "plugins": {
         "@release-it/bumper": {
             "in": [
-                "src/manifest.json",
-                "src/manifest.v3.json"
+                "src/man/chrome/manifest.json",
+                "src/man/chrome-mv2/manifest.json",
+                "src/man/firefox/manifest.json"
             ],
             "out": [
-                "src/manifest.json",
-                "src/manifest.v3.json"
+                "src/man/chrome/manifest.json",
+                "src/man/chrome-mv2/manifest.json",
+                "src/man/firefox/manifest.json"
             ]
         }
     },
@@ -18,7 +20,8 @@
     "hooks": {
         "before:init": [
             "git push",
-            "pnpm lint-fix"
+            "pnpm lint-fix",
+            "pnpm readme"
         ],
         "after:bump": "pnpm auto-changelog -p",
         "after:git:release": "echo 'After git push, before github release'",

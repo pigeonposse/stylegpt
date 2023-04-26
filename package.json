@@ -13,38 +13,22 @@
 		"package.json"
 	],
 	"scripts": {
-		"scripts": "pnpm pes",
-		"start": "echo 'Dev: pnpm pes dev \nBuild: pnpm pes build'",
+		"scripts": "pnpm run",
+		"lint": "node .utils/lint.js",
+		"lint-check": "node .utils/lint.js --check",
+		"lint-fix": "node .utils/lint.js --fix",
+		"build": "node .utils/build.js --type all",
+		"build-select": "node .utils/build.js",
+		"build-firefox": "node .utils/build.js --type firefox",
+		"build-chrome": "node .utils/build.js --type chrome",
+		"build-chrome-mv2": "node .utils/build.js --type chrome-mv2",
+		"dev": "node .utils/build.js --watch",
+		"dev-firefox": "node .utils/build.js --watch --type firefox",
+		"dev-chrome": "node .utils/build.js --watch --type chrome",
+		"dev-chrome-mv2": "node .utils/build.js --watch --type chrome-mv2",
+		"coverage": "browserslist --coverage",
 		"release": "node .utils/release.js",
-		"rm-all": "rimraf dist",
-		"rm:c": "rimraf dist/chrome",
-		"rm:cv2": "rimraf dist/chrome-mv2",
-		"rm:f": "rimraf dist/firefox",
-		"lint": "run-p lint:**",
-		"lint:js": "eslint src --ext .js",
-		"lint-fix": "run-p lint-fix:**",
-		"lint-fix:js": "eslint src --ext .js --fix",
-		"dev": "pnpm dev:f",
-		"dev:c": "pnpm rm:c & pnpm build:c:man && run-p watch-c:**",
-		"dev:cv2": "pnpm rm:cv2 & pnpm build:cv2:man && run-p watch-cv2:**",
-		"dev:f": "pnpm rm:f & pnpm build:f:man && run-p watch-f:**",
-		"watch-cv2:parcel": "parcel watch src/manifest.json --dist-dir dist/chrome-mv2 --no-cache --no-hmr --no-content-hash",
-		"watch-cv2:web-ext": "web-ext run -t chromium --source-dir ./dist/chrome-mv2",
-		"watch-c:parcel": "parcel watch src/manifest.v3.json --dist-dir dist/chrome --no-cache --no-hmr --no-content-hash",
-		"watch-c:web-ext": "web-ext run -t chromium --source-dir ./dist/chrome",
-		"watch-f:parcel": "parcel watch src/manifest.json --dist-dir dist/firefox --no-cache --no-hmr --no-content-hash",
-		"watch-f:web-ext": "web-ext run --source-dir ./dist/firefox",
-		"old-build": "pnpm lint-fix && pnpm rm-all && run-s build:c:** && run-s build:f:**",
-		"prebuild-c": "mv src/manifest.json src/manifest_temp.json && cp src/manifest.v3.json src/manifest.json || true",
-		"postbuild-c": "mv src/manifest.json src/manifest.v3.json && mv src/manifest_temp.json src/manifest.json || true",
-		"build": "pnpm lint-fix && pnpm rm-all && run-s build:c:** && run-s build:cv2:** && run-s build:f:**",
-		"build:cv2:man": "parcel build src/manifest.json --dist-dir dist/chrome-mv2 --no-content-hash --no-source-maps --no-cache --detailed-report 0",
-		"build:cv2:comp": "web-ext build --source-dir=./dist/chrome-mv2 --artifacts-dir=dist/comp --filename=chrome-mv2-stylegpt-{version}.zip",
-		"build:c:man": "pnpm prebuild-c && parcel build src/manifest.json --dist-dir dist/chrome --no-content-hash --no-source-maps --no-cache --detailed-report 0 && pnpm postbuild-c",
-		"build:c:comp": "web-ext build --source-dir=./dist/chrome --artifacts-dir=dist/comp --filename=chrome-stylegpt-{version}.zip",
-		"build:f:man": "parcel build src/manifest.json --dist-dir dist/firefox --no-content-hash --no-source-maps --no-cache --detailed-report 0",
-		"build:f:comp": "web-ext build --source-dir=./dist/firefox --artifacts-dir=dist/comp --filename=firefox-stylegpt-{version}.zip",
-		"coverage": "browserslist --coverage"
+		"readme": "node .utils/readme.js"
 	},
 	"keywords": [
 		"javascript",
@@ -63,6 +47,8 @@
 	],
 	"devDependencies": {
 		"@parcel/config-webextension": "^2.8.3",
+		"@parcel/packager-webextension": "^2.8.3",
+		"@parcel/transformer-webextension": "^2.8.3",
 		"@pigeon-posse/eslint-config": "^1.0.1",
 		"@pigeon-posse/pkg-extended-scripts": "^0.3.0",
 		"@release-it/bumper": "^4.0.2",
@@ -76,17 +62,20 @@
 		"eslint-plugin-jsdoc": "^39.9.1",
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
-		"inquirer": "^9.1.5",
+		"inquirer": "^9.2.0",
 		"npm-run-all": "^4.1.5",
 		"parcel": "^2.8.3",
 		"release-it": "^15.10.1",
 		"rimraf": "^4.4.1",
-		"web-ext": "^7.6.1"
+		"web-ext": "^7.6.2"
 	},
 	"browserslist": [
 		"last 1 Chrome version",
 		"last 1 Firefox version"
 	],
+	"@parcel/bundler-default": {
+		"minBundles": 10000000
+	},
 	"webExt": {
 		"sourceDir": "dist",
 		"run": {
@@ -95,10 +84,8 @@
 			]
 		}
 	},
-	"@parcel/bundler-default": {
-		"minBundles": 10000000
-	},
 	"extra": {
+		"errorId": "pigeon-error",
 		"path": {
 			"releaseIt": ".release-it.json"
 		},
@@ -107,6 +94,11 @@
 		"store": {
 			"chrome": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
 			"firefox": "https://addons.mozilla.org/es/firefox/addon/stylegpt/"
+		},
+		"collective": {
+			"name": "PigeonPosse",
+			"url": "https://pigeonposse.com",
+			"email": "dev@pigeonposse.com"
 		}
 	},
 	"homepage": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
@@ -117,13 +109,13 @@
 	"author": {
 		"name": "Angelo",
 		"email": "angelo@pigeonposse.com",
-		"url": "https://pigeonposse.com"
+		"url": "https://github.com/angelespejo"
 	},
 	"contributors": [
 		{
 			"name": "Alejo",
 			"email": "alejo@pigeonposse.com",
-			"url": "https://pigeonposse.com"
+			"url": "https://github.com/alejomalia"
 		}
 	],
 	"license": {

@@ -100,8 +100,8 @@
 		"description": "Título de la sección de marcador de posición de imagen de fondo del chat"
 	},
 	"stylesSection_chatBgImgPosition": {
-		"message": "Posición de la imagen de fondo",
-		"description": "Título de la sección de posición de imagen de fondo del chat"
+		"message": "Tamaño de la imagen de fondo",
+		"description": "Título de la sección de tamaño de imagen de fondo del chat"
 	},
 	"stylesSection_chatBgImgPosition_cover": {
 		"message": "Cubrir",
@@ -124,7 +124,7 @@
 		"description": "Título alternativo del botón para ver opciones de estilo"
 	},
 	"stylesSection_reset": {
-		"message": "Restablecer",
+		"message": "Resetear",
 		"description": "Título del botón para restablecer opciones de estilo"
 	}
 }

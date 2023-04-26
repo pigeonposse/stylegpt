@@ -37,7 +37,7 @@ const release = async () => {
 	
 	console.log( '' )
 
-	await inquirer.prompt( questions ).then( ( answers ) => {
+	await inquirer.prompt( questions ).then( async ( answers ) => {
 
 		if ( !answers || !answers.git_add || ! answers.git_commit ) return
 
@@ -47,9 +47,9 @@ const release = async () => {
 			releaseIt : 'pnpm release-it',
 		}
 		
-	 	exec( cmd.gitAdd )
-	 	exec( cmd.gitCommit )
-	 	exec( cmd.releaseIt )
+	 	await exec( cmd.gitAdd )
+	 	await exec( cmd.gitCommit )
+	 	await exec( cmd.releaseIt )
 
 	} )
 
@@ -61,6 +61,7 @@ try {
 
 }catch( e ){
 
-	console.log( e )
+	console.log( '❌ ' + e )
 
 }
+
