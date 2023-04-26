@@ -4,13 +4,12 @@
  * @description Todo.
  */
 
-import inquirer                     from 'inquirer'
-import { awaitExec, pkg, joinPath } from './_core.js'
+import inquirer                from 'inquirer'
+import { exec, pkg, joinPath } from './_core.js'
 
-const exec
- = async ( flag = '' ) => {
+const execLint = async ( flag = '' ) => {
 
-	await awaitExec( `eslint ${joinPath( pkg.dir, 'src' )} --ext .js ${flag}` )
+	await exec( `eslint ${joinPath( pkg.dir, 'src' )} --ext .js ${flag}` )
 
 }
 
