@@ -51,7 +51,7 @@ const execDev = async ( type ) => {
 
 		buildPath = getDistPath( type )
 		manPath   = getManifestPath( type )
-		target    = type == 'firefox' ? '-t firefox' : '-t chromium'
+		target    = type == 'firefox' ? '-t firefox-desktop' : '-t chromium'
 		
 		return Promise.all( [
 			exec( `parcel watch ${manPath} --dist-dir ${buildPath} --no-cache --no-hmr --no-content-hash` ),
