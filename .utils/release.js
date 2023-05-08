@@ -8,6 +8,8 @@ import inquirer                 from 'inquirer'
 import { releaseIt }            from './templates/releaseIt.js'
 import { exec, pkg, writeSync } from './_core.js'
 
+const noRelease = process.argv.includes( '--no-release' )
+
 const questions = [
 	{
 		type    : 'input',
@@ -44,12 +46,22 @@ const release = async () => {
 		const cmd = {
 			gitAdd    : 'git add ' + answers.git_add,
 			gitCommit : 'git commit -m "' + answers.git_commit + '"',
+			push      : 'git push -u origin main',
 			releaseIt : 'pnpm release-it',
 		}
 		
 	 	await exec( cmd.gitAdd )
 	 	await exec( cmd.gitCommit )
-	 	await exec( cmd.releaseIt )
+	 	
+	 	if ( noRelease ) {
+
+	 		await exec( cmd.push )
+	 	
+		}else {
+
+	 		await exec( cmd.releaseIt )
+	 	
+		}
 
 	} )
 

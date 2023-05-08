@@ -61,8 +61,8 @@ const header = ( pkg ) => {
 [![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
 [![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](${fundingUrl}) 
 
-[![License](https://img.shields.io/github/license/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}?color=blue&label=License&style=flat-square)](/LICENSE)
-[![Version](https://img.shields.io/github/package-json/v/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}?color=a1b858&label&style=flat-square)](${pkg.data.repository.url})
+[![LICENSE](https://img.shields.io/badge/License-grey?style=flat-square)](/LICENSE)
+[![Version](https://img.shields.io/github/package-json/v/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}?color=a1b858&label=GitHub%20Releases&style=flat-square)](${pkg.data.repository.url}/releases)
 [![CHROME](https://img.shields.io/chrome-web-store/v/${pkg.data.extra.store.chrome.id}?color=blue&style=flat-square)](${pkg.data.extra.store.chrome.url})
 [![MOZILLA](https://img.shields.io/amo/v/${pkg.data.extra.store.mozilla.id}?color=blue&style=flat-square)](${pkg.data.extra.store.mozilla.url})
 

@@ -49,8 +49,8 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 [![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
 [![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate) 
 
-[![License](https://img.shields.io/github/license/pigeonposse/stylegpt?color=blue&label=License&style=flat-square)](/LICENSE)
-[![Version](https://img.shields.io/github/package-json/v/pigeonposse/stylegpt?color=a1b858&label&style=flat-square)](https://github.com/pigeonposse/stylegpt)
+[![LICENSE](https://img.shields.io/badge/License-grey?style=flat-square)](/LICENSE)
+[![Version](https://img.shields.io/github/package-json/v/pigeonposse/stylegpt?color=a1b858&label=GitHub%20Releases&style=flat-square)](https://github.com/pigeonposse/stylegpt/releases)
 [![CHROME](https://img.shields.io/chrome-web-store/v/khoggafmiibmeihpkpbkllkkdfhmokoj?color=blue&style=flat-square)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
 [![MOZILLA](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
 
@@ -66,7 +66,7 @@ StyleGPT is an extension that modifies the appearance of ChatGPT, providing a mo
 
 ## ⚙️ Usage
 
-1. Go to https://chat.openai.com/chat
+1. Go to _https://chat.openai.com/chat_
 2. You will see a right menu on page
 
 | ![Explanation](docs/demo/explanation.png) | ![Explanation 1](docs/demo/explanation-1.png) |

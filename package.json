@@ -27,6 +27,7 @@
 		"dev-chrome": "node .utils/build.js --watch --type chrome",
 		"dev-chrome-mv2": "node .utils/build.js --watch --type chrome-mv2",
 		"coverage": "browserslist --coverage",
+		"git": "node .utils/release.js --no-release",
 		"release": "node .utils/release.js",
 		"readme": "node .utils/readme.js"
 	},
