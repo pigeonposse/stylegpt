@@ -49,6 +49,34 @@ _PigeonPosse_ is a ✨ **code development collective** ✨ focused on creating p
 
 }
 
+const header = ( pkg ) => {
+
+	const collective = pkg.data.extra.collective
+	const fundingUrl = pkg.data.funding.url
+	return ` 
+[![HEADER](docs/banner.png)](https://youtu.be/UN1hu4e-VmM)
+
+[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](${collective.web}) 
+[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](${collective.web}/?popup=about) 
+[![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
+[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](${fundingUrl}) 
+
+[![License](https://img.shields.io/github/license/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}?color=blue&label=License&style=flat-square)](/LICENSE)
+[![Version](https://img.shields.io/github/package-json/v/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}?color=a1b858&label&style=flat-square)](${pkg.data.repository.url})
+[![CHROME](https://img.shields.io/chrome-web-store/v/${pkg.data.extra.store.chrome.id}?color=blue&style=flat-square)](${pkg.data.extra.store.chrome.url})
+[![MOZILLA](https://img.shields.io/amo/v/${pkg.data.extra.store.mozilla.id}?color=blue&style=flat-square)](${pkg.data.extra.store.mozilla.url})
+
+StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
+
+#### 🧩 Download links:
+
+- [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](${pkg.data.extra.store.mozilla.url})
+- [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=flat-square)](${pkg.data.extra.store.chrome.url})
+
+`
+
+}
+
 const markFunct = ( pkg ) => {
 
 	return `<!--\n${mark( pkg )}\n-->`
@@ -58,8 +86,9 @@ const markFunct = ( pkg ) => {
 export const readme = ( pkg ) => {
 
 	return {
-		org  : org( pkg ),
-		mark : markFunct( pkg ),
+		org    : org( pkg ),
+		header : header( pkg ),
+		mark   : markFunct( pkg ),
 	}
 
 }

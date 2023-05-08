@@ -15,6 +15,7 @@ const dynamicReadme = () => {
 
 		addTextBetweenAMark( 'README.md', '<!-- PIGEONPOSSE START MARK -->', '<!-- PIGEONPOSSE END MARK -->', readmeTemp.mark )
 		addTextBetweenAMark( 'README.md', '<!-- PIGEONPOSSE START ORG -->', '<!-- PIGEONPOSSE END ORG -->', readmeTemp.org )
+		addTextBetweenAMark( 'README.md', '<!-- PIGEONPOSSE START HEADER -->', '<!-- PIGEONPOSSE END HEADER -->', readmeTemp.header )
 
 	}catch( e ){
 

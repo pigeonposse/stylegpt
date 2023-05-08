@@ -92,12 +92,19 @@
 		"chatWebMatch": "/chat\\.openai\\.com/",
 		"chatPage": "https://chat.openai.com/",
 		"store": {
-			"chrome": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
-			"firefox": "https://addons.mozilla.org/es/firefox/addon/stylegpt/"
+			"chrome": {
+				"url": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
+				"id": "khoggafmiibmeihpkpbkllkkdfhmokoj"
+			},
+			"mozilla": {
+				"url" : "https://addons.mozilla.org/es/firefox/addon/stylegpt/",
+				"id": "{8f0f11ab-1cc1-4db9-81a3-251de69235d9}"
+			}
 		},
 		"collective": {
 			"name": "PigeonPosse",
 			"url": "https://pigeonposse.com",
+			"web": "https://pigeonposse.com",
 			"email": "dev@pigeonposse.com"
 		}
 	},

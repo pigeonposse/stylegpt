@@ -38,15 +38,31 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 -->
 <!-- PIGEONPOSSE END MARK -->
 
-# styleGPT - _Browser extension_
+# styleGPT -  A _Browser extension_ for ChatGPT
 
+<!-- PIGEONPOSSE START HEADER -->
+ 
 [![HEADER](docs/banner.png)](https://youtu.be/UN1hu4e-VmM)
 
+[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://pigeonposse.com) 
+[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](https://pigeonposse.com/?popup=about) 
+[![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
+[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate) 
 
-🧩 Download links:
+[![License](https://img.shields.io/github/license/pigeonposse/stylegpt?color=blue&label=License&style=flat-square)](/LICENSE)
+[![Version](https://img.shields.io/github/package-json/v/pigeonposse/stylegpt?color=a1b858&label&style=flat-square)](https://github.com/pigeonposse/stylegpt)
+[![CHROME](https://img.shields.io/chrome-web-store/v/khoggafmiibmeihpkpbkllkkdfhmokoj?color=blue&style=flat-square)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
+[![MOZILLA](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
+
+StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
+
+#### 🧩 Download links:
 
 - [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
 - [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=flat-square)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
+
+
+<!-- PIGEONPOSSE END HEADER -->
 
 ## ⚙️ Usage
 
