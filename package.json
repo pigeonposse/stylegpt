@@ -54,7 +54,7 @@
 		"@release-it/bumper": "^4.0.2",
 		"auto-changelog": "^2.4.0",
 		"browserslist": "^4.21.5",
-		"eslint": "^8.39.0",
+		"eslint": "^8.40.0",
 		"eslint-plugin-align-assignments": "^1.1.2",
 		"eslint-plugin-align-import": "^1.0.0",
 		"eslint-plugin-html": "^7.1.0",
@@ -62,10 +62,10 @@
 		"eslint-plugin-jsdoc": "^39.9.1",
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
-		"inquirer": "^9.2.0",
+		"inquirer": "^9.2.2",
 		"npm-run-all": "^4.1.5",
 		"parcel": "^2.8.3",
-		"release-it": "^15.10.1",
+		"release-it": "^15.10.3",
 		"rimraf": "^4.4.1",
 		"web-ext": "^7.6.2"
 	},
@@ -97,7 +97,7 @@
 				"id": "khoggafmiibmeihpkpbkllkkdfhmokoj"
 			},
 			"mozilla": {
-				"url" : "https://addons.mozilla.org/es/firefox/addon/stylegpt/",
+				"url": "https://addons.mozilla.org/es/firefox/addon/stylegpt/",
 				"id": "{8f0f11ab-1cc1-4db9-81a3-251de69235d9}"
 			}
 		},
