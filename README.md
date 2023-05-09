@@ -27,7 +27,7 @@
 ███████║   ██║      ██║   ███████╗███████╗╚██████╔╝██║        ██║   
 ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝ ╚═════╝ ╚═╝        ╚═╝                        
                                                 
-VERSION: 	1.1.13 
+VERSION: 	1.1.14 
 REPOSITORY: https://github.com/pigeonposse/stylegpt
 AUTHORS: 
 	- Angelo (https://github.com/angelespejo)
