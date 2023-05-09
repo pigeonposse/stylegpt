@@ -5,7 +5,7 @@
  *
  * @version 1.0.0
  */
-
+/* eslint-disable no-unused-vars */
 import { ContextMenu } from './contextMenu/main'
 
 export class Core {
