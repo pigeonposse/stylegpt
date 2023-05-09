@@ -7,6 +7,30 @@
 		"message": "🤖🧩 styleGPT és una extensió que canvia l'estil de la interfície web de chatGPT 🐦🌈",
 		"description": "Descripció de la extensió."
 	},
+	"web": {
+		"message": "Web",
+		"description": "Per als enllaços 'web' de l'organització"
+	},
+	"about": {
+		"message": "Sobre nosaltres",
+		"description": "Per als enllaços 'sobre-nosaltres' de l'organització"
+	},
+	"moreProjects": {
+		"message": "Més projectes",
+		"description": "Per als enllaços '+ projectes' de l'organització"
+	},
+	"extMenuDesc" : {
+		"message": "Informació sobre l'extensió",
+		"description": "Per a la descripció del contextMenu de l'extensió"
+	},
+	"orgMenuDesc" : {
+		"message": "Informació sobre el col·lectiu",
+		"description": "Per a la descripció del contextMenu de l'organització"
+	},
+	"issues": {
+		"message": "Informar d'errors",
+		"description": "Enllaços per a errors"
+	},
 	"donate": {
 		"message": "Donar",
 		"description": "Enllaços per a donacions"

@@ -7,9 +7,33 @@
 		"message": "🤖🧩 styleGPT is an extension that change style from chatGPT web 🐦🌈",
 		"description": "Description of the extension."
 	},
+	"web": {
+		"message": "Web",
+		"description": "For web Links"
+	},
+	"about": {
+		"message": "About",
+		"description": "For about Links"
+	},
+	"moreProjects": {
+		"message": "More projects",
+		"description": "For more-projects Links"
+	},
+	"extMenuDesc" : {
+		"message": "About extension",
+		"description": "For extension context Menu description"
+	},
+	"orgMenuDesc" : {
+		"message": "Developer Collective information",
+		"description": "For organization context Menu description"
+	},
 	"donate": {
 		"message": "Donate",
 		"description": "For donate Links"
+	},
+	"issues": {
+		"message": "issues",
+		"description": "For issues Links."
 	},
 	"contribute": {
 		"message": "Contribute",

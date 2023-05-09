@@ -5,12 +5,25 @@
  *
  * @version 1.0.0
  */
-/*eslint-disable */
 
-const brwsr = chrome || browser
+import { Core }   from './core/main'
+import * as utils from '../utils/_main'
 
-brwsr.runtime.onMessage.addListener( ( request, sender, sendResponse ) => {
+try{
 
-	if ( request.error ) console.error( request.error )
+	const run = async () => {
 
-} )
+		const core = new Core( utils )
+		
+		await core.init()
+
+	}
+
+	run()
+
+}catch( e ){
+
+	console.error( e )
+
+}
+

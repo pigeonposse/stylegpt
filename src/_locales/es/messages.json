@@ -7,6 +7,30 @@
 		"message": "🤖🧩 styleGPT es una extensión que cambia el estilo de la interfaz web de chatGPT 🐦🌈",
 		"description": "Descripción de la extensión."
 	},
+	"web": {
+		"message": "Web",
+		"description": "Para los enlaces 'web' de la organización"
+	},
+	"about": {
+		"message": "Sobre nosotros",
+		"description": "Para los enlaces 'sobre-nosotros' de la organización"
+	},
+	"moreProjects": {
+		"message": "Más proyectos",
+		"description": "Para los enlaces '+ proyectos' de la organización"
+	},
+	"extMenuDesc" : {
+		"message": "Información sobre la extensión",
+		"description": "Para la Descripción del contextMenu de la extensión"
+	},
+	"orgMenuDesc" : {
+		"message": "Información sobre el colectivo",
+		"description": "Para la Descripción del contextMenu de la organización"
+	},
+	"issues": {
+		"message": "Reportar errores",
+		"description": "Enlaces para errores"
+	},
 	"donate": {
 		"message": "Donar",
 		"description": "Enlaces para donaciones"

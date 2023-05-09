@@ -104,6 +104,8 @@
 		},
 		"collective": {
 			"name": "PigeonPosse",
+			"gh": "https://github.com/pigeonposse",
+			"about": "https://pigeonposse.com?popup=about",
 			"url": "https://pigeonposse.com",
 			"web": "https://pigeonposse.com",
 			"email": "dev@pigeonposse.com"

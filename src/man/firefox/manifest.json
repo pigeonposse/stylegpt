@@ -15,7 +15,8 @@
 	"background": {
 		"scripts": [
 			"../../background/background.js"
-		]
+		],
+		"persistent": true
 	},
 	"content_scripts": [
 		{
@@ -33,7 +34,8 @@
 	],
 	"permissions": [
 		"storage",
-		"activeTab"
+		"activeTab",
+		"menus"
 	],
 	"content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
 	"applications": {
