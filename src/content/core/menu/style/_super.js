@@ -72,7 +72,7 @@ export class StyleSuper extends MenuCore {
 			userBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userBgColor' ),
 				id            : 'pigeon-user-color-bg-input',
-				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.dark\\:bg-gray-800',
+				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.dark\\:bg-gray-800 > div',
 				changedStyles : {
 					backgroundColor : '{{value}}',
 				},
@@ -98,7 +98,7 @@ export class StyleSuper extends MenuCore {
 			aiBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_aiBgColor' ),
 				id            : 'pigeon-color-bg-input',
-				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.bg-gray-50.dark\\:bg-\\[\\#444654\\]',
+				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.bg-gray-50.dark\\:bg-\\[\\#444654\\] > div',
 				changedStyles : {
 					backgroundColor : '{{value}}',
 				},
