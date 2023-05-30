@@ -92,7 +92,7 @@ h1 {
 }
 
 /* CHAT container - paged nav div */
-.flex-1.overflow-hidden > div > div > div .text-xs{
+.flex-1.overflow-hidden > div > div > div .text-xs.visible{
     padding: 2px 10px;
     border-radius: var(--pigeon-radius);
     -webkit-border-radius: var(--pigeon-radius);
