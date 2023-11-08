@@ -27,7 +27,7 @@
 ███████║   ██║      ██║   ███████╗███████╗╚██████╔╝██║        ██║   
 ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝ ╚═════╝ ╚═╝        ╚═╝                        
                                                 
-VERSION: 	1.1.16 
+VERSION: 	1.2.0 
 REPOSITORY: https://github.com/pigeonposse/stylegpt
 AUTHORS: 
 	- Angelo (https://github.com/angelespejo)
@@ -52,13 +52,13 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 [![LICENSE](https://img.shields.io/badge/License-grey?style=flat-square)](/LICENSE)
 [![Version](https://img.shields.io/github/package-json/v/pigeonposse/stylegpt?color=a1b858&label=GitHub%20Releases&style=flat-square)](https://github.com/pigeonposse/stylegpt/releases)
 [![CHROME](https://img.shields.io/chrome-web-store/v/khoggafmiibmeihpkpbkllkkdfhmokoj?color=blue&style=flat-square)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
-[![MOZILLA](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
+[![MOZILLA](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=flat-square)](https://addons.mozilla.org/firefox/addon/super8/)
 
 StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
 
 #### 🧩 Download links:
 
-- [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](https://addons.mozilla.org/es/firefox/addon/stylegpt/)
+- [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](https://addons.mozilla.org/firefox/addon/super8/)
 - [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=flat-square)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
 
 
