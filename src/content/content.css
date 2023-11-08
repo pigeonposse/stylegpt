@@ -116,13 +116,9 @@ header {
         .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div {
             background: var(--pigeon-bg-color-2);
         }
-        /* USReR */
+        /* USRER */
         .flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div {
             background: var(--pigeon-bg-color-3);
-        }
-        div:is( > svg > text),
-        div:has( > svg > text) {
-            background: var(--pigeon-gradient);
         }
 
     /* CHAT container - icons */

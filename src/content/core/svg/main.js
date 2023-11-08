@@ -37,6 +37,7 @@ export class Svg {
 		} )
 
 	}
+	
 	init(){
 
 		return this._dynamicColor( )

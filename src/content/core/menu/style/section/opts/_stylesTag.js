@@ -15,7 +15,7 @@ export class StylesTagSection extends OptsSectionSuper{
 	async _createStylesTagElement(){
 
 		this.stylesTag    = document.createElement( 'style' )
-		this.stylesTag.id = this.data.bodyClass + '-css'
+		this.stylesTag.id = 'pp-stylegpt-menu-styles-css'
 
 		document.head.appendChild( this.stylesTag )
 	

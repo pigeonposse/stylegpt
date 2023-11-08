@@ -30,7 +30,7 @@
         "after:release": [
             "gh repo edit https://github.com/pigeonposse/stylegpt -d \"🤖🧩 styleGPT is an extension that change style from chatGPT web. 🐦🌈\"",
             "gh repo edit https://github.com/pigeonposse/stylegpt --add-topic javascript,chrome-extension,firefox-extension,browser-extension,extension,chat-gpt,gpt,gpt4,open-ai,openai,ai,web,npm",
-            "echo 'Github action is now releasing: styleGPT v${version} to https://github.com/pigeonposse/stylegpt.\n Check if all is ok 🌈🤖\n https://github.com/pigeonposse/stylegpt/actions'"
+            "echo 'Github action is now releasing: stylegpt v${version} to https://github.com/pigeonposse/stylegpt.\n Check if all is ok 🌈🤖\n https://github.com/pigeonposse/stylegpt/actions'"
         ]
     },
     "github": {

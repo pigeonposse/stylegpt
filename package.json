@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "styleGPT",
+	"name": "stylegpt",
 	"description": "🤖🧩 styleGPT is an extension that change style from chatGPT web. 🐦🌈",
 	"version": "1.2.1",
 	"type": "module",
@@ -47,32 +47,31 @@
 		"npm"
 	],
 	"devDependencies": {
-		"@parcel/config-webextension": "^2.8.3",
-		"@parcel/packager-webextension": "^2.8.3",
-		"@parcel/transformer-webextension": "^2.8.3",
+		"@parcel/config-webextension": "^2.10.2",
+		"@parcel/packager-webextension": "^2.10.2",
+		"@parcel/transformer-webextension": "^2.10.2",
 		"@pigeon-posse/eslint-config": "^1.0.1",
 		"@pigeon-posse/pkg-extended-scripts": "^0.3.0",
 		"@release-it/bumper": "^4.0.2",
 		"auto-changelog": "^2.4.0",
-		"browserslist": "^4.21.5",
-		"eslint": "^8.40.0",
+		"browserslist": "^4.22.1",
+		"eslint": "^8.53.0",
 		"eslint-plugin-align-assignments": "^1.1.2",
 		"eslint-plugin-align-import": "^1.0.0",
 		"eslint-plugin-html": "^7.1.0",
-		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-import": "^2.29.0",
 		"eslint-plugin-jsdoc": "^39.9.1",
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
-		"inquirer": "^9.2.2",
+		"inquirer": "^9.2.12",
 		"npm-run-all": "^4.1.5",
-		"parcel": "^2.8.3",
-		"release-it": "^15.10.3",
+		"parcel": "^2.10.2",
+		"release-it": "^15.11.0",
 		"rimraf": "^4.4.1",
-		"web-ext": "^7.6.2"
+		"web-ext": "^7.8.0"
 	},
 	"browserslist": [
-		"last 1 Chrome version",
-		"last 1 Firefox version"
+		">0.3%, defaults"
 	],
 	"@parcel/bundler-default": {
 		"minBundles": 10000000
@@ -90,6 +89,7 @@
 		"path": {
 			"releaseIt": ".release-it.json"
 		},
+		"licenseUrl": "https://github.com/pigeonposse/stylegpt/LICENSE",
 		"chatWebMatch": "/chat\\.openai\\.com/",
 		"chatPage": "https://chat.openai.com/",
 		"store": {
@@ -128,10 +128,7 @@
 			"url": "https://github.com/alejomalia"
 		}
 	],
-	"license": {
-		"type": "GPL-3.0",
-		"url": "https://github.com/pigeonposse/stylegpt/LICENSE"
-	},
+	"license": "GPL-3.0",
 	"bugs": {
 		"url": "https://github.com/pigeonposse/stylegpt/issues"
 	},

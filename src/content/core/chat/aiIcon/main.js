@@ -17,16 +17,16 @@ export class AiIcon {
 	styles(){
 
 		return `
-	.relative.h-\\[30px\\].w-\\[30px\\].p-1.rounded-sm.text-white.flex.items-center.justify-center {
-	    background-image: var( --pigeon-gradient-2 ) !important;
+	.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center {
+		background-color: #96969633 !important;
 	}
-	.relative.h-\\[30px\\].w-\\[30px\\].p-1.rounded-sm.text-white.flex.items-center.justify-center > svg {
+	.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg {
 	    background-image: url("${this.url}");
 	    background-repeat: no-repeat;
 	    background-size: contain;
 	    background-position: center;
 	}
-	.relative.h-\\[30px\\].w-\\[30px\\].p-1.rounded-sm.text-white.flex.items-center.justify-center > svg > path {
+	.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg > path {
 		display:none;
 	}`
 	
@@ -35,13 +35,10 @@ export class AiIcon {
 	init(){
 
 		const styleElement       = document.createElement( 'style' )
+		styleElement.id          = 'pp-stylegpt-icon-styles-css'
 		styleElement.textContent = this.styles()
 
-		if ( this.url && document.head ) {
-
-			document.head.appendChild( styleElement )
-		
-		}
+		if ( this.url && document.head ) document.head.appendChild( styleElement )
 	
 	}
 

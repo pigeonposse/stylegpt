@@ -9,8 +9,8 @@
 import { Menu } from './menu/main'
 import { Chat } from './chat/main'
 import { Svg }  from './svg/main'
-import imgUrl   from '../../assets/img/logo.png'
 import { data } from './_shared/main'
+import imgUrl   from '../../assets/img/logo.png'
 
 export class Core {
 
