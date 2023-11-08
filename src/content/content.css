@@ -60,12 +60,15 @@ header {
     main [role="presentation"] form button[as="button"] {
         padding: 10px 20px;
     }
+    div:is(> ul >li > button),
     div:has(> ul >li > button) {
         border-radius: var(--pigeon-input-radius) !important;
+        -webkit-border-radius: var(--pigeon-input-radius) !important;
     }
 
     div > ul > li > button .rounded-lg {
         border-radius: var(--pigeon-input-radius) !important;
+        -webkit-border-radius: var(--pigeon-input-radius) !important;
     }
 
 /* CHAT PAGE */
@@ -84,8 +87,10 @@ header {
     .flex-1.overflow-hidden > div > div > div > div pre {
         border: 1px solid var(--gray-600);
         border-radius: var(--pigeon-btn-radius);
+        -webkit-border-radius: var(--pigeon-btn-radius);
     }
 
+    .flex-1.overflow-hidden > div > div > div > div pre:is(.hljs) > div,
     .flex-1.overflow-hidden > div > div > div > div pre:has(.hljs) > div {
         background: transparent !important;
     }
@@ -115,6 +120,7 @@ header {
         .flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div {
             background: var(--pigeon-bg-color-3);
         }
+        div:is( > svg > text),
         div:has( > svg > text) {
             background: var(--pigeon-gradient);
         }
@@ -140,11 +146,13 @@ header {
 /* regenerate btns, textarea, chat icons */
 .btn-neutral,
 .rounded-sm,
+div:is(> textarea),
 div:has(> textarea) {
     border-radius: var(--pigeon-input-radius) !important;
     -webkit-border-radius: var(--pigeon-input-radius) !important;
     overflow:hidden;
 }
+div:is(> textarea),
 div:has(> textarea) {
     padding-left: 20px;
     padding-right: 20px;
@@ -181,9 +189,12 @@ button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.t
     nav .rounded-lg:not([data-headlessui-state] .rounded-lg),
     nav [data-headlessui-state] button {
         border-radius: var(--pigeon-input-radius) !important;
+        -webkit-border-radius: var(--pigeon-input-radius) !important;
     }
+    div:is( > div > div > div > div > nav),
     div:has( > div > div > div > div > nav) {
         border-radius: var(--pigeon-btn-radius) !important;
+        -webkit-border-radius: var(--pigeon-btn-radius) !important;
         margin:10px;
     }
     nav [data-headlessui-state] button {
@@ -277,6 +288,7 @@ button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.t
         margin: 20px 0;
         border: none;
         border-radius: 5px;
+        -webkit-border-radius: 5px;
     }
 
     .pigeon-menu-container-section-group {
@@ -416,10 +428,12 @@ button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.t
     #pigeon-user-menu-section > nav {
         display: block;
         border-radius: var(--pigeon-btn-radius);
+        -webkit-border-radius: var(--pigeon-btn-radius);
         padding: 10px;
     }
     #pigeon-user-menu-section > nav a {
         border-radius: var(--pigeon-btn-radius);
+        -webkit-border-radius: var(--pigeon-btn-radius);
     }
 
 /*****************************************************************/

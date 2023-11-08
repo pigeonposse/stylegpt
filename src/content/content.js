@@ -43,5 +43,5 @@ const init = async () => {
 document.addEventListener( 'readystatechange', async () => {
 	
 	if ( document.readyState === 'complete' ) init()
-	
+
 } )

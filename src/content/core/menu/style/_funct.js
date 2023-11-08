@@ -96,7 +96,7 @@ export class StyleFunct extends StyleHtml {
 
 		if( selectElement ) selectElement.addEventListener( 'change', () => {
 
-			console.log( 'El valor del select ha cambiado:', selectElement.value )
+			// console.log( 'El valor del select ha cambiado:', selectElement.value )
 			this._addStylesForCodeByName( selectElement.value )
 		
 		} )
@@ -111,10 +111,20 @@ export class StyleFunct extends StyleHtml {
 
 	async _addStylesForCode(){
 
-		const storage   = await this.utils.storage.get( this.data.bodyClass )
-		const themeName = storage['codeStyle']
-	
-		if( themeName ) this._addStylesForCodeByName( themeName )
+		const storage = await this.utils.storage.get( this.data.bodyClass )
+
+		if( storage && typeof storage === 'object' && 'codeStyle' in storage ) {
+
+			this._addStylesForCodeByName( storage['codeStyle'] )
+		
+		}else {
+
+			await this.utils.storage.set( this.data.bodyClass, {
+				...storage,
+				'codeStyle' : 'none',
+			} )
+		
+		}
 		this._stylesForCodeObserver()
 	
 	}
