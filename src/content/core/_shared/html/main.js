@@ -79,6 +79,21 @@ export class Html extends HtmlSuper {
 
 	}
 
+	menuBtnCustom( args, html ){
+
+		const btn = document.createElement( 'button' )
+
+		btn.id = args.id
+		btn.setAttribute( 'class', `pigeon-form-btn ${this.classes.menuIcon}` )
+		
+		if ( args.title ) btn.title = args.title
+
+		btn.appendChild( html )
+		
+		return btn
+	
+	}
+
 	menuBtn( args ){
 
 		const btn = document.createElement( 'button' )

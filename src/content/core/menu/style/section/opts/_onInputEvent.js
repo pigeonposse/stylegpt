@@ -72,11 +72,7 @@ export class OnInputEventSection extends StylesTagSection {
 
 		sel.addEventListener( 'click', async ( ) => {
 
-			if ( v.btnType == 'reset' ) {
-
-				await this._onClickResetBtn( k )
-			
-			}
+			if ( v.btnType == 'reset' ) await this._onClickResetBtn( k )
 
 			if ( v.btnType == 'toggle' ) {
 

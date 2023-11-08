@@ -47,11 +47,7 @@ export class MenuSection extends SectionSuper {
 
 		document.addEventListener( 'click', ( event ) => {
 
-			if ( !section.contains( event.target ) ) {
-
-				hideSection()
-			
-			}
+			if ( !section.contains( event.target ) ) hideSection()
 
 		} )
 	

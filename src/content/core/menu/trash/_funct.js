@@ -8,30 +8,6 @@ import { TrashHtml } from './_html'
 
 export class TrashFunct extends TrashHtml {
 
-	_getLink( ) {
-
-		let nav, links, res
-
-		nav   = document.querySelector( 'nav' )
-		links = nav.querySelectorAll( 'a' )
-		res   = false
-
-		links.forEach( link => {
-		
-			if ( 
-				link.innerText.includes( 'Clear conversations' )
-			) {
-
-				res = link
-		
-			}
-
-		} )
-
-		return res
-
-	}
-
 	_setFunct( ) {
 
 		let btn = document.getElementById( this.data.btnID )
@@ -42,18 +18,13 @@ export class TrashFunct extends TrashHtml {
 	
 			let navLink 
 
-			navLink = 'button.p-1.hover\\:text-white:last-child'
+			navLink = 'button.p-1.hover\\:text-token-text-primary:last-child'
 			navLink = document.querySelector( navLink )
 			
 			if ( !navLink ) return
 
 			await navLink.click()
 
-			navLink = 'button.p-1.hover\\:text-white:first-child'
-			navLink = document.querySelector( navLink )
-
-			if ( navLink ) navLink.click()
-		
 		} )
 
 	}

@@ -44,9 +44,7 @@ export class StylesTagSection extends OptsSectionSuper{
 
 	async _changeStyles( storageObj ) {
 
-		let res
-		
-		res = ''
+		let res = ''
 
 		Object.entries( this.data.section ).forEach( async ( [ k, v ] ) => {
 
@@ -59,7 +57,7 @@ export class StylesTagSection extends OptsSectionSuper{
 			)
 				
 		} )
-		// console.log( res )
+
 		return res
 
 	}	
@@ -67,7 +65,6 @@ export class StylesTagSection extends OptsSectionSuper{
 	async setStylesTag( storageObj ) {
 		
 		let styles 
-		// console.log( storageObj )
 
 		if ( !this.stylesTag ) await this._createStylesTagElement()
 

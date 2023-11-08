@@ -7,9 +7,30 @@
  * @version     1.0.0
  */
 
-import { MenuCore } from '../_super/main'
-
+import { MenuCore }       from '../_super/main'
+import { codeEditorList } from './code-editor-list'
 export class StyleSuper extends MenuCore {
+
+	_getCodeStyle(){
+
+		return {
+			title : 'Code Editor',
+			id    : 'pigeon-code-editor',
+			// stylizedSel   : 'main:first-of-type',
+			// changedStyles : {
+			// 	backgroundSize : '{{value}}',
+			// },
+			opts  : [
+				{
+					value : 'none',
+					name  : 'Default',
+				},
+				...codeEditorList,
+			],
+			defaultValue : 'none',
+		}
+	
+	}
 
 	fontOpts = [
 		{
@@ -37,6 +58,13 @@ export class StyleSuper extends MenuCore {
 			value : 'Times New Roman',
 		},
 	]
+	
+	// impares
+	userSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div'
+	// par
+	aiSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div'
+	// bg
+	bgSectionQuery = '#__next'
 
 	data = {
 		btnID     : 'pigeon-styles',
@@ -54,7 +82,7 @@ export class StyleSuper extends MenuCore {
 			userColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userColor' ),
 				id            : 'pigeon-styles-menu-user-color',
-				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.dark\\:bg-gray-800',
+				stylizedSel   : this.userSectionQuery,
 				changedStyles : {
 					color : '{{value}}',
 				},
@@ -62,7 +90,7 @@ export class StyleSuper extends MenuCore {
 			userFont : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userFont' ),
 				id            : 'pigeon-styles-menu-user-text',
-				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.dark\\:bg-gray-800',
+				stylizedSel   : this.userSectionQuery,
 				changedStyles : {
 					fontFamily : '{{value}}',
 				},
@@ -72,7 +100,7 @@ export class StyleSuper extends MenuCore {
 			userBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userBgColor' ),
 				id            : 'pigeon-user-color-bg-input',
-				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.dark\\:bg-gray-800 > div',
+				stylizedSel   : this.userSectionQuery,
 				changedStyles : {
 					backgroundColor : '{{value}}',
 				},
@@ -80,7 +108,7 @@ export class StyleSuper extends MenuCore {
 			aiFont : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_aiFont' ),
 				id            : 'pigeon-styles-menu-chat-text',
-				stylizedSel   : '.markdown',
+				stylizedSel   : this.aiSectionQuery,
 				changedStyles : {
 					fontFamily : '{{value}}',
 				},
@@ -90,7 +118,7 @@ export class StyleSuper extends MenuCore {
 			aiColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_aiColor' ),
 				id            : 'pigeon-styles-menu-chat-color',
-				stylizedSel   : '.markdown',
+				stylizedSel   : this.aiSectionQuery + ' .markdown',
 				changedStyles : {
 					color : '{{value}}',
 				},
@@ -98,7 +126,7 @@ export class StyleSuper extends MenuCore {
 			aiBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_aiBgColor' ),
 				id            : 'pigeon-color-bg-input',
-				stylizedSel   : '.group.w-full.text-gray-800.dark\\:text-gray-100.border-b.border-black\\/10.dark\\:border-gray-900\\/50.bg-gray-50.dark\\:bg-\\[\\#444654\\] > div',
+				stylizedSel   : this.aiSectionQuery,
 				changedStyles : {
 					backgroundColor : '{{value}}',
 				},
@@ -106,9 +134,9 @@ export class StyleSuper extends MenuCore {
 			chatBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgColor' ),
 				id            : 'pigeon-chat-color-bg-input',
-				stylizedSel   : 'main:first-of-type',
+				stylizedSel   : this.bgSectionQuery,
 				changedStyles : {
-					backgroundColor : '{{value}}',
+					backgroundColor : '{{value}} !important',
 				},
 			},
 			chatBgImg : {
@@ -117,7 +145,7 @@ export class StyleSuper extends MenuCore {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgImg' ),
 				id            : 'pigeon-img-bg-input',
 				placeholder   : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgImg_placeholder' ),
-				stylizedSel   : 'main:first-of-type',
+				stylizedSel   : this.bgSectionQuery,
 				changedStyles : {
 					backgroundImage    : 'url("{{value}}")',
 					backgroundRepeat   : 'no-repeat',
@@ -127,7 +155,7 @@ export class StyleSuper extends MenuCore {
 			chatBgImgPosition : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgImgPosition' ),
 				id            : 'pigeon-img-bg-position-input',
-				stylizedSel   : 'main:first-of-type',
+				stylizedSel   : this.bgSectionQuery,
 				changedStyles : {
 					backgroundSize : '{{value}}',
 				},
@@ -159,6 +187,7 @@ export class StyleSuper extends MenuCore {
 				],
 				defaultValue : 'cover',
 			},
+			codeStyle  : this._getCodeStyle(),
 			showStyles : {
 				type         : 'btn',
 				btnType      : 'toggle',

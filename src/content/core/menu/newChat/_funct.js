@@ -16,7 +16,12 @@ export class NewChatFunct extends NewChatHtml{
 		links = nav.querySelectorAll( 'a' )
 		res   = false
 
-		if ( links[0] && links[0].innerText.includes( 'New chat' ) ) res = links[0]
+		if ( links[0] ) {
+
+			const searchText = links[0].innerText.toLowerCase()
+			if ( searchText.includes( 'new chat' ) ) res = links[0]
+	
+		}
 
 		return res
 	
@@ -29,12 +34,9 @@ export class NewChatFunct extends NewChatHtml{
 		btn = document.getElementById( this.data.btnID )
 
 		btn.addEventListener( 'click', () => {
-		
-			let navLink
 
-			navLink = this._getLink( )
+			let navLink = this._getLink( )
 
-			if ( !navLink ) console.log( 'nav link [new chat] does not exist' )
 			if ( !navLink ) return 
 		
 			navLink.click()

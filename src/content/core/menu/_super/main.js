@@ -40,7 +40,30 @@ export class MenuCore {
 		selector.appendChild( html )
 
 	}
+
+	_btnCustom( data, htmlElement ) {
+
+		let selector, args, html
 	
+		if ( !data ) return
+
+		args = {
+			id    : data.btnID ? data.btnID : false,
+			title : data.btnTitle ? data.btnTitle : false,
+		}
+
+		if ( document.getElementById( args.id ) ) return
+
+		selector = document.getElementById( this.sharedData.menuBtnSection )
+		
+		if ( !selector ) return
+
+		html = this.html.menuBtnCustom( args, htmlElement )
+
+		selector.appendChild( html )
+
+	}
+
 	_menu( data ) {
 
 		let selector, html

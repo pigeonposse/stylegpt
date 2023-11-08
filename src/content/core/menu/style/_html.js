@@ -142,6 +142,15 @@ export class StyleHtml extends StyleSuper {
 				this.data.section.chatBgImgPosition,
 				this.data.section.chatBgColor,
 			),
+			this.html.line(),
+			this.html.section( [
+				this.html.title( this.data.section.codeStyle.title ),
+				this.html.select( {
+					id    : this.data.section.codeStyle.id,
+					title : this.data.section.codeStyle.title,
+					opts  : this.data.section.codeStyle.opts,
+				} ),
+			] ), 
 		]
 
 		bgContent = this._sectionBtns( this.data.section )

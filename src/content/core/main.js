@@ -30,7 +30,7 @@ export class Core {
 
 		let selector, waitMain, div1, div2
 		
-		selector = document.body 
+		selector = document.querySelector( 'body' ) 
 		waitMain = await this.utils.waitForSelector( 'main' )
 		
 		if ( !waitMain ) throw 'No main HTML displayed'

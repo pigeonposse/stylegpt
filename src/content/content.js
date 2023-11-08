@@ -26,7 +26,7 @@ const init = async () => {
 
 	}catch( e ){
 
-		console.log( e )
+		console.error( e )
 		
 		utils.brwsr.runtime.sendMessage( { error: 'StyleGPT Error: ' + e } )
 
@@ -40,4 +40,8 @@ const init = async () => {
 
 }
 
-init()
+document.addEventListener( 'readystatechange', async () => {
+	
+	if ( document.readyState === 'complete' ) init()
+	
+} )
