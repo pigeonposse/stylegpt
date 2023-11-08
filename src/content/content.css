@@ -426,6 +426,7 @@ button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.t
         border-radius: var(--pigeon-btn-radius);
         -webkit-border-radius: var(--pigeon-btn-radius);
         padding: 10px;
+        text-align: start;
     }
     #pigeon-user-menu-section > nav a {
         border-radius: var(--pigeon-btn-radius);
