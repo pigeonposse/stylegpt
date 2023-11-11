@@ -8,52 +8,18 @@ import { UserMenuSuper } from './_super'
 
 export class UserMenuHtml extends UserMenuSuper {
 
-	_waitForElm( targetSelector, callback ) {
-
-		const element = document.querySelector( targetSelector )
-
-		if ( element ) {
-
-			callback( element )
-		
-		} else {
-
-			const observer = new MutationObserver( ( mutations, obs ) => {
-
-				const element = document.querySelector( targetSelector )
-
-				if ( element ) {
-
-					callback( element )
-					obs.disconnect()
-				
-				}
-	
-			} )
-
-			observer.observe( document.body, {
-				childList : true,
-				subtree   : true,
-			} )
-		
-		}
-
-	}
-
 	async addHtml( cb ){
 
-		// console.log( 'waitfor', 'img[alt="User"]' )
-		this._waitForElm( 'img[alt="User"]', ( el ) => {
+		const image = await this.utils.waitForSelector( 'img[alt="User"]' )
+		if( !image ) return
 
-			const clonedEl = el.cloneNode( true )
+		const clonedEl = image.cloneNode( true )
 			
-			this._btnCustom( 
-				this.data, 
-				clonedEl, 
-			)
-			cb()	
-		
-		} )
+		this._btnCustom( 
+			this.data, 
+			clonedEl, 
+		)
+		cb()
 		
 	}
 

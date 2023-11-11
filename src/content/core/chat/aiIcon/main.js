@@ -32,7 +32,7 @@ export class AiIcon {
 	
 	}
 
-	init(){
+	async init(){
 
 		const styleElement       = document.createElement( 'style' )
 		styleElement.id          = 'pp-stylegpt-icon-styles-css'

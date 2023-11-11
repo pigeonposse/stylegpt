@@ -16,6 +16,7 @@ import { url }                                     from './url'
 import { string }                                  from './string'
 import { pkg }                                     from './pkg'
 import { HtmlParser }                              from './htmlParser'
+// import { observeQuery }                            from './observeQuery'
 
 export {
 	observer,
@@ -31,4 +32,5 @@ export {
 	url,
 	pkg,
 	HtmlParser,
+	// observeQuery,
 }

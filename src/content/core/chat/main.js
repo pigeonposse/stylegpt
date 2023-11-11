@@ -7,6 +7,7 @@
  */
 
 import { AiIcon } from './aiIcon/main'
+// import { Time }   from './time/main'
 
 export class Chat {
 
@@ -14,12 +15,15 @@ export class Chat {
 
 		this.url   = url
 		this.utils = utils
+		// this.time   = new Time( this.utils )
+		this.aiIcon = new AiIcon( this.url )
 	
 	}
 
-	init(){
+	async init(){
 
-		return new AiIcon( this.url ).init()
+		// await this.time.init()
+		await this.aiIcon.init()
 	
 	}
 

@@ -14,7 +14,7 @@ export class StyleSuper extends MenuCore {
 	_getCodeStyle(){
 
 		return {
-			title : 'Code Editor',
+			title : this.utils.brwsr.i18n.getMessage( 'stylesSection_codeEditor' ),
 			id    : 'pigeon-code-editor',
 			// stylizedSel   : 'main:first-of-type',
 			// changedStyles : {
@@ -79,6 +79,14 @@ export class StyleSuper extends MenuCore {
 			},
 		},
 		section : {
+			sidebarBgColor : {
+				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_sidebarBgColor' ),
+				id            : 'pigeon-styles-sidebar-color',
+				stylizedSel   : '.scrollbar-trigger > nav, .scrollbar-trigger > nav h3',
+				changedStyles : {
+					backgroundColor : '{{value}} !important',
+				},
+			},
 			userColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userColor' ),
 				id            : 'pigeon-styles-menu-user-color',

@@ -25,7 +25,7 @@ export class Menu {
 	
 	}
 	
-	init(){
+	async init(){
 
 		this.userMenu.init()
 		this.sidebar.init()

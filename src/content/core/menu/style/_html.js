@@ -121,6 +121,14 @@ export class StyleHtml extends StyleSuper {
 		id = this.data.sectionID
 
 		txtContent = [
+			this.html.section( [
+				this.html.title( this.data.section.sidebarBgColor.title ),
+				this.html.inputColor( {
+					id    : this.data.section.sidebarBgColor.id,
+					title : this.data.section.sidebarBgColor.title,
+				} ),
+			] ), 
+			this.html.line(),
 			this._sectionText( 
 				this.data.group.user.title,
 				this.data.section.userFont,

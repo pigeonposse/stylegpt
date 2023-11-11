@@ -1,9 +1,7 @@
 /**
- * Do function.
+ * Url functions.
  *
- * @description Todo.
- *
- * @version 1.0.0
+ * @description Url functions.
  */
 
 const exists = async ( url ) => {

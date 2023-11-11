@@ -38,9 +38,9 @@ export class Svg {
 
 	}
 	
-	init(){
+	async init(){
 
-		return this._dynamicColor( )
+		this._dynamicColor( )
 	
 	}
 

@@ -84,6 +84,9 @@ header {
     }
 
     /* CHAT containers - CODE */
+    code.hljs {
+        color: inherit !important;
+    }
     .flex-1.overflow-hidden > div > div > div > div pre {
         border: 1px solid var(--gray-600);
         border-radius: var(--pigeon-btn-radius);
@@ -196,6 +199,24 @@ button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.t
     nav [data-headlessui-state] button {
         padding: 10px !important;
     }
+    /* .pigeon-styles nav h3 {
+        background: transparent !important;
+    } */
+    .pigeon-styles nav li > a,
+    .pigeon-styles nav div > a,
+    .pigeon-styles nav div > button {
+        background: transparent !important;
+    }
+    .pigeon-styles nav li > a:hover,
+    .pigeon-styles nav div > a:hover,
+    .pigeon-styles nav div > button:hover {
+        background: #52525236 !important;
+    }
+    .pigeon-styles nav li a .dark\:from-gray-900,
+    .pigeon-styles nav .bg-gradient-to-l.dark\:from-gray-800.from-gray-100 {
+        --tw-gradient-from: transparent !important;
+    }
+
 
 /*****************************************************************/
 /* STYLEGPT - BTNS */
@@ -431,6 +452,36 @@ button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.t
     #pigeon-user-menu-section > nav a {
         border-radius: var(--pigeon-btn-radius);
         -webkit-border-radius: var(--pigeon-btn-radius);
+    }
+
+    /*************************************************************/
+    /* TIME - disabled */
+    /*************************************************************/
+    .pp-stylegpt-time {
+        margin: 5px auto auto auto;
+        font-size: 13px;
+        /* height: 13px; */
+    }
+    .pp-stylegpt-time:hover span {
+        display: initial;
+    }
+    .pp-stylegpt-time div{
+        position: relative;
+        width: fit-content;
+        margin: auto;
+    }
+    .pp-stylegpt-time span{
+        display:none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        background: black;
+        color: white;
+        padding: 3px 10px;
+        box-sizing: content-box;
+        border-radius: 10px;
     }
 
 /*****************************************************************/

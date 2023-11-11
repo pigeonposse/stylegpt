@@ -1,7 +1,10 @@
 {
 	"name": {
-		"message": "styleGPT",
+		"message": "styleGPT - The Best Customizer for ChatGPT",
 		"description": "The name of my extension"
+	},
+	"productName": {
+		"message": "styleGPT"
 	},
 	"description": {
 		"message": "🤖🧩 styleGPT is an extension that change style from chatGPT web 🐦🌈",
@@ -114,6 +117,12 @@
 	"stylesSection_chatBgColor": {
 		"message": "Background color",
 		"description": "Title of the chat background color section"
+	},
+	"stylesSection_codeEditor": {
+		"message": "Code Editor"
+	},
+	"stylesSection_sidebarBgColor": {
+		"message": "Sidebar color"
 	},
 	"stylesSection_chatBgImg": {
 		"message": "Background image",

@@ -23,7 +23,7 @@ export class ContextMenuExt extends ContextMenuSuper {
 		return [
 			{
 				id       : id,
-				title    : this.manifest.name,
+				title    : this.brwsr.i18n.getMessage( 'productName' ),
 				contexts : contexts,
 			}, 
 			/**

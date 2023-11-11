@@ -16,12 +16,7 @@ const init = async () => {
 	try {
 
 		const core = new Core( utils )
-	
-		await core.menuSection()
-		await core.chat()
-		await core.menu()
-		await core.svg()
-		
+		await core.init()
 		error = false
 
 	}catch( e ){

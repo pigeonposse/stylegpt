@@ -8,64 +8,63 @@ import { UserMenuHtml } from './_html'
 
 export class UserMenuFunct extends UserMenuHtml {
 
-	_setFunctMenu(){
+	async _setFunctMenu(){
+
+		const el = await this.utils.waitForSelector( 'div[role="menu"][data-headlessui-state="open"]' )
+		if( !el ) return
 		
-		this._waitForElm( 'div[role="menu"][data-headlessui-state="open"]', ( el ) => {
+		let section         = document.getElementById( this.data.btnID + '-section' )
+		const orignalEl     = el.querySelector( 'nav' )
+		const cloneEl       = orignalEl.cloneNode( true )
+		const existCloneEl  = section.querySelector( 'nav' )
+		el.style.visibility = 'hidden'
+		if ( existCloneEl ) return
+		const menuClasses = this.html.classes.menu.split( ' ' )
 
-			let section         = document.getElementById( this.data.btnID + '-section' )
-			const orignalEl     = el.querySelector( 'nav' )
-			const cloneEl       = orignalEl.cloneNode( true )
-			const existCloneEl  = section.querySelector( 'nav' )
-			el.style.visibility = 'hidden'
-			if ( existCloneEl ) return
-			const menuClasses = this.html.classes.menu.split( ' ' )
+		// Add each class to the 'section' element
+		menuClasses.forEach( className => cloneEl.classList.add( className ) )
 
-			// Add each class to the 'section' element
-			menuClasses.forEach( className => cloneEl.classList.add( className ) )
+		section.appendChild( cloneEl )
 
-			section.appendChild( cloneEl )
+		const originalBtns = orignalEl.querySelectorAll( 'a[as="button"]' )
+		const cloneBtns    = cloneEl.querySelectorAll( 'a[as="button"]' )
 
-			const originalBtns = orignalEl.querySelectorAll( 'a[as="button"]' )
-			const cloneBtns    = cloneEl.querySelectorAll( 'a[as="button"]' )
+		const mimicOriginalEvent = ( event ) => {
 
-			const mimicOriginalEvent = ( event ) => {
+			event.preventDefault() 
+			const index = Array.from( cloneBtns ).indexOf( event.target ) 
+			if ( index !== -1 && originalBtns[index] ) {
 
-				event.preventDefault() 
-				const index = Array.from( cloneBtns ).indexOf( event.target ) 
-				if ( index !== -1 && originalBtns[index] ) {
-
-					originalBtns[index].click()
+				originalBtns[index].click()
 				
-				}
-
 			}
 
-			cloneBtns.forEach( cloneBtn => {
+		}
 
-				cloneBtn.addEventListener( 'click', mimicOriginalEvent )
+		cloneBtns.forEach( cloneBtn => {
+
+			cloneBtn.addEventListener( 'click', mimicOriginalEvent )
 	
-			} )
+		} )
 
-			const removeCloneIfOriginalRemoved = () => {
+		const removeCloneIfOriginalRemoved = () => {
 
-				if ( !document.contains( orignalEl ) ) {
+			if ( !document.contains( orignalEl ) ) {
 
-					cloneEl.remove()
-					observer.disconnect()
+				cloneEl.remove()
+				observer.disconnect()
 				
-				}
-
 			}
-			
-			// Create a MutationObserver to watch for changes in the DOM
-			const observer = new MutationObserver( removeCloneIfOriginalRemoved )
-			
-			// Start observing changes on the document
-			observer.observe( document, { childList: true, subtree: true } )
 
-			// console.log( el )
-		
-		} ) 
+		}
+			
+		// Create a MutationObserver to watch for changes in the DOM
+		const observer = new MutationObserver( removeCloneIfOriginalRemoved )
+			
+		// Start observing changes on the document
+		observer.observe( document, { childList: true, subtree: true } )
+
+		// console.log( el )
 	
 	}
 

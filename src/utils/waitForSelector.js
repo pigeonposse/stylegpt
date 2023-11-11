@@ -1,9 +1,7 @@
 /**
- * Do function.
+ * WaitForSelector.
  *
- * @description Kddk.
- *
- * @version 1.0.0
+ * @description WaitForSelector.
  */
 
 export const waitForSelector = ( selector ) =>{

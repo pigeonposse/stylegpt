@@ -17,13 +17,10 @@ export class Core {
 	constructor( utils ) {
 
 		this.utils = utils
+		this.svg   = new Svg( this.utils, data.menuSection )
+		this.menu  = new Menu( this.utils )
+		this.chat  = new Chat( this.utils, imgUrl )
 	
-	}
-
-	svg(){
-
-		new Svg( this.utils, data.menuSection ).init()
-
 	}
 
 	async menuSection(){
@@ -48,16 +45,13 @@ export class Core {
 	
 	}
 
-	menu(){
+	async init(){
 
-		new Menu( this.utils ).init()
-
-	}
-
-	chat(){
-
-		new Chat( this.utils, imgUrl ).init()
-
+		await this.menuSection()
+		await this.chat.init()
+		await this.menu.init()
+		await this.svg.init()
+	
 	}
 
 }
