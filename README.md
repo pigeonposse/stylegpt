@@ -42,12 +42,12 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 
 <!-- PIGEONPOSSE START HEADER -->
 
-[![HEADER](docs/banner.png)](https://youtu.be/UN1hu4e-VmM)
+[![HEADER](docs/banner.png)](https://www.youtube.com/watch?v=Nh1DvI3p0p8)
 
-[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://pigeonposse.com) 
-[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](https://pigeonposse.com/?popup=about) 
+[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://pigeonposse.com)
+[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
 [![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
-[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate) 
+[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate)
 
 [![LICENSE](https://img.shields.io/badge/License-grey?style=flat-square)](/LICENSE)
 [![Version](https://img.shields.io/github/package-json/v/pigeonposse/stylegpt?color=a1b858&label=GitHub%20Releases&style=flat-square)](https://github.com/pigeonposse/stylegpt/releases)
@@ -56,7 +56,7 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 
 StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
 
-[View demo](https://youtu.be/UN1hu4e-VmM)
+[View demo](https://www.youtube.com/watch?v=Nh1DvI3p0p8)
 
 ## 🧩 Download links
 
@@ -77,7 +77,7 @@ StyleGPT is an extension that modifies the appearance of ChatGPT, providing a mo
 
 > ℹ️ Video demo for v1.3
 
-[![View Demo](docs/demo/video-capture.png)](https://youtu.be/UN1hu4e-VmM)
+[![View Demo](docs/demo/video-capture.png)](https://www.youtube.com/watch?v=Nh1DvI3p0p8)
 
 ### Change chat styles
 
@@ -112,7 +112,7 @@ You can contribute via **_Github_**.
 
 Help us to develop more interesting things.
 
-[![Donate](https://img.shields.io/badge/Donate-grey?style=flat-square)](https://pigeonposse.com/?popup=donate) 
+[![Donate](https://img.shields.io/badge/Donate-grey?style=flat-square)](https://pigeonposse.com/?popup=donate)
 
 ## 📜 License
 

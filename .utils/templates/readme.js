@@ -20,7 +20,7 @@ You can contribute via **_Github_**.
 
 Help us to develop more interesting things.
 
-[![Donate](https://img.shields.io/badge/Donate-grey?style=flat-square)](${pkg.data.funding.url}) 
+[![Donate](https://img.shields.io/badge/Donate-grey?style=flat-square)](${pkg.data.funding.url})
 
 ## 📜 License
 
@@ -52,12 +52,12 @@ const header = ( pkg ) => {
 	const collective = pkg.data.extra.collective
 	const fundingUrl = pkg.data.funding.url
 	return `
-[![HEADER](docs/banner.png)](https://youtu.be/UN1hu4e-VmM)
+[![HEADER](docs/banner.png)](${pkg.data.extra.demoUrl})
 
-[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](${collective.web}) 
-[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](${collective.web}/?popup=about) 
+[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](${collective.web})
+[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](${collective.web}/?popup=about)
 [![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
-[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](${fundingUrl}) 
+[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](${fundingUrl})
 
 [![LICENSE](https://img.shields.io/badge/License-grey?style=flat-square)](/LICENSE)
 [![Version](https://img.shields.io/github/package-json/v/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}?color=a1b858&label=GitHub%20Releases&style=flat-square)](${pkg.data.repository.url}/releases)
@@ -66,7 +66,7 @@ const header = ( pkg ) => {
 
 StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
 
-[View demo](https://youtu.be/UN1hu4e-VmM)
+[View demo](${pkg.data.extra.demoUrl})
 
 ## 🧩 Download links
 
