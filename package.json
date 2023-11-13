@@ -51,7 +51,6 @@
 		"npm"
 	],
 	"devDependencies": {
-		"husky": "^8.0.3",
 		"@commitlint/cli": "^18.4.1",
 		"@parcel/config-webextension": "^2.10.2",
 		"@parcel/packager-webextension": "^2.10.2",
@@ -74,7 +73,9 @@
 		"eslint-plugin-jsdoc": "^39.9.1",
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
+		"husky": "^8.0.3",
 		"inquirer": "^9.2.12",
+		"lint-staged": "^15.1.0",
 		"markdownlint": "^0.31.1",
 		"npm-run-all": "^4.1.5",
 		"parcel": "^2.10.2",
@@ -108,6 +109,9 @@
 		"cz-customizable": {
 			"config": ".dev/cz-config.cjs"
 		}
+	},
+	"lint-staged": {
+		"*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,json}": "eslint"
 	},
 	"webExt": {
 		"sourceDir": "dist",

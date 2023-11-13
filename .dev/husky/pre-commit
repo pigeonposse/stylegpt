@@ -10,6 +10,6 @@
 # @see https://git-scm.com/docs/git-commit#_hooks
 ###############################################################################
 
-pnpm lint
+pnpm exec lint-staged
 
 # exec < /dev/tty && node_modules/.bin/cz --hook || true
