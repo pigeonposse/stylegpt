@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+###############################################################################
+# PRE COMMIT
+#
+# @description runs before creating the COMMIT message
+# @see https://typicode.github.io/husky/
+# @see https://git-scm.com/docs/git-commit#_hooks
+###############################################################################
+
+pnpm lint
+
+# exec < /dev/tty && node_modules/.bin/cz --hook || true

@@ -6,7 +6,7 @@
  * @see https://github.com/release-it/release-it/blob/main/docs/configuration.md
  */
 
-import { pkg } from '../_core.js'
+import { pkg } from '../core/main.js'
 
 const topics = pkg.data.keywords.join( ',' )
 const gitUrl = pkg.data.repository.url

@@ -7,7 +7,7 @@
 import inquirer from 'inquirer'
 import path     from 'path'
 import fs       from 'fs/promises'
-import { exec } from './_core.js'
+import { exec } from './core/main.js'
 
 const main = async () => {
 

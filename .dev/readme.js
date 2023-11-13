@@ -5,7 +5,7 @@
  */
 
 import { readme }                   from './templates/readme.js'
-import { pkg, addTextBetweenAMark } from './_core.js'
+import { pkg, addTextBetweenAMark } from './core/main.js'
 
 const dynamicReadme = () => {
 

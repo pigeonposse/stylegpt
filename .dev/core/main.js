@@ -1,9 +1,9 @@
 /**
- * Core for .Utils folder.
+ * Core for .dev folder.
  *
- * @description Functions for .Utils folder.
+ * @description Functions for .dev folder.
  */
-import { spawnSync, spawn } from 'child_process'
+import { spawn } from 'child_process'
 import { fileURLToPath }    from 'url'
 import fs                   from 'fs'
 import path                 from 'path'
@@ -57,7 +57,7 @@ export const pkgFunct = ( fileName ) => {
 
 	let projectPath = path.join(
 		path.dirname( fileURLToPath( import.meta.url ) ),
-		'..', 
+		'..', '..', 
 	)
 
 	// when is used in the compilated files of 'dist' folder

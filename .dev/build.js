@@ -5,14 +5,14 @@
  */
 
 import inquirer                         from 'inquirer'
-import { exec, pkg, joinPath, copyDir } from './_core.js'
+import { exec, pkg, joinPath, copyDir } from './core/main.js'
 
 const getDistPath       = ( type ) => joinPath( pkg.dir, 'dist', type )
 const getManPath        = ( type ) => joinPath( pkg.dir, 'src', 'man', type )
 const getManifestPath   = ( type ) => joinPath( getManPath( type ), 'manifest.json' )
 const getManLocalesPath = ( type ) => joinPath( getManPath( type ), '_locales' )
 const compressPath      = joinPath( pkg.dir, 'dist', 'comp' )
-const lintPath          = joinPath( pkg.dir, '.utils', 'lint.js' )
+const lintPath          = joinPath( pkg.dir, '.dev', 'lint.js' )
 const localesPath       = joinPath( pkg.dir, 'src', '_locales' )
 
 const execBuild = async ( type, compress = true ) => {

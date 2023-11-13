@@ -1,0 +1,20 @@
+{
+    "files.autoSave": "onFocusChange",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "markdownlint.ignore": [
+        "**/LICENSE"
+    ],
+    "terminal.integrated.defaultProfile.linux": "zsh", 
+    "terminal.integrated.profiles.linux": {
+        "zsh": {
+            "path": "/bin/zsh"
+        },
+    }
+}

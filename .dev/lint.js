@@ -5,7 +5,7 @@
  */
 
 import inquirer                from 'inquirer'
-import { exec, pkg, joinPath } from './_core.js'
+import { exec, pkg, joinPath } from './core/main.js'
 
 const execLint = async ( flag = '' ) => {
 
