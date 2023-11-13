@@ -14,8 +14,8 @@
 	],
 	"scripts": {
 		"scripts": "pnpm run",
-		"lint": "node .dev/lint.js",
-		"lint-check": "node .dev/lint.js --check",
+		"lint": "node .dev/lint.js --check",
+		"lint-ask": "node .dev/lint.js",
 		"lint-fix": "node .dev/lint.js --fix",
 		"build": "node .dev/build.js --type all",
 		"build-select": "node .dev/build.js",
