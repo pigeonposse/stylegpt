@@ -27,9 +27,11 @@
 		"dev-chrome": "node .utils/build.js --watch --type chrome",
 		"dev-chrome-mv2": "node .utils/build.js --watch --type chrome-mv2",
 		"coverage": "browserslist --coverage",
-		"git": "node .utils/release.js --no-release",
+		"push-main": "node .utils/release.js --no-release",
 		"release": "node .utils/release.js",
-		"readme": "node .utils/readme.js"
+		"readme": "node .utils/readme.js",
+		"todo": "node .utils/todo.js",
+		"dev-info": "md docs/dev-info.md"
 	},
 	"keywords": [
 		"javascript",
@@ -55,6 +57,7 @@
 		"@release-it/bumper": "^4.0.2",
 		"auto-changelog": "^2.4.0",
 		"browserslist": "^4.22.1",
+		"cli-markdown": "^3.0.5",
 		"eslint": "^8.53.0",
 		"eslint-plugin-align-assignments": "^1.1.2",
 		"eslint-plugin-align-import": "^1.0.0",
@@ -64,6 +67,7 @@
 		"eslint-plugin-json": "^3.1.0",
 		"eslint-plugin-promise": "^6.1.1",
 		"inquirer": "^9.2.12",
+		"markdownlint": "^0.31.1",
 		"npm-run-all": "^4.1.5",
 		"parcel": "^2.10.2",
 		"process": "^0.11.10",
@@ -99,7 +103,7 @@
 				"id": "khoggafmiibmeihpkpbkllkkdfhmokoj"
 			},
 			"mozilla": {
-				"url": "https://addons.mozilla.org/firefox/addon/super8/",
+				"url": "https://addons.mozilla.org/firefox/addon/stylegpt/",
 				"id": "{8f0f11ab-1cc1-4db9-81a3-251de69235d9}"
 			}
 		},

@@ -22,10 +22,9 @@ Help us to develop more interesting things.
 
 [![Donate](https://img.shields.io/badge/Donate-grey?style=flat-square)](${pkg.data.funding.url}) 
 
-
 ## 📜 License
 
-This software is licensed with ***[GPLv3](/LICENSE)***.
+This software is licensed with **[GPLv3](/LICENSE)**.
 
 [![Read more](https://img.shields.io/badge/Read-more-grey?style=flat-square)](/LICENSE)
 
@@ -41,10 +40,9 @@ _PigeonPosse_ is a ✨ **code development collective** ✨ focused on creating p
 | ---------------------------------------------------------------------------------- | ----------- | ------------ | ---------------------------------------------- |
 | <img src="${pkg.data.author.url}.png?size=72" style="border-radius:100%"/> | ${pkg.data.author.name} |   Author & Development   | [@${pkg.data.author.name}](${pkg.data.author.url}) |
 | <img src="${pkg.data.contributors[0].url}.png?size=72" style="border-radius:100%"/> | ${pkg.data.contributors[0].name} |   Author & Design   | [@${pkg.data.contributors[0].name}](${pkg.data.contributors[0].url}) |
-| <img src="https://github.com/${pkg.data.extra.collective.name}.png?size=72" style="border-radius:100%"/> | ${pkg.data.extra.collective.name} | Collective	  | [@${pkg.data.extra.collective.name}](https://github.com/${pkg.data.extra.collective.name}) |
+| <img src="https://github.com/${pkg.data.extra.collective.name}.png?size=72" style="border-radius:100%"/> | ${pkg.data.extra.collective.name} | Collective | [@${pkg.data.extra.collective.name}](https://github.com/${pkg.data.extra.collective.name}) |
 
-
-<br> 
+</br>
 `
 
 }
@@ -53,7 +51,7 @@ const header = ( pkg ) => {
 
 	const collective = pkg.data.extra.collective
 	const fundingUrl = pkg.data.funding.url
-	return ` 
+	return `
 [![HEADER](docs/banner.png)](https://youtu.be/UN1hu4e-VmM)
 
 [![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](${collective.web}) 
@@ -68,11 +66,12 @@ const header = ( pkg ) => {
 
 StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
 
-#### 🧩 Download links:
+[View demo](https://youtu.be/UN1hu4e-VmM)
 
-- [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](${pkg.data.extra.store.mozilla.url})
+## 🧩 Download links
+
 - [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=flat-square)](${pkg.data.extra.store.chrome.url})
-
+- [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=flat-square)](${pkg.data.extra.store.mozilla.url})
 `
 
 }
