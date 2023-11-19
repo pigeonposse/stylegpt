@@ -9,17 +9,18 @@ export class HtmlBody extends HtmlSuper {
 
 	_createFooterChild( ){
 
-		let desc, array
+		let desc, links
 
-		desc = document.createElement( 'span' )
-		
+		desc             = document.createElement( 'span' )
+		links            = document.createElement( 'div' )
 		desc.textContent = this.version
 		desc.setAttribute( 'class', 'version' )
-		array = this.links.map( link => this.createLink( link.href, link.name ) )
-		
-		array.push( desc )
+		this.links.forEach( link => links.appendChild( this.createLink( link.href, link.name, link.icon ) ) )
 
-		return array
+		return [
+			links,
+			desc,
+		]
 	
 	}
 
@@ -92,19 +93,15 @@ export class HtmlBody extends HtmlSuper {
 			el = document.createElement( 'div' )
 			el.setAttribute( 'class', section.className )
 			
-			if ( section.children ) {
-
-				section.children.forEach( child => {
-
-					el.appendChild( child )
-				
-				} )
-			
-			}
+			if ( section.children ) 
+				section.children.forEach( child => el.appendChild( child ) )
 
 			document.body.appendChild( el )
 		
 		} )
+		
+		// const toggle = this.createToggle( 'activate', () => console.log( 'hola' ) )
+		// document.querySelector( '.header' ).appendChild( toggle )
 	
 	}
 

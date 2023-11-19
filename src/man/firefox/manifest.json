@@ -29,6 +29,9 @@
 			"matches": [
 				"https://chat.openai.com/*"
 			],
+			"exclude_matches": [
+				"https://chat.openai.com/share/*"
+			],
 			"run_at": "document_end"
 		}
 	],

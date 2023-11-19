@@ -31,7 +31,7 @@ export class Menu {
 		this.sidebar.init()
 		this.darkmode.init()
 		this.newChat.init()
-		this.trash.init()
+		// this.trash.init()
 		this.style.init()
 
 	}

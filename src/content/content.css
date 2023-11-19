@@ -29,15 +29,16 @@ html {
     --pigeon-btn-radius: 20px;
     --pigeon-input-radius: 50px;
     --pigeon-circle: 100%;
+    /* dynamics */
+    --pigeon-conversation-ai-bg-color: var(--pigeon-bg-color-2);
+    --pigeon-conversation-user-bg-color: var(--pigeon-bg-color-3);
+    --pigeon-sidebar-bg-color: #1a1a1a;
 }
 
 html.light {
     --pigeon-bg-color: #f7f7f8;
     --pigeon-bg-color-2: #ffffff;
     --pigeon-bg-color-3: #f7f7f8;
-}
-header {
-    box-shadow: none !important;
 }
 
 /*****************************************************************/
@@ -46,16 +47,6 @@ header {
 
 /* NEW CHAT */
 
-    /* containers */
-    .md\:flex.items-start.text-center.gap-3\.5 {
-        background: var(--pigeon-bg-color-2);
-        padding: 20px;
-        border-radius: var(--pigeon-radius);
-        -webkit-border-radius: var(--pigeon-radius);
-    }
-    .flex.flex-col.items-center.text-sm.dark\:bg-gray-800 {
-        margin: 0 75px !important;
-    }
     /* btns */
     main [role="presentation"] form button[as="button"] {
         padding: 10px 20px;
@@ -66,142 +57,121 @@ header {
         -webkit-border-radius: var(--pigeon-input-radius) !important;
     }
 
-    div > ul > li > button .rounded-lg {
-        border-radius: var(--pigeon-input-radius) !important;
-        -webkit-border-radius: var(--pigeon-input-radius) !important;
-    }
-
 /* CHAT PAGE */
 
-    /* CHAT section */
-    .dark .dark\:bg-gray-800,
-    .flex-1.overflow-hidden > div > div,
-    .flex.flex-col.text-sm.dark\:bg-gray-800,
-    .flex.flex-col.text-sm.dark\:bg-gray-800 > div {
+    /* HEADER CONTENT */
+    .sticky.top-0.mb-1\.5.flex.items-center.justify-between.z-10.h-14.bg-white\/95.p-2.font-semibold.dark\:bg-gray-800\/90,
+    .sticky.top-0.mb-1\.5.flex.items-center.justify-between.z-10.h-14.bg-white\/95.p-2.font-semibold.dark\:bg-gray-800\/90 > div {
         background: none;
         background-color: transparent !important;
         border: none;
     }
 
-    /* CHAT containers - CODE */
-    code.hljs {
-        color: inherit !important;
-    }
-    .flex-1.overflow-hidden > div > div > div > div pre {
-        border: 1px solid var(--gray-600);
-        border-radius: var(--pigeon-btn-radius);
-        -webkit-border-radius: var(--pigeon-btn-radius);
-    }
+    /* CHAT - CONVERSATION SECTION */
 
-    .flex-1.overflow-hidden > div > div > div > div pre:is(.hljs) > div,
-    .flex-1.overflow-hidden > div > div > div > div pre:has(.hljs) > div {
-        background: transparent !important;
+        /* BG */
+        #__next {
+            background: var(--pigeon-conversation-bg-color);
+            background-image: var(--pigeon-conversation-bg-img);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: var(--pigeon-conversation-bg-img-size);
+        }
+
+        /* all containers*/
+        .flex-1.overflow-hidden > div > div > div > div > div:not([type="button"]) > div:not([type="button"]){
+            border-radius: var(--pigeon-radius);
+            -webkit-border-radius: var(--pigeon-radius);
+            border: none;
+            padding: 20px;
+            box-sizing: content-box;
+        }
+        .flex-1.overflow-hidden > div > div > div > div > div:not([type="button"]) > div:not([type="button"]) > div{
+            overflow-x: scroll;
+        }
+
+        /* AI */
+        .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"]) {
+            background: var(--pigeon-bg-color-2);
+        }
+        .pigeon-styles .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"]) {
+            background: var(--pigeon-conversation-ai-bg-color);
+            color: var(--pigeon-conversation-ai-color);
+            font-family: var(--pigeon-conversation-ai-font);
+        }
+        .pigeon-styles .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"]) p {
+            color: var(--pigeon-conversation-ai-color);
+        }
+        
+        /* USER */
+        .flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div:not([type="button"]) > div:not([type="button"]) {
+            background: var(--pigeon-bg-color-3);
+        }
+        .pigeon-styles .flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div:not([type="button"]) > div:not([type="button"]) {
+            background: var(--pigeon-conversation-user-bg-color);
+            color: var(--pigeon-conversation-user-color);
+            font-family: var(--pigeon-conversation-user-font);
+        }
+
+        /* CHAT containers - CODE */
+        code.hljs {
+            color: inherit !important;
+        }
+        .flex-1.overflow-hidden > div > div > div > div pre {
+            border: 1px solid var(--gray-600);
+            border-radius: var(--pigeon-btn-radius);
+            -webkit-border-radius: var(--pigeon-btn-radius);
+        }
+
+    /* regenerate btns, textarea, chat icons */
+    .btn-neutral,
+    .rounded-sm,
+    div:is(> textarea),
+    div:has(> textarea) {
+        border-radius: var(--pigeon-input-radius) !important;
+        -webkit-border-radius: var(--pigeon-input-radius) !important;
+        overflow:hidden;
     }
-    .flex-1.overflow-hidden > div > div > div > div pre:not(.hljs) > div {
-        background: black !important;
-    }
-    /* CHAT containers */
-    .flex-1.overflow-hidden > div > div > div > div{
-        border: none;
-    }
-    .flex-1.overflow-hidden > div > div > div > div > div{
-        border-radius: var(--pigeon-radius);
-        -webkit-border-radius: var(--pigeon-radius);
+    div:is(> textarea),
+    div:has(> textarea) {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .flex-1.overflow-hidden > div > div > div > div:not(div.relative) > div{
-        margin : 5px 80px !important;
+    form button.absolute.p-1.rounded-md.md\:bottom-3.md\:p-2.md\:right-3.dark\:hover\:bg-gray-900.dark\:disabled\:hover\:bg-transparent.right-2.gizmo\:dark\:disabled\:bg-white.gizmo\:disabled\:bg-black.gizmo\:disabled\:opacity-10.disabled\:text-gray-400.enabled\:bg-brand-purple.gizmo\:enabled\:bg-black.text-white.gizmo\:p-0\.5.gizmo\:border.gizmo\:border-black.gizmo\:rounded-lg.gizmo\:dark\:border-white.gizmo\:dark\:bg-white.bottom-1\.5.transition-colors.disabled\:opacity-40{
+        border-radius: var(--pigeon-input-radius) !important;
+        -webkit-border-radius: var(--pigeon-input-radius) !important;
     }
-
-    /* CHAT - CONVERSATION SECTION */
-        /* AI */
-        .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div {
-            background: var(--pigeon-bg-color-2);
-        }
-        /* USRER */
-        .flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div {
-            background: var(--pigeon-bg-color-3);
-        }
-
-    /* CHAT container - icons */
-    .flex-1.overflow-hidden > div > div > div .lg\:self-center {
-        margin: auto 20px;
-    }
-
-    /* CHAT container - paged nav div */
-    .flex-1.overflow-hidden > div > div > div .text-xs.visible{
-        padding: 2px 10px;
-        border-radius: var(--pigeon-radius);
-        -webkit-border-radius: var(--pigeon-radius);
-        background: var(--pigeon-bg-color);
-    }
-
-    /* USER containers */
-    html.light body:not(.pigeon-styles) .group.w-full.text-gray-800.dark\:text-gray-100.border-b.border-black\/10.dark\:border-gray-900\/50.dark\:bg-gray-800 {
-        background: var(--pigeon-bg-color-3);
-    }
-
-/* regenerate btns, textarea, chat icons */
-.btn-neutral,
-.rounded-sm,
-div:is(> textarea),
-div:has(> textarea) {
-    border-radius: var(--pigeon-input-radius) !important;
-    -webkit-border-radius: var(--pigeon-input-radius) !important;
-    overflow:hidden;
-}
-div:is(> textarea),
-div:has(> textarea) {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-form button.absolute.p-1.rounded-md.md\:bottom-3.md\:p-2.md\:right-3.dark\:hover\:bg-gray-900.dark\:disabled\:hover\:bg-transparent.right-2.gizmo\:dark\:disabled\:bg-white.gizmo\:disabled\:bg-black.gizmo\:disabled\:opacity-10.disabled\:text-gray-400.enabled\:bg-brand-purple.gizmo\:enabled\:bg-black.text-white.gizmo\:p-0\.5.gizmo\:border.gizmo\:border-black.gizmo\:rounded-lg.gizmo\:dark\:border-white.gizmo\:dark\:bg-white.bottom-1\.5.transition-colors.disabled\:opacity-40{
-    border-radius: var(--pigeon-input-radius) !important;
-    -webkit-border-radius: var(--pigeon-input-radius) !important;
-}
-
-/* btn scroll */
-button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.text-gray-600.dark\:border-white\/10.dark\:bg-white\/10.dark\:text-gray-200.right-6.bottom-\[124px\].md\:bottom-\[180px\].gizmo\:md\:bottom-\[143px\].lg\:bottom-\[120px\].border-gray-200.bg-gray-50 {
-    position: fixed;
-    right: 12px;
-    bottom: 50px;
-}
-
-/* chat textarea bg */
-.absolute.bottom-0.left-0.w-full.border-t.md\:border-t-0.dark\:border-white\/20.md\:border-transparent.md\:dark\:border-transparent.md\:bg-vert-light-gradient.bg-white.dark\:bg-gray-800.md\:\!bg-transparent.dark\:md\:bg-vert-dark-gradient.pt-2 {
-	background-image:none;
-}
-/* chat textarea - footer text */
-.absolute.bottom-0.left-0.w-full.border-t.md\:border-t-0.dark\:border-white\/20.md\:border-transparent.md\:dark\:border-transparent.md\:bg-vert-light-gradient.bg-white.dark\:bg-gray-800.md\:\!bg-transparent.dark\:md\:bg-vert-dark-gradient.pt-2 span {
-	text-shadow: rgb(0 0 0 / 84%) 0px 0px;
-}
 
 /*****************************************************************/
 /* SIDEBAR NAV */
 /*****************************************************************/
 
-    nav > div {
-        margin: 5px !important;
-    }
-    nav .rounded-md, 
-    nav .rounded-lg:not([data-headlessui-state] .rounded-lg),
-    nav [data-headlessui-state] button {
-        border-radius: var(--pigeon-input-radius) !important;
-        -webkit-border-radius: var(--pigeon-input-radius) !important;
-    }
-    div:is( > div > div > div > div > nav),
-    div:has( > div > div > div > div > nav) {
+    div:is( > div.h-full > div > div > div > nav),
+    div:has( > div.h-full > div > div > div > nav) {
         border-radius: var(--pigeon-btn-radius) !important;
         -webkit-border-radius: var(--pigeon-btn-radius) !important;
         margin:10px;
     }
-    nav [data-headlessui-state] button {
-        padding: 10px !important;
+        /* BTNS */
+        nav .rounded-md, 
+        nav .rounded-lg:not([data-headlessui-state] .rounded-lg),
+        nav [data-headlessui-state] button {
+            border-radius: var(--pigeon-input-radius) !important;
+            -webkit-border-radius: var(--pigeon-input-radius) !important;
+        }
+
+    /* colored */    
+    .pigeon-styles div:is( > div.h-full > div > div > div > nav),
+    .pigeon-styles div:has( > div.h-full > div > div > div > nav) {
+        background-color: var(--pigeon-sidebar-bg-color) !important;
     }
-    /* .pigeon-styles nav h3 {
-        background: transparent !important;
-    } */
+    .pigeon-styles div:is( > div.h-full > div > div > div > nav) h3,
+    .pigeon-styles div:has( > div.h-full > div > div > div > nav) h3 {
+        background-color: transparent !important;
+        color: var(--pigeon-sidebar-bg-color) !important;
+        filter: brightness(2);
+    }
+    
     .pigeon-styles nav li > a,
     .pigeon-styles nav div > a,
     .pigeon-styles nav div > button {
@@ -209,14 +179,20 @@ button.cursor-pointer.absolute.z-10.rounded-full.gizmo\:bg-clip-padding.border.t
     }
     .pigeon-styles nav li > a:hover,
     .pigeon-styles nav div > a:hover,
-    .pigeon-styles nav div > button:hover {
-        background: #52525236 !important;
+    .pigeon-styles nav div > button:hover,
+    .pigeon-styles nav div > a.bg-token-surface-primary {
+        background-color: var(--pigeon-sidebar-bg-color) !important;
+        filter: brightness(0.7);
+        opacity: 0.7;
     }
     .pigeon-styles nav li a .dark\:from-gray-900,
     .pigeon-styles nav .bg-gradient-to-l.dark\:from-gray-800.from-gray-100 {
         --tw-gradient-from: transparent !important;
     }
-
+    .pigeon-styles nav .dark .dark\:from-black,
+    .pigeon-styles nav .to-transparent {
+        background: transparent !important;
+    }
 
 /*****************************************************************/
 /* STYLEGPT - BTNS */

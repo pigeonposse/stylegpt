@@ -31,7 +31,7 @@ export class StylesTagSection extends OptsSectionSuper{
 		for ( property in styles ) {
 
 			value    = styles[property].replace( '{{value}}', newValue )
-			property = this.utils.string.convertCamelToKebab( property )
+			property = property.startsWith( '--' ) ? property : this.utils.string.convertCamelToKebab( property )
 			css     += '  ' + property + ': ' + value + ';\n'
 		
 		}
@@ -48,7 +48,7 @@ export class StylesTagSection extends OptsSectionSuper{
 
 		Object.entries( this.data.section ).forEach( async ( [ k, v ] ) => {
 
-			if ( !storageObj[k] || !v.stylizedSel || !v.changedStyles ) return
+			if ( !storageObj[k] || !v.changedStyles ) return
 
 			res += this._convertStylesToCSS( 
 				v.stylizedSel,

@@ -60,9 +60,9 @@ export class StyleSuper extends MenuCore {
 	]
 	
 	// impares
-	userSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div'
+	userSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div:not([type="button"]) > div:not([type="button"])'
 	// par
-	aiSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div'
+	aiSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"])'
 	// bg
 	bgSectionQuery = '#__next'
 
@@ -82,25 +82,33 @@ export class StyleSuper extends MenuCore {
 			sidebarBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_sidebarBgColor' ),
 				id            : 'pigeon-styles-sidebar-color',
-				stylizedSel   : '.scrollbar-trigger > nav, .scrollbar-trigger > nav h3',
+				stylizedSel   : '',
 				changedStyles : {
-					backgroundColor : '{{value}} !important',
+					'--pigeon-sidebar-bg-color' : '{{value}}',
 				},
 			},
 			userColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userColor' ),
 				id            : 'pigeon-styles-menu-user-color',
-				stylizedSel   : this.userSectionQuery,
+				// stylizedSel   : this.userSectionQuery,
+				// changedStyles : {
+				// 	color : '{{value}}',
+				// },
+				stylizedSel   : '',
 				changedStyles : {
-					color : '{{value}}',
+					'--pigeon-conversation-user-color' : '{{value}}',
 				},
 			},
 			userFont : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userFont' ),
 				id            : 'pigeon-styles-menu-user-text',
-				stylizedSel   : this.userSectionQuery,
+				// stylizedSel   : this.userSectionQuery,
+				// changedStyles : {
+				// 	fontFamily : '{{value}}',
+				// },
+				stylizedSel   : '',
 				changedStyles : {
-					fontFamily : '{{value}}',
+					'--pigeon-conversation-user-font' : '{{value}}',
 				},
 				defaultValue : 'var(--pigeon-font-family)',
 				opts         : this.fontOpts,
@@ -108,17 +116,21 @@ export class StyleSuper extends MenuCore {
 			userBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_userBgColor' ),
 				id            : 'pigeon-user-color-bg-input',
-				stylizedSel   : this.userSectionQuery,
+				// stylizedSel   : this.userSectionQuery,
+				// changedStyles : {
+				// 	backgroundColor : '{{value}}',
+				// },
+				stylizedSel   : '',
 				changedStyles : {
-					backgroundColor : '{{value}}',
+					'--pigeon-conversation-user-bg-color' : '{{value}}',
 				},
 			},
 			aiFont : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_aiFont' ),
 				id            : 'pigeon-styles-menu-chat-text',
-				stylizedSel   : this.aiSectionQuery,
+				stylizedSel   : '',
 				changedStyles : {
-					fontFamily : '{{value}}',
+					'--pigeon-conversation-ai-font' : '{{value}}',
 				},
 				defaultValue : 'var(--pigeon-font-family)',
 				opts         : this.fontOpts,
@@ -126,25 +138,25 @@ export class StyleSuper extends MenuCore {
 			aiColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_aiColor' ),
 				id            : 'pigeon-styles-menu-chat-color',
-				stylizedSel   : this.aiSectionQuery + ' .markdown',
+				stylizedSel   : '',
 				changedStyles : {
-					color : '{{value}}',
+					'--pigeon-conversation-ai-color' : '{{value}}',
 				},
 			},
 			aiBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_aiBgColor' ),
 				id            : 'pigeon-color-bg-input',
-				stylizedSel   : this.aiSectionQuery,
+				stylizedSel   : '',
 				changedStyles : {
-					backgroundColor : '{{value}}',
+					'--pigeon-conversation-ai-bg-color' : '{{value}}',
 				},
 			},
 			chatBgColor : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgColor' ),
 				id            : 'pigeon-chat-color-bg-input',
-				stylizedSel   : this.bgSectionQuery,
+				stylizedSel   : '',
 				changedStyles : {
-					backgroundColor : '{{value}} !important',
+					'--pigeon-conversation-bg-color' : '{{value}}',
 				},
 			},
 			chatBgImg : {
@@ -153,19 +165,27 @@ export class StyleSuper extends MenuCore {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgImg' ),
 				id            : 'pigeon-img-bg-input',
 				placeholder   : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgImg_placeholder' ),
-				stylizedSel   : this.bgSectionQuery,
+				// stylizedSel   : this.bgSectionQuery,
+				// changedStyles : {
+				// 	backgroundImage    : 'url("{{value}}")',
+				// 	backgroundRepeat   : 'no-repeat',
+				// 	backgroundPosition : 'center',
+				// },
+				stylizedSel   : '',
 				changedStyles : {
-					backgroundImage    : 'url("{{value}}")',
-					backgroundRepeat   : 'no-repeat',
-					backgroundPosition : 'center',
+					'--pigeon-conversation-bg-img' : 'url("{{value}}")',
 				},
 			},
 			chatBgImgPosition : {
 				title         : this.utils.brwsr.i18n.getMessage( 'stylesSection_chatBgImgPosition' ),
 				id            : 'pigeon-img-bg-position-input',
-				stylizedSel   : this.bgSectionQuery,
+				// stylizedSel   : this.bgSectionQuery,
+				// changedStyles : {
+				// 	backgroundSize : '{{value}}',
+				// },
+				stylizedSel   : '',
 				changedStyles : {
-					backgroundSize : '{{value}}',
+					'--pigeon-conversation-bg-img-size' : '{{value}}',
 				},
 				opts : [
 					{

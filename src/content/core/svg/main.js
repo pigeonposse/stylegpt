@@ -17,25 +17,20 @@ export class Svg {
 
 	_dynamicColor(){
 
-		let htmlTag, elements
-
-		elements = document.querySelectorAll( '#' + this.svgSelector + ' svg' )
-		htmlTag  = document.querySelector( 'html' )
+		const section  = document.querySelector( '#' + this.svgSelector )
+		const elements = section.querySelectorAll( 'svg' )
+		const html     = document.querySelector( 'html' )
+		const funct    = ( target ) => {
 	
-		this.utils.observer.class( htmlTag, ( v ) => {
+			const color = target.className.includes( 'dark' ) ? 'white' : 'black'
 
-			let color
-
-			color = v[0].target.className == 'dark' ? 'white' : 'black'
-
-			elements.forEach( el => {
-
-				el.setAttribute( 'fill', color )
+			elements.forEach( el => el.setAttribute( 'fill', color ) )
+	
+		}
 		
-			} )
+		funct( document.querySelector( 'html' ) )
+		this.utils.observer.class( html, ( v ) => funct( v[0].target ) )
 	
-		} )
-
 	}
 	
 	async init(){

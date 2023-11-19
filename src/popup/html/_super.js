@@ -45,31 +45,72 @@ export class HtmlSuper {
 		this.links = [
 			{ 
 				href : this.pkg.funding.url,
-				name : '💜 ' + this.utils.brwsr.i18n.getMessage( 'donate' ), 
+				icon : '💜',
+				name : this.utils.brwsr.i18n.getMessage( 'donate' ), 
 			},
 			{ 
 				href : this.pkg.repository.url, 
-				name : '🐦 ' + this.utils.brwsr.i18n.getMessage( 'contribute' ), 
+				icon : '🐦',
+				name : this.utils.brwsr.i18n.getMessage( 'contribute' ), 
 			},
 			{ 
 				href : this.utils.isChromium() ? this.pkg.extra.store.chrome.url : this.pkg.extra.store.mozilla.url, 
-				name : '⭐️ ' + this.utils.brwsr.i18n.getMessage( 'review' ), 
+				icon : '⭐️',
+				name : this.utils.brwsr.i18n.getMessage( 'review' ), 
 			},
 		]
 	
 	}
 
-	createLink( href, name ) {
+	createLink( href, name, icon = false ) {
 
-		let el
-
-		el = document.createElement( 'a' )
+		const el = document.createElement( 'a' )
 		el.setAttribute( 'href', href )
 		el.setAttribute( 'target', '_blank' )
-		el.textContent = name
+		
+		if( !icon )
+			el.textContent = name
+		else {
+
+			el.textContent = icon
+			el.classList.add( 'icon' )
+			const popover       = document.createElement( 'span' )
+			popover.textContent = name
+			el.appendChild( popover )
+		
+		}
 
 		return el
 	
+	}
+	
+	createToggle( title, onClickMethod ) {
+
+		const divToggle = document.createElement( 'div' )
+		divToggle.classList.add( 'toogle' )
+
+		const divTitle       = document.createElement( 'div' )
+		divTitle.textContent = title
+
+		const labelSwitch = document.createElement( 'label' )
+		labelSwitch.classList.add( 'switch' )
+
+		const inputCheckbox = document.createElement( 'input' )
+		inputCheckbox.setAttribute( 'type', 'checkbox' )
+
+		const spanSlider = document.createElement( 'span' )
+		spanSlider.classList.add( 'slider', 'round' )
+
+		labelSwitch.appendChild( inputCheckbox )
+		labelSwitch.appendChild( spanSlider )
+
+		divToggle.appendChild( divTitle )
+		divToggle.appendChild( labelSwitch )
+
+		inputCheckbox.onclick = onClickMethod
+
+		return divToggle
+
 	}
 
 }
