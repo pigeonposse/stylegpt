@@ -56,7 +56,6 @@ const webLinks = (pkg) => {
 	return `${imgUrl({name:'Web', color: 'grey', url: pkg.data.extra.collective.web })}
 ${imgUrl({name:'About Us', color: 'grey', url: `${pkg.data.extra.collective.web}/?popup=about`})}
 ${imgUrl({name:'Donate', color: 'pink', url: pkg.data.funding.url})}
-
 ${imgUrl({name:'Github', logo: 'github', url: 'https://github.com/pigeonposse'})}
 ${imgUrl({name:'Twitter', logo: 'twitter', url: 'https://twitter.com/pigeonposse_'})}
 ${imgUrl({name:'Instagram', logo: 'instagram', url: 'https://www.instagram.com/pigeon.posse/'})}
@@ -83,11 +82,7 @@ const header = ( pkg ) => {
 	return `
 [![HEADER](docs/banner.png)](${pkg.data.extra.demoUrl})
 
-<p align="center">
-
 ${webLinks(pkg)}
-
-</p>
 
 ${imgUrl({name:'License', color: 'green', type: `github/license/pigeonposse/stylegpt`,url: `/LICENSE`})}
 ${imgUrl({name:'Github Releases', color: 'blue', type: `github/package-json/v/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}`,url: `${pkg.data.repository.url}/releases`})}
