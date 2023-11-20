@@ -20,7 +20,7 @@
     "hooks": {
         "before:init": [
             "git push",
-            "pnpm lint-fix"
+            "pnpm lint:fix"
         ],
         "after:bump": [
             "pnpm auto-changelog -p",

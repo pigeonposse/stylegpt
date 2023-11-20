@@ -34,7 +34,7 @@ const data = {
 		'commitMessage' : `Release ${ver}`,
 	},
 	'hooks' : {
-		'before:init'       : [ 'git push', 'pnpm lint-fix' ],
+		'before:init'       : [ 'git push', 'pnpm lint:fix' ],
 	    'after:bump'        : [ 'pnpm auto-changelog -p', 'pnpm readme' ],
 	    'after:git:release' : 'echo \'After git push, before github release\'',
 	    'after:release'     : [
