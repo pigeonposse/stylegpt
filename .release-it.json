@@ -15,7 +15,7 @@
     },
     "git": {
         "requireBranch": "main",
-        "commitMessage": "Release v${version}"
+        "commitMessage": ":bookmark: feat(all): Release v${version}"
     },
     "hooks": {
         "before:init": [

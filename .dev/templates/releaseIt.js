@@ -31,7 +31,7 @@ const data = {
 	},
 	'git' : {
 		'requireBranch' : 'main',
-		'commitMessage' : `Release ${ver}`,
+		'commitMessage' : `:bookmark: feat(all): Release ${ver}`,
 	},
 	'hooks' : {
 		'before:init'       : [ 'git push', 'pnpm lint:fix' ],

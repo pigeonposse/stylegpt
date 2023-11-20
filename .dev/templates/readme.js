@@ -59,7 +59,9 @@ ${imgUrl({name:'Donate', color: 'pink', url: pkg.data.funding.url})}
 
 ${imgUrl({name:'Github', logo: 'github', url: 'https://github.com/pigeonposse'})}
 ${imgUrl({name:'Twitter', logo: 'twitter', url: 'https://twitter.com/pigeonposse_'})}
-${imgUrl({name:'Instagram', logo: 'instagram', url: 'https://www.instagram.com/pigeon.posse/'})}`
+${imgUrl({name:'Instagram', logo: 'instagram', url: 'https://www.instagram.com/pigeon.posse/'})}
+${imgUrl({name:'Medium', logo: 'medium', url: 'https://medium.com/@pigeonposse'})}`
+
 }
 
 const imgUrl = ( {name, color = 'black', url, logo = false, type = false} ) => {
