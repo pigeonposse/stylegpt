@@ -1,0 +1,97 @@
+###############################################################################
+# TEST CHROME EXTENSION AND FIREFOX EXTENSION
+###############################################################################
+
+name: Run tests 
+
+###############################################################################
+# ON
+###############################################################################
+
+on:
+    push:
+        branches:
+            - main
+    schedule:
+        - cron: '0 0 * * *'  # Ejecuta todos los días a la medianoche (UTC)
+
+
+###############################################################################
+# JOBS
+###############################################################################
+
+jobs:
+
+  build:
+
+    name: TEST
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write 
+
+    ###########################################################################
+    # STEPS
+    ###########################################################################
+
+    steps:
+
+        #########################################################################
+        # INIT & INSTALLATION
+        #########################################################################
+        
+        - name: 🛎 Checkout
+          uses: actions/checkout@v3
+
+        - name: 🏗 Install pnpm
+          uses: pnpm/action-setup@v2
+          id: pnpm-install
+
+        - name: 👨🏻‍💻 Install pkg dependencies
+          run: |
+            pnpm install --no-frozen-lockfile
+
+        - name: 🌐 Install Playwright Browsers
+          run: pnpm exec playwright install --with-deps
+
+        ###################################################################
+        # BUILD
+        ###################################################################
+        
+        - name: 🏗 Build package
+          run:  pnpm build
+
+        ###################################################################
+        # TESTS
+        ###################################################################
+
+        - name: Run tests
+          run: pnpm test
+          id: test
+
+        - name: Check test status and create issue if failed
+          if: ${{ failure() }}
+          run: |
+            testStatus=$(echo "${{ steps.test.outcome }}")
+
+            # Check if the issue is already open
+            if curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                https://api.github.com/repos/${{ github.repository }}/issues?state=open | grep -q "Error en los tests"; then
+                echo "Issue already exists, not creating a new one."
+            else
+                # Create issue only if the test has failed and there's no open issue
+                if [ "$testStatus" = "failure" ]; then
+                    echo "Test failed, creating an issue."
+                    # Call an action to create the issue here
+                    - uses: JasonEtco/create-an-issue@v2
+                      with:
+                        title: Tests error
+                        body: The tests have failed. Please check and fix the code.
+                fi
+            fi
+        
+
+
+###############################################################################
+# END
+###############################################################################

@@ -2,6 +2,9 @@
 
 src/man/**/_locales
 
+# Tests
+test-results
+
 # Logs
 logs
 *.log
