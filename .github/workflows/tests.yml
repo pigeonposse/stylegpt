@@ -24,7 +24,7 @@ jobs:
 
   build:
 
-    name: TEST
+    name: ⚡️ Run tests
     runs-on: ubuntu-latest
     permissions:
       contents: write
