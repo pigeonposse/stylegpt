@@ -13,6 +13,7 @@ on:
   push:
     tags:
       - '*'
+  workflow_dispatch:
 
 
 ###############################################################################
@@ -56,13 +57,20 @@ jobs:
     # BUILD PKG
     #########################################################################
 
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
     - name: 🛠️ Install pnpm
       uses: pnpm/action-setup@v2
       id: pnpm-install
+      with:
+        version: 8
+        run_install: true
 
     - name: Install pkg dependencies
       run: |
-        pnpm install
         pnpm readme
         pnpm build
 
