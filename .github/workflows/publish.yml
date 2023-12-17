@@ -63,14 +63,11 @@ jobs:
         node-version: 20
 
     - name: 🛠️ Install pnpm
-      uses: pnpm/action-setup@v2
-      id: pnpm-install
-      with:
-        version: 8
-        run_install: true
+      run: npm install -g pnpm@^8
 
-    - name: Install pkg dependencies
+    - name: Build pkg dependencies
       run: |
+        pnpm install
         pnpm readme
         pnpm build
 
