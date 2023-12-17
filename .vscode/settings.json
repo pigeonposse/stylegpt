@@ -1,7 +1,7 @@
 {
     "files.autoSave": "onFocusChange",
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "[markdown]": {

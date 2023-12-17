@@ -8,6 +8,8 @@ import { fileURLToPath }    from 'url'
 import fs                   from 'fs'
 import path                 from 'path'
 
+export {zipFile} from './zip.js'
+
 export const exec = async ( cmd ) => {
 
 	console.log( `🐢 CMD: ${cmd}` )
@@ -50,15 +52,14 @@ export const exec = async ( cmd ) => {
 	}
 
 }
+export const getCorePath = () => path.dirname( fileURLToPath( import.meta.url ) )
+export const getDevPath = () => path.join( getCorePath(), '..')
 
 export const pkgFunct = ( fileName ) => {
 
 	const json = ( projectPath ) => JSON.parse( fs.readFileSync( projectPath ) )
 
-	let projectPath = path.join(
-		path.dirname( fileURLToPath( import.meta.url ) ),
-		'..', '..', 
-	)
+	let projectPath = path.join(getDevPath(), '..' )
 
 	// when is used in the compilated files of 'dist' folder
 	if ( projectPath.includes( 'dist' ) ) projectPath = path.join( projectPath, '..' )
@@ -104,7 +105,15 @@ export const addTextBetweenAMark = async ( projectPath, startMarker, endMarker, 
 	writeSync( projectPath, newTextContent )
 
 }
-
+export const readJSON = async(path) =>{
+	try {
+	  const content = fs.readFileSync(path, 'utf-8');
+	  const data = JSON.parse(content);
+	  return data;
+	} catch (error) {
+		throw Error(error);
+	}
+  }
 export const renameAndCopyFiles = async ( oldFileName, tempFileName, newFileName ) => {
 
 	try {
@@ -209,3 +218,8 @@ export const copyDir = async ( src, dest ) => {
 	}
 
 }
+
+export const formatString = (inputString) => {
+	
+	return inputString.toLowerCase().replace(/ /g, '--');
+  }

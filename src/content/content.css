@@ -66,7 +66,9 @@ html.light {
         background-color: transparent !important;
         border: none;
     }
-
+    .sticky.top-0.mb-1\.5.flex.items-center.justify-between.z-10.h-14.bg-white.p-2.font-semibold.dark\:bg-gray-800 {
+        background-color: transparent !important;
+    }
     /* CHAT - CONVERSATION SECTION */
 
         /* BG */
@@ -151,6 +153,11 @@ html.light {
         border-radius: var(--pigeon-btn-radius) !important;
         -webkit-border-radius: var(--pigeon-btn-radius) !important;
         margin:10px;
+    }
+    
+    div:is( > div.h-full > div > div > div > nav) .pt-3\.5,
+    div:has( > div.h-full > div > div > div > nav) .pt-3\.5 {
+        background: transparent !important;
     }
         /* BTNS */
         nav .rounded-md, 

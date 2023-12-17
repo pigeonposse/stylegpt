@@ -63,8 +63,22 @@ StyleGPT is an extension that modifies the appearance of ChatGPT, providing a mo
 
 ## 🧩 Download links
 
-- [![Chrome Extension](https://img.shields.io/badge/Chrome-grey?style=for-the-badge)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
-- [![Firefox Extension](https://img.shields.io/badge/Firefox-grey?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/stylegpt/)
+[![Chrome Store](https://img.shields.io/badge/Chrome%20Store-grey?style=for-the-badge&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
+[![Edge Store](https://img.shields.io/badge/Edge%20Store-grey?style=for-the-badge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/stylegpt/)
+[![Mozilla Store](https://img.shields.io/badge/Mozilla%20Store-grey?style=for-the-badge&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
+
+### Manual
+
+[![Chrome](https://img.shields.io/badge/Chrome-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/chrome-stylegpt-1.3.1.zip)
+[![Edge](https://img.shields.io/badge/Edge-grey?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/edge-stylegpt-1.3.1.zip)
+[![Firefox](https://img.shields.io/badge/Firefox-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/firefox-stylegpt-1.3.1.zip)
+[![Safari](https://img.shields.io/badge/Safari-grey?style=for-the-badge&logo=safari&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/safari-stylegpt-1.3.1.zip)
+[![Opera](https://img.shields.io/badge/Opera-grey?style=for-the-badge&logo=opera&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/opera-stylegpt-1.3.1.zip)
+[![Brave](https://img.shields.io/badge/Brave-grey?style=for-the-badge&logo=brave&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/brave-stylegpt-1.3.1.zip)
+[![Chromium](https://img.shields.io/badge/Chromium-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/chromium-stylegpt-1.3.1.zip)
+[![Chromium (Manifest 2)](https://img.shields.io/badge/Chromium%20(Manifest%202)-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.1/chromium-mv2-stylegpt-1.3.1.zip)
+
+[![All](https://img.shields.io/badge/All-black?style=for-the-badge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases)
 
 <!-- PIGEONPOSSE END HEADER -->
 
@@ -133,9 +147,9 @@ _PigeonPosse_ is a ✨ **code development collective** ✨ focused on creating p
 
 |                                                                                    | Name        | Role         | GitHub                                         |
 | ---------------------------------------------------------------------------------- | ----------- | ------------ | ---------------------------------------------- |
-| <img src="https://github.com/angelespejo.png?size=72" style="border-radius:100%"/> | Angelo |   Author & Development   | [@Angelo](https://github.com/angelespejo) |
-| <img src="https://github.com/alejomalia.png?size=72" style="border-radius:100%"/> | Alejo |   Author & Design   | [@Alejo](https://github.com/alejomalia) |
-| <img src="https://github.com/PigeonPosse.png?size=72" style="border-radius:100%"/> | PigeonPosse | Collective | [@PigeonPosse](https://github.com/PigeonPosse) |
+| <img src="https://github.com/angelespejo.png?size=72" alt="Angelo" style="border-radius:100%"/> | Angelo |   Author & Development   | [@Angelo](https://github.com/angelespejo) |
+| <img src="https://github.com/alejomalia.png?size=72" alt="Alejo" style="border-radius:100%"/> | Alejo |   Author & Design   | [@Alejo](https://github.com/alejomalia) |
+| <img src="https://github.com/PigeonPosse.png?size=72" alt="PigeonPosse" style="border-radius:100%"/> | PigeonPosse | Collective | [@PigeonPosse](https://github.com/PigeonPosse) |
 
 </br>
 

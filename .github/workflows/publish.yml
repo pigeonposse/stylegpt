@@ -23,8 +23,8 @@ jobs:
 
   build:
 
-    name: Publish web extensions (Chrome & firefox) and release in github
-    runs-on: ubuntu-latest
+    name: Publish web extensions in GitHub and in Marketplaces
+    runs-on: macos-latest
     permissions:
       contents: write
 
@@ -33,35 +33,37 @@ jobs:
     ###########################################################################
 
     steps:
+    
+    #########################################################################
+    # XCODE SETUP
+    #########################################################################
+
+    - name: 🛠️ "XCODE SETUP"
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
 
     #########################################################################
-    # INIT & BUILD PKG
+    # INIT ENV
     #########################################################################
     
-    - name: "Checks-out repository"
+    - name: 🛠️ "Checks-out repository"
       uses: actions/checkout@v3
-
-
-    #########################################################################
-    # IF IS IN MAIN BRANCH
-    #########################################################################
-
-    # - name: Exit if not on MAIN branch
-    #   if: endsWith(github.ref, 'main') == false
-    #   run: exit -1
 
 
     #########################################################################
     # BUILD PKG
     #########################################################################
 
-    - name: Install pnpm
+    - name: 🛠️ Install pnpm
       uses: pnpm/action-setup@v2
       id: pnpm-install
 
     - name: Install pkg dependencies
       run: |
         pnpm install
+        pnpm readme
         pnpm build
 
 
@@ -69,7 +71,7 @@ jobs:
     # GET PKG INFO
     #########################################################################
 
-    - name: Get package info
+    - name: 🏗️ Get package info
       id: package
       uses: codex-team/action-nodejs-package-info@v1.1
 
@@ -77,20 +79,18 @@ jobs:
     # GITHUB RELEASE
     #########################################################################
 
-    - name: Create Github release
+    - name: 🏗️ Create Github release
       uses: ncipollo/release-action@v1
       with:
         artifacts: "dist/comp/*.zip"
-        body: |
-          🧩 View changelog at: https://github.com/pigeonposse/styleGPT/blob/main/CHANGELOG.md
-          📜 View license: https://github.com/pigeonposse/styleGPT/blob/main/LICENSE
+        bodyFile: "docs/release-body.md"
 
 
     # #########################################################################
     # # FIREFOX
     # #########################################################################
 
-    - name: Upload FIREFOX extension
+    - name: 🛒 Upload FIREFOX extension in Mozilla Marketplace
       uses: trmcnvn/firefox-addon@v1
       with:
         # uuid is only necessary when updating an existing addon,
@@ -105,18 +105,31 @@ jobs:
 
 
     # #########################################################################
+    # # EDGE
+    # #########################################################################
+
+    - name: 🛒 Upload EDGE extension
+      uses: wdzeng/edge-addon@v1 
+      with:
+        product-id: "8bd375c1-4698-4cd7-b551-89418b9d9d16"
+        zip-path: dist/comp/edge-stylegpt-${{ steps.package.outputs.version }}.zip
+        client-id: ${{ secrets.EDGE_CLIENT_ID }}
+        client-secret: ${{ secrets.EDGE_CLIENT_SECRET }}
+        access-token-url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
+
+
+    # #########################################################################
     # # CHROME
     # #########################################################################
 
-    # - name: Upload CHROME extension
-    #   uses: Klemensas/chrome-extension-upload-action@v1.3
-    #   with:
-    #     refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
-    #     client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
-    #     client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
-    #     file-name: '.dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
-    #     app-id: 'khoggafmiibmeihpkpbkllkkdfhmokoj'
-    #     publish: true
+    - name: 🛒 Upload CHROME extension
+      uses: mnao305/chrome-extension-upload@v4.0.1
+      with:
+        file-path: 'dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
+        extension-id: "khoggafmiibmeihpkpbkllkkdfhmokoj"
+        client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
+        client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
+        refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}
 
 
 ###############################################################################

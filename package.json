@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "stylegpt",
-	"description": "🤖🧩 styleGPT is an extension that change style from chatGPT web. 🐦🌈",
+	"description": "🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. Make ChatGPT website more corporate. 🐦🌈",
 	"version": "1.3.1",
 	"type": "module",
 	"engines": {
@@ -20,6 +20,7 @@
 		"build:firefox": "node .dev/build.js --type firefox",
 		"build:chrome": "node .dev/build.js --type chrome",
 		"build:chrome-mv2": "node .dev/build.js --type chrome-mv2",
+		"build:safari": "node .dev/build.js --type safari",
 		"dev": "node .dev/build.js --watch",
 		"dev:firefox": "node .dev/build.js --watch --type firefox",
 		"dev:chrome": "node .dev/build.js --watch --type chrome",
@@ -61,6 +62,8 @@
 		"@pigeon-posse/pkg-extended-scripts": "^0.3.0",
 		"@playwright/test": "^1.40.0",
 		"@release-it/bumper": "^4.0.2",
+		"appdmg": "^0.6.6",
+		"archiver": "^6.0.1",
 		"auto-changelog": "^2.4.0",
 		"browserslist": "^4.22.1",
 		"cli-markdown": "^3.0.5",
@@ -125,25 +128,87 @@
 		}
 	},
 	"extra": {
+		"productName": "StyleGPT",
 		"errorId": "pigeon-error",
 		"path": {
 			"releaseIt": ".release-it.json"
 		},
-		"licenseUrl": "https://github.com/pigeonposse/stylegpt/LICENSE",
+		"licenseUrl": "https://github.com/pigeonposse/stylegpt/blob/main/LICENSE",
+		"changelogUrl": "https://github.com/pigeonposse/stylegpt/blob/main/CHANGELOG.md",
+		"repoDocsUrl": "https://github.com/pigeonposse/stylegpt/blob/main/docs",
+		"releaseUrl": "https://github.com/pigeonposse/stylegpt/releases",
+		"demoUrl": "https://www.youtube.com/watch?v=Nh1DvI3p0p8",
 		"chatWebMatch": "/chat\\.openai\\.com/",
 		"chatPage": "https://chat.openai.com/",
 		"store": {
 			"chrome": {
+				"name": "Chrome Store",
 				"url": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
+				"logo":"googlechrome",
 				"id": "khoggafmiibmeihpkpbkllkkdfhmokoj"
 			},
+			"edge": {
+				"name": "Edge Store",
+				"url": "https://microsoftedge.microsoft.com/addons/detail/stylegpt/",
+				"logo":"microsoftstore",
+				"id": "8bd375c1-4698-4cd7-b551-89418b9d9d16"
+			},
 			"mozilla": {
+				"name": "Mozilla Store",
 				"url": "https://addons.mozilla.org/firefox/addon/stylegpt/",
+				"logo":"firefoxbrowser",
 				"id": "{8f0f11ab-1cc1-4db9-81a3-251de69235d9}"
 			}
 		},
-		"demoUrl": "https://www.youtube.com/watch?v=Nh1DvI3p0p8",
+		"download": {
+			"chrome": {
+				"id": "chrome",
+				"name": "Chrome",
+				"logo":"googlechrome"
+			},
+			"edge": {
+				"id": "edge",
+				"name": "Edge",
+				"logo":"microsoftedge"
+			},
+			"firefox": {
+				"id": "firefox",
+				"name": "Firefox",
+				"logo":"firefoxbrowser"
+			},
+			"safari": {
+				"id": "safari",
+				"name": "Safari",
+				"logo":"safari"
+			},
+			"brave": {
+				"id": "brave",
+				"name": "Brave",
+				"logo":"brave"
+			},
+			"opera": {
+				"id": "opera",
+				"name": "Opera",
+				"logo":"opera"
+			},
+			"operaGX": {
+				"id": "opera-gx",
+				"name": "Opera GX",
+				"logo":"operagx"
+			},
+			"chromium": {
+				"id": "chromium",
+				"name": "Chromium",
+				"logo":"googlechrome"
+			},
+			"chromiumMv2": {
+				"id": "chromium-mv2",
+				"name": "Chromium (Manifest 2)",
+				"logo":"googlechrome"
+			}
+		},
 		"collective": {
+			"id": "pigeonposse",
 			"name": "PigeonPosse",
 			"gh": "https://github.com/pigeonposse",
 			"about": "https://pigeonposse.com?popup=about",

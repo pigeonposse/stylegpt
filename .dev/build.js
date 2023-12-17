@@ -6,23 +6,30 @@
 
 import inquirer                         from 'inquirer'
 import { exec, pkg, joinPath, copyDir } from './core/main.js'
+import { buildSafari } from './safari-build/main.js'
 
-const getDistPath       = ( type ) => joinPath( pkg.dir, 'dist', type )
+const distPath      = joinPath( pkg.dir, 'dist' )
+const getDistPath       = ( type ) => joinPath( distPath, type )
 const getManPath        = ( type ) => joinPath( pkg.dir, 'src', 'man', type )
 const getManifestPath   = ( type ) => joinPath( getManPath( type ), 'manifest.json' )
 const getManLocalesPath = ( type ) => joinPath( getManPath( type ), '_locales' )
-const compressPath      = joinPath( pkg.dir, 'dist', 'comp' )
+const compressPath      = joinPath( distPath, 'comp' )
 const lintPath          = joinPath( pkg.dir, '.dev', 'lint.js' )
 const localesPath       = joinPath( pkg.dir, 'src', '_locales' )
 
-const execBuild = async ( type, compress = true ) => {
+const compressBuild = async (type, name) => {
+	const buildPath = getDistPath( type )
+	await exec( `web-ext build --source-dir=${buildPath} --artifacts-dir=${compressPath} --filename=${name}-stylegpt-{version}.zip  --overwrite-dest` )
+}
+
+const execBuild = async ( type, compress = true, name =false ) => {
 
 	try{
 
-		let buildPath, manPath
-
-		buildPath = getDistPath( type )
-		manPath   = getManifestPath( type )
+		const buildPath = getDistPath( type )
+		const manPath   = getManifestPath( type )
+		
+		if(!name) name = type
 
 		// remove direcotry in dist
 		await exec( `rimraf ${buildPath}` )
@@ -33,7 +40,7 @@ const execBuild = async ( type, compress = true ) => {
 		// execute build with/without compression
 		await exec( `parcel build ${manPath} --dist-dir ${buildPath} --no-content-hash --no-source-maps --no-cache --detailed-report 0` )
 		
-		if ( compress ) await exec( `web-ext build --source-dir=${buildPath} --artifacts-dir=${compressPath} --filename=${type}-stylegpt-{version}.zip  --overwrite-dest` )
+		if ( compress ) await compressBuild(type, name)
 
 	}catch( e ){
 
@@ -47,11 +54,9 @@ const execDev = async ( type ) => {
 
 	try{
 
-		let buildPath, manPath, target
-
-		buildPath = getDistPath( type )
-		manPath   = getManifestPath( type )
-		target    = type == 'firefox' ? '-t firefox-desktop' : '-t chromium'
+		const buildPath = getDistPath( type )
+		const manPath   = getManifestPath( type )
+		const target    = type == 'firefox' ? '-t firefox-desktop' : '-t chromium'
 		
 		return Promise.all( [
 			exec( `parcel watch ${manPath} --dist-dir ${buildPath} --no-cache --no-hmr --no-content-hash` ),
@@ -68,21 +73,47 @@ const execDev = async ( type ) => {
 }
 
 const executeBuild = async( typeValue, type = 'build', compress = true ) => {
-	
+	const download = pkg.data.extra.download
 	const funct = type == 'build' ? execBuild : execDev
 
 	// execute build if is dev mode
 	if ( type === 'dev' ) await executeBuild( typeValue, 'build', compress )
 
-	if ( typeValue == 'chrome' || typeValue == 'firefox' || typeValue == 'chrome-mv2' ) {
+	if ( typeValue === 'chrome' || typeValue === 'firefox' || typeValue === 'chrome-mv2' ) {
 
 		await funct( typeValue, compress )
 		
-	}else if ( typeValue == 'all' ) {
-
-		await funct( 'chrome-mv2', compress )
+	}else if ( typeValue === 'safari' ) {
+		
+		if(type === 'dev') throw Error('Dev for safari is not enable')
 		await funct( 'chrome', compress ) 
-		await funct( 'firefox', compress )
+		await buildSafari('macOS')
+
+	}else if ( typeValue === 'all' ) {
+
+
+		if(type !== 'dev') {
+			
+			await exec( `rimraf ${distPath}` )
+			await funct( 'chrome', compress, download.chromium.id)
+			await funct( 'chrome-mv2', compress, download.chromiumMv2.id)
+			await funct( 'firefox', compress )
+			
+			await buildSafari('macOS')
+
+			await compressBuild( 'chrome', download.chrome.id ) 
+			await compressBuild( 'chrome', download.edge.id )
+			await compressBuild( 'chrome-mv2', download.opera.id )
+			await compressBuild( 'chrome', download.operaGX.id )
+			await compressBuild( 'chrome', download.brave.id )
+			
+
+		}else {
+
+			await funct( 'chrome', compress ) 
+			await funct( 'firefox', compress )
+			await funct( 'chrome-mv2', compress )
+		}
 		
 	}else {
 
@@ -94,9 +125,7 @@ const executeBuild = async( typeValue, type = 'build', compress = true ) => {
 
 const questions = ( type = 'build' ) => {
 
-	let choices 
-
-	choices = [
+	const choices = [
 		{ name: 'Chrome', value: 'chrome' },
 		{ name: 'Chrome Manifest version 2', value: 'chrome-mv2' },
 		{ name: 'Firefox', value: 'firefox' },
@@ -110,7 +139,7 @@ const questions = ( type = 'build' ) => {
 				name    : 'build',
 				message : `Select the ${type} type:`,
 				default : ( type == 'build' ) ? 'all' : 'chrome',
-				choices : choices,
+				choices,
 			},
 		] )
 		.then( async ( answers ) => {
