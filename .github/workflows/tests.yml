@@ -9,9 +9,6 @@ name: Run tests
 ###############################################################################
 
 on:
-    push:
-        branches:
-            - main
     schedule:
         - cron: '0 0 * * *'  # Ejecuta todos los días a la medianoche (UTC)
 
