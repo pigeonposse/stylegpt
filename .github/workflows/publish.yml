@@ -39,17 +39,22 @@ jobs:
     # XCODE SETUP
     #########################################################################
 
-    # - name: 🛠️ "XCODE SETUP"
-    #   uses: maxim-lobanov/setup-xcode@v1
-    #   with:
-    #     xcode-version: latest-stable
+    - name: "🛠️ XCODE SETUP"
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
 
+    - name: CHECK VERSIONS
+      run: |
+        xcode-select --version
+        xcrun --version
+        xcodebuild -version 
 
     #########################################################################
     # INIT ENV
     #########################################################################
     
-    - name: 🛠️ "Checks-out repository"
+    - name: 🛠️ Checks-out repository
       uses: actions/checkout@v3
 
 
