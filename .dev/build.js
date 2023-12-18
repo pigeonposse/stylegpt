@@ -19,7 +19,7 @@ const localesPath       = joinPath( pkg.dir, 'src', '_locales' )
 
 const compressBuild = async (type, name) => {
 	const buildPath = getDistPath( type )
-	await exec( `web-ext build --source-dir=${buildPath} --artifacts-dir=${compressPath} --filename=${name}-stylegpt-{version}.zip  --overwrite-dest` )
+	await exec( `web-ext build --source-dir=${buildPath} --artifacts-dir=${compressPath} --filename=${name}-stylegpt-{version}.zip --overwrite-dest` )
 }
 
 const execBuild = async ( type, compress = true, name =false ) => {
@@ -72,7 +72,7 @@ const execDev = async ( type ) => {
 
 }
 
-const executeBuild = async( typeValue, type = 'build', compress = true ) => {
+const executeBuild = async ( typeValue, type = 'build', compress = true ) => {
 	const download = pkg.data.extra.download
 	const funct = type == 'build' ? execBuild : execDev
 

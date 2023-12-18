@@ -9,9 +9,13 @@ web:
     name: "{{package.name}}"
     type: "browser-extension"
     subtypes:
-      - Chromiun
       - Chrome
       - Firefox
+      - Safari
+      - Chromiun
+      - Brave
+      - Opera
+      - Edge
     version: "{{package.version}}"
     description: "{{package.description}}"
     homepage: "{{package.homepage}}"
