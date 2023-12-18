@@ -27,7 +27,7 @@
 ███████║   ██║      ██║   ███████╗███████╗╚██████╔╝██║        ██║   
 ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝ ╚═════╝ ╚═╝        ╚═╝                        
                                                 
-VERSION: 	1.3.4 
+VERSION: 	1.3.5 
 REPOSITORY: https://github.com/pigeonposse/stylegpt
 AUTHORS: 
 	- Angelo (https://github.com/angelespejo)
@@ -73,15 +73,15 @@ Make ChatGPT website more corporate.
 
 ### Manual
 
-[![Chrome](https://img.shields.io/badge/Chrome-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/chrome-stylegpt-1.3.4.zip)
-[![Edge](https://img.shields.io/badge/Edge-grey?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/edge-stylegpt-1.3.4.zip)
-[![Firefox](https://img.shields.io/badge/Firefox-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/firefox-stylegpt-1.3.4.zip)
-[![Safari](https://img.shields.io/badge/Safari-grey?style=for-the-badge&logo=safari&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/safari-stylegpt-1.3.4.zip)
-[![Brave](https://img.shields.io/badge/Brave-grey?style=for-the-badge&logo=brave&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/brave-stylegpt-1.3.4.zip)
-[![Opera](https://img.shields.io/badge/Opera-grey?style=for-the-badge&logo=opera&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/opera-stylegpt-1.3.4.zip)
-[![Opera GX](https://img.shields.io/badge/Opera%20GX-grey?style=for-the-badge&logo=operagx&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/opera-gx-stylegpt-1.3.4.zip)
-[![Chromium](https://img.shields.io/badge/Chromium-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/chromium-stylegpt-1.3.4.zip)
-[![Chromium (Manifest 2)](https://img.shields.io/badge/Chromium%20(Manifest%202)-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/chromium-mv2-stylegpt-1.3.4.zip)
+[![Chrome](https://img.shields.io/badge/Chrome-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/chrome-stylegpt-1.3.5.zip)
+[![Edge](https://img.shields.io/badge/Edge-grey?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/edge-stylegpt-1.3.5.zip)
+[![Firefox](https://img.shields.io/badge/Firefox-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/firefox-stylegpt-1.3.5.zip)
+[![Safari](https://img.shields.io/badge/Safari-grey?style=for-the-badge&logo=safari&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/safari-stylegpt-1.3.5.zip)
+[![Brave](https://img.shields.io/badge/Brave-grey?style=for-the-badge&logo=brave&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/brave-stylegpt-1.3.5.zip)
+[![Opera](https://img.shields.io/badge/Opera-grey?style=for-the-badge&logo=opera&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/opera-stylegpt-1.3.5.zip)
+[![Opera GX](https://img.shields.io/badge/Opera%20GX-grey?style=for-the-badge&logo=operagx&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/opera-gx-stylegpt-1.3.5.zip)
+[![Chromium](https://img.shields.io/badge/Chromium-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/chromium-stylegpt-1.3.5.zip)
+[![Chromium (Manifest 2)](https://img.shields.io/badge/Chromium%20(Manifest%202)-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/chromium-mv2-stylegpt-1.3.5.zip)
 
 [![All](https://img.shields.io/badge/All-black?style=for-the-badge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases)
 
