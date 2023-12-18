@@ -73,7 +73,7 @@ const dataStoreLinks = (pkg) => {
 }
 
 const dataReleasesLinks = (pkg) => {
-	const downloadUrl = (id) => `${pkg.data.extra.releaseUrl}/tag/${pkg.data.version}/${id}-${pkg.data.name}-${pkg.data.version}.zip`
+	const downloadUrl = (id) => `${pkg.data.extra.releaseUrl}/download/${pkg.data.version}/${id}-${pkg.data.name}-${pkg.data.version}.zip`
 	let res = []
 	for (const key in pkg.data.extra.download) {
 		const download = pkg.data.extra.download[key]
@@ -131,7 +131,7 @@ const imgUrl = ( {name, color = 'black', url, logo = false, type = false} ) => {
 const header = ( pkg ) => {
 
 	const collective = pkg.data.extra.collective
-	const fundingUrl = pkg.data.funding.url
+
 	return `
 [![HEADER](docs/banner.png)](${pkg.data.extra.demoUrl})
 
@@ -142,6 +142,10 @@ ${imgUrl({name:'Github Releases', color: 'blue', type: `github/package-json/v/${
 ${storeVersionImgLinks(pkg)}
 
 ${pkg.data.description}
+
+You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. 
+
+Make ChatGPT website more corporate.
 
 [View demo](${pkg.data.extra.demoUrl})
 

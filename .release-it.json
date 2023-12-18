@@ -28,8 +28,8 @@
         ],
         "after:git:release": "echo 'After git push, before github release'",
         "after:release": [
-            "gh repo edit https://github.com/pigeonposse/stylegpt -d \"🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. Make ChatGPT website more corporate. 🐦🌈\"",
-            "gh repo edit https://github.com/pigeonposse/stylegpt --add-topic javascript,chrome-extension,firefox-extension,browser-extension,extension,chat-gpt,gpt,gpt4,open-ai,openai,ai,web,npm",
+            "gh repo edit https://github.com/pigeonposse/stylegpt -d \"🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. 🐦🌈\"",
+            "gh repo edit https://github.com/pigeonposse/stylegpt --add-topic javascript,chrome-extension,firefox-extension,safari-extension,opera-extension,opera-gx-extension,brave-extension,edge-extension,browser-extension,extension,chat-gpt,gpt,gpt4,open-ai,openai,ai,web,styles",
             "echo 'Github action is now releasing: stylegpt v${version} to https://github.com/pigeonposse/stylegpt.\n Check if all is ok 🌈🤖\n https://github.com/pigeonposse/stylegpt/actions'"
         ]
     },

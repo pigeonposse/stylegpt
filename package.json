@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "stylegpt",
-	"description": "🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. Make ChatGPT website more corporate. 🐦🌈",
+	"description": "🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. 🐦🌈",
 	"version": "1.3.3",
 	"type": "module",
 	"engines": {
@@ -42,6 +42,11 @@
 		"javascript",
 		"chrome-extension",
 		"firefox-extension",
+		"safari-extension",
+		"opera-extension",
+		"opera-gx-extension",
+		"brave-extension",
+		"edge-extension",
 		"browser-extension",
 		"extension",
 		"chat-gpt",
@@ -51,7 +56,7 @@
 		"openai",
 		"ai",
 		"web",
-		"npm"
+		"styles"
 	],
 	"devDependencies": {
 		"@commitlint/cli": "^18.4.3",

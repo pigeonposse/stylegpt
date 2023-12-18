@@ -1,5 +1,8 @@
 ###############################################################################
 # PLBLISH CHROME EXTENSION AND FIREFOX EXTENSION
+#
+# @see https://github.com/marketplace?type=actions
+# @see https://github.com/actions/runner-images/blob/main/images/macos/macos-13-Readme.md
 ###############################################################################
 
 name: Publish
@@ -42,27 +45,28 @@ jobs:
     - name: 🛠️ Checks out repository
       uses: actions/checkout@v3
 
-    # - name: 🛠️ XCode set up
-    #   uses: maxim-lobanov/setup-xcode@v1
-    #   with:
-    #     xcode-version: '14.3.1'
-
-    # - name: 🛠️ Install Node
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: 20
-
     # @see https://github.com/LinusU/node-appdmg/issues/234
     - name: 🛠️ Install SYSTEM tools
       run: |
+        brew install jq
         python3 -m pip install setuptools
         npm install -g pnpm@^8
     
     - name: 🛠️ Get package info
       id: package
-      uses: codex-team/action-nodejs-package-info@v1.1
+      run: |
+        NAME=$(jq -r '.name' package.json)
+        echo "::set-output name=NAME::$NAME"
+        VERSION=$(jq -r '.version' package.json)
+        echo "::set-output name=VERSION::$VERSION"
+        MOZILLA_ID=$(jq -r '.extra.store.mozilla.id' package.json)
+        echo "::set-output name=MOZILLA_ID::$MOZILLA_ID"
+        CHROME_ID=$(jq -r '.extra.store.chrome.id' package.json)
+        echo "::set-output name=CHROME_ID::$CHROME_ID"
+        EDGE_ID=$(jq -r '.extra.store.edge.id' package.json)
+        echo "::set-output name=EDGE_ID::$EDGE_ID"
 
-    - name: 🛠️ Set dependences versions
+    - name: 🛠️ Print env variables
       run: |
         echo "macos $(sw_vers -productVersion)"
         python3 --version 
@@ -71,7 +75,7 @@ jobs:
         xcodebuild -version
         echo "node $(node -v)"
         echo "pnpm $(pnpm --version)"
-
+        echo "${{ steps.package.outputs }}"
 
     #########################################################################
     # BUILD PACKAGE
@@ -90,7 +94,7 @@ jobs:
     - name: 🏗️ Create Github release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${{ steps.package.outputs.version }}
+        tag: ${{ steps.package.outputs.VERSION }}
         artifacts: "dist/comp/*.zip"
         bodyFile: "docs/release-body.md"
 
@@ -100,17 +104,31 @@ jobs:
     # #########################################################################
 
     - name: 🛒 Upload FIREFOX extension in Mozilla Marketplace
-      uses: trmcnvn/firefox-addon@v1
-      with:
-        # uuid is only necessary when updating an existing addon,
-        # omitting it will create a new addon
-        uuid: '{8f0f11ab-1cc1-4db9-81a3-251de69235d9}'
-        xpi: dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
-        manifest: dist/firefox/manifest.json
-        # get keys in:
-        # https://addons.mozilla.org/en-US/developers/addon/api/key/
-        api-key: ${{ secrets.FIREFOX_API_KEY }}
-        api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+      run: |
+        set -e
+        output=$(trmcnvn/firefox-addon@v1 \
+          --uuid '${{ steps.package.outputs.MOZILLA_ID }}' \
+          --xpi "dist/comp/firefox-${{ steps.package.outputs.NAME }}-${{ steps.package.outputs.VERSION }}.zip" \
+          --manifest "dist/firefox/manifest.json" \
+          --api-key "${{ secrets.FIREFOX_API_KEY }}" \
+          --api-secret "${{ secrets.FIREFOX_API_SECRET }}")
+    
+        if [ $? -ne 0 ]; then
+          echo "Upload fail because:"
+          echo "$output"
+        fi
+        
+      # uses: trmcnvn/firefox-addon@v1
+      # with:
+      #   # uuid is only necessary when updating an existing addon,
+      #   # omitting it will create a new addon
+      #   uuid: '{8f0f11ab-1cc1-4db9-81a3-251de69235d9}'
+      #   xpi: dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+      #   manifest: dist/firefox/manifest.json
+      #   # get keys in:
+      #   # https://addons.mozilla.org/en-US/developers/addon/api/key/
+      #   api-key: ${{ secrets.FIREFOX_API_KEY }}
+      #   api-secret: ${{ secrets.FIREFOX_API_SECRET }}
 
 
     # #########################################################################
@@ -118,13 +136,26 @@ jobs:
     # #########################################################################
 
     - name: 🛒 Upload EDGE extension
-      uses: wdzeng/edge-addon@v1 
-      with:
-        product-id: "8bd375c1-4698-4cd7-b551-89418b9d9d16"
-        zip-path: dist/comp/edge-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
-        client-id: ${{ secrets.EDGE_CLIENT_ID }}
-        client-secret: ${{ secrets.EDGE_CLIENT_SECRET }}
-        access-token-url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
+      run: |
+        set -e
+        output=$(wdzeng/edge-addon@v1 \
+          --product-id "${{ steps.package.outputs.EDGE_ID }}" \
+          --zip-path "dist/comp/edge-${{ steps.package.outputs.NAME }}-${{ steps.package.outputs.VERSION }}.zip" \
+          --client-id "${{ secrets.EDGE_CLIENT_ID }}" \
+          --client-secret "${{ secrets.EDGE_CLIENT_SECRET }}" \
+          --access-token-url "${{ secrets.EDGE_ACCESS_TOKEN_URL }}")
+
+        if [ $? -ne 0 ]; then
+          echo "Upload fail because:"
+          echo "$output"
+        fi
+      # uses: wdzeng/edge-addon@v1 
+      # with:
+      #   product-id: "8bd375c1-4698-4cd7-b551-89418b9d9d16"
+      #   zip-path: dist/comp/edge-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+      #   client-id: ${{ secrets.EDGE_CLIENT_ID }}
+      #   client-secret: ${{ secrets.EDGE_CLIENT_SECRET }}
+      #   access-token-url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
 
 
     # #########################################################################
@@ -132,13 +163,27 @@ jobs:
     # #########################################################################
 
     - name: 🛒 Upload CHROME extension
-      uses: mnao305/chrome-extension-upload@v4.0.1
-      with:
-        file-path: 'dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
-        extension-id: "khoggafmiibmeihpkpbkllkkdfhmokoj"
-        client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
-        client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
-        refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}
+      run: |
+        set -e
+        output=$(mnao305/chrome-extension-upload@v4.0.1 \
+          --file-path "dist/comp/chrome-${{ steps.package.outputs.NAME }}-${{ steps.package.outputs.VERSION }}.zip" \
+          --extension-id "${{ steps.package.outputs.CHROME_ID }}" \
+          --client-id "${{ secrets.CHOME_EXTENSION_CLIENT_ID }}" \
+          --client-secret "${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}" \
+          --refresh-token "${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}")
+
+        if [ $? -ne 0 ]; then
+          echo "Upload fail because:"
+          echo "$output"
+        fi
+
+      # uses: mnao305/chrome-extension-upload@v4.0.1
+      # with:
+      #   file-path: 'dist/comp/chrome-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip'
+      #   extension-id: "khoggafmiibmeihpkpbkllkkdfhmokoj"
+      #   client-id: ${{ secrets.CHOME_EXTENSION_CLIENT_ID }}
+      #   client-secret: ${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}
+      #   refresh-token: ${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}
 
 
 ###############################################################################

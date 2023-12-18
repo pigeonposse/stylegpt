@@ -91,7 +91,7 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 | ![Explanation](docs/demo/explanation.png) | ![Explanation 1](docs/demo/explanation-1.png) |
 | ------------------------- | ------------------------- |
 
-### Demo v1
+### Demo
 
 > ℹ️ Video demo for v1.3
 
