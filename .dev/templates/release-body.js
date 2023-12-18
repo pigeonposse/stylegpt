@@ -14,6 +14,6 @@ ${pkg.data.description}
 - 📝 [CHANGELOG](${pkg.data.extra.changelogUrl})
 - 📜 [LICENSE](${pkg.data.extra.licenseUrl})
 
-- 🔍 [SAFARI REQUIREMENTS](${pkg.data.extra.repoDocsUrl}/safari-unsigned-info.md)
+- 🔍 [SAFARI REQUIREMENTS](${pkg.data.repository.url}/blob/${pkg.data.version}/docs/safari-unsigned-info.md)
 `
 }

@@ -7,4 +7,4 @@
 - 📝 [CHANGELOG](https://github.com/pigeonposse/stylegpt/blob/main/CHANGELOG.md)
 - 📜 [LICENSE](https://github.com/pigeonposse/stylegpt/blob/main/LICENSE)
 
-- 🔍 [SAFARI REQUIREMENTS](https://github.com/pigeonposse/stylegpt/blob/main/docs/safari-unsigned-info.md)
+- 🔍 [SAFARI REQUIREMENTS](https://github.com/pigeonposse/stylegpt/blob/1.3.3/docs/safari-unsigned-info.md)
