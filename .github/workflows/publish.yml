@@ -54,7 +54,6 @@ jobs:
 
     - name: 🛠️ Install SYSTEM tools
       run: |
-        xcode-select --install
         npm install -g pnpm@^8
     
     - name: 🛠️ Get package info
@@ -64,6 +63,7 @@ jobs:
     - name: 🛠️ Set dependences versions
       run: |
         echo "macos $(sw_vers -productVersion)"
+        python3 --version 
         xcode-select --version
         xcrun --version
         xcodebuild -version
