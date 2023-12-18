@@ -59,7 +59,7 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 
 🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. 🐦🌈
 
-You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. 
+You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience.
 
 Make ChatGPT website more corporate.
 

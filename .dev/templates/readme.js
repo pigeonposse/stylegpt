@@ -143,7 +143,7 @@ ${storeVersionImgLinks(pkg)}
 
 ${pkg.data.description}
 
-You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. 
+You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience.
 
 Make ChatGPT website more corporate.
 
