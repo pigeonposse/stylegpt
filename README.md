@@ -27,7 +27,7 @@
 ███████║   ██║      ██║   ███████╗███████╗╚██████╔╝██║        ██║   
 ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝ ╚═════╝ ╚═╝        ╚═╝                        
                                                 
-VERSION: 	1.3.3 
+VERSION: 	1.3.4 
 REPOSITORY: https://github.com/pigeonposse/stylegpt
 AUTHORS: 
 	- Angelo (https://github.com/angelespejo)
@@ -57,7 +57,11 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 [![Mozilla Store](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
 [![Chrome Store](https://img.shields.io/chrome-web-store/v/khoggafmiibmeihpkpbkllkkdfhmokoj?color=blue&style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
 
-🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. Make ChatGPT website more corporate. 🐦🌈
+🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. 🐦🌈
+
+You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. 
+
+Make ChatGPT website more corporate.
 
 [View demo](https://www.youtube.com/watch?v=Nh1DvI3p0p8)
 
@@ -69,15 +73,15 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 
 ### Manual
 
-[![Chrome](https://img.shields.io/badge/Chrome-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/chrome-stylegpt-1.3.3.zip)
-[![Edge](https://img.shields.io/badge/Edge-grey?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/edge-stylegpt-1.3.3.zip)
-[![Firefox](https://img.shields.io/badge/Firefox-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/firefox-stylegpt-1.3.3.zip)
-[![Safari](https://img.shields.io/badge/Safari-grey?style=for-the-badge&logo=safari&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/safari-stylegpt-1.3.3.zip)
-[![Brave](https://img.shields.io/badge/Brave-grey?style=for-the-badge&logo=brave&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/brave-stylegpt-1.3.3.zip)
-[![Opera](https://img.shields.io/badge/Opera-grey?style=for-the-badge&logo=opera&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/opera-stylegpt-1.3.3.zip)
-[![Opera GX](https://img.shields.io/badge/Opera%20GX-grey?style=for-the-badge&logo=operagx&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/opera-gx-stylegpt-1.3.3.zip)
-[![Chromium](https://img.shields.io/badge/Chromium-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/chromium-stylegpt-1.3.3.zip)
-[![Chromium (Manifest 2)](https://img.shields.io/badge/Chromium%20(Manifest%202)-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/tag/1.3.3/chromium-mv2-stylegpt-1.3.3.zip)
+[![Chrome](https://img.shields.io/badge/Chrome-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/chrome-stylegpt-1.3.4.zip)
+[![Edge](https://img.shields.io/badge/Edge-grey?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/edge-stylegpt-1.3.4.zip)
+[![Firefox](https://img.shields.io/badge/Firefox-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/firefox-stylegpt-1.3.4.zip)
+[![Safari](https://img.shields.io/badge/Safari-grey?style=for-the-badge&logo=safari&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/safari-stylegpt-1.3.4.zip)
+[![Brave](https://img.shields.io/badge/Brave-grey?style=for-the-badge&logo=brave&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/brave-stylegpt-1.3.4.zip)
+[![Opera](https://img.shields.io/badge/Opera-grey?style=for-the-badge&logo=opera&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/opera-stylegpt-1.3.4.zip)
+[![Opera GX](https://img.shields.io/badge/Opera%20GX-grey?style=for-the-badge&logo=operagx&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/opera-gx-stylegpt-1.3.4.zip)
+[![Chromium](https://img.shields.io/badge/Chromium-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/chromium-stylegpt-1.3.4.zip)
+[![Chromium (Manifest 2)](https://img.shields.io/badge/Chromium%20(Manifest%202)-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.4/chromium-mv2-stylegpt-1.3.4.zip)
 
 [![All](https://img.shields.io/badge/All-black?style=for-the-badge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases)
 
