@@ -51,7 +51,7 @@ jobs:
     #   uses: actions/setup-node@v3
     #   with:
     #     node-version: 20
-    
+
     # @see https://github.com/LinusU/node-appdmg/issues/234
     - name: 🛠️ Install SYSTEM tools
       run: |
@@ -90,6 +90,7 @@ jobs:
     - name: 🏗️ Create Github release
       uses: ncipollo/release-action@v1
       with:
+        tag: ${{ steps.package.outputs.version }}
         artifacts: "dist/comp/*.zip"
         bodyFile: "docs/release-body.md"
 
