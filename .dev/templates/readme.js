@@ -67,7 +67,7 @@ const dataStoreLinks = (pkg) => {
 	let res = []
 	for (const storesKey in pkg.data.extra.store) {
 		const store = pkg.data.extra.store[storesKey]
-		res.push({name:store.name, color: 'grey', url: store.url})
+		res.push({ color: 'grey', ...store})
 	}
 	return res
 }
@@ -114,7 +114,10 @@ export const repoLinks = (pkg) => constructorLinks(dataRepoLinks(pkg) )
 export const storeLinks = (pkg) => constructorLinks(dataStoreLinks(pkg) )
 export const storeImgLinks = (pkg) => constructorLinks(dataStoreLinks(pkg), 'img' )
 export const releaseImgLinks = (pkg) => constructorLinks(dataReleasesLinks(pkg), 'img' )
-
+export const storeVersionImgLinks = (pkg) => {
+	return `${imgUrl({ ...pkg.data.extra.store.mozilla, color: 'blue', type: `amo/v/${pkg.data.extra.store.mozilla.id}` })}
+${imgUrl({ ...pkg.data.extra.store.chrome, color: 'blue', type: `chrome-web-store/v/${pkg.data.extra.store.chrome.id}` })}`
+}
 const imgUrl = ( {name, color = 'black', url, logo = false, type = false} ) => {
 	
 	if(!type) type = `badge/${encodeURIComponent(name)}-${color}?`
@@ -136,10 +139,9 @@ ${webImgLinks(pkg)}
 
 ${imgUrl({name:'License', color: 'green', type: `github/license/pigeonposse/stylegpt`,url: `/LICENSE`})}
 ${imgUrl({name:'Github Releases', color: 'blue', type: `github/package-json/v/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}`,url: pkg.data.extra.releaseUrl})}
-${imgUrl({name:'Mozilla', logo: 'firefox-browser', color: 'blue', type: `amo/v/${pkg.data.extra.store.mozilla.id}`,url: pkg.data.extra.store.mozilla.url})}
-${imgUrl({name:'Chrome', logo: 'google-chrome', color: 'blue', type: `chrome-web-store/v/${pkg.data.extra.store.chrome.id}`,url: pkg.data.extra.store.chrome.url})}
+${storeVersionImgLinks(pkg)}
 
-StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
+${pkg.data.description}
 
 [View demo](${pkg.data.extra.demoUrl})
 

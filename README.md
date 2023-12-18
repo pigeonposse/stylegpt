@@ -54,18 +54,18 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 
 [![License](https://img.shields.io/github/license/pigeonposse/stylegpt?color=green&style=for-the-badge&logoColor=white)](/LICENSE)
 [![Github Releases](https://img.shields.io/github/package-json/v/pigeonposse/stylegpt?color=blue&style=for-the-badge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases)
-[![Mozilla](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=for-the-badge&logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
-[![Chrome](https://img.shields.io/chrome-web-store/v/khoggafmiibmeihpkpbkllkkdfhmokoj?color=blue&style=for-the-badge&logo=google-chrome&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
+[![Mozilla Store](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
+[![Chrome Store](https://img.shields.io/chrome-web-store/v/khoggafmiibmeihpkpbkllkkdfhmokoj?color=blue&style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
 
-StyleGPT is an extension that modifies the appearance of ChatGPT, providing a more beautiful and novel interface for users. Thanks to this extension, you can hide the menu of options and history to give more priority to the conversation, and have quick access to the options and new tools that we have implemented in order to improve the experience.
+🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience. Make ChatGPT website more corporate. 🐦🌈
 
 [View demo](https://www.youtube.com/watch?v=Nh1DvI3p0p8)
 
 ## 🧩 Download links
 
-[![Chrome Store](https://img.shields.io/badge/Chrome%20Store-grey?style=for-the-badge&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
-[![Edge Store](https://img.shields.io/badge/Edge%20Store-grey?style=for-the-badge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/stylegpt/)
-[![Mozilla Store](https://img.shields.io/badge/Mozilla%20Store-grey?style=for-the-badge&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
+[![Chrome Store](https://img.shields.io/badge/Chrome%20Store-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
+[![Edge Store](https://img.shields.io/badge/Edge%20Store-grey?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/stylegpt/)
+[![Mozilla Store](https://img.shields.io/badge/Mozilla%20Store-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
 
 ### Manual
 
