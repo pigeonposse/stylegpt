@@ -51,9 +51,11 @@ jobs:
     #   uses: actions/setup-node@v3
     #   with:
     #     node-version: 20
-
+    
+    # @see https://github.com/LinusU/node-appdmg/issues/234
     - name: 🛠️ Install SYSTEM tools
       run: |
+        python3 -m pip install setuptools
         npm install -g pnpm@^8
     
     - name: 🛠️ Get package info
@@ -69,7 +71,6 @@ jobs:
         xcodebuild -version
         echo "node $(node -v)"
         echo "pnpm $(pnpm --version)"
-        ls -la
 
 
     #########################################################################

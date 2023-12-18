@@ -91,7 +91,7 @@ const buildDmg = async (type, options) =>{
         ]
     }, null, 2))
 
-    await exec(`pnpm appdmg ${APPDMG_JSON} ${SAFARI_DMG_OUTPUT}`)
+    await exec(`appdmg ${APPDMG_JSON} ${SAFARI_DMG_OUTPUT}`)
     writeSync(APPDMG_JSON, JSON.stringify({}, null, 2))
 
     console.groupEnd()
