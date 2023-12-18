@@ -25,7 +25,7 @@ jobs:
   build:
 
     name: Publish web extensions in GitHub and in Marketplaces
-    runs-on: macos-13
+    runs-on: macos-latest
     permissions:
       contents: write
 
@@ -42,15 +42,15 @@ jobs:
     - name: 🛠️ Checks-out repository
       uses: actions/checkout@v3
 
-    - name: 🛠️ XCode set up
-      uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: '14.3.1'
+    # - name: 🛠️ XCode set up
+    #   uses: maxim-lobanov/setup-xcode@v1
+    #   with:
+    #     xcode-version: '14.3.1'
 
     - name: 🛠️ Install Node
       uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: 20
 
     - name: 🛠️ Install pnpm
       run: npm install -g pnpm@^8
