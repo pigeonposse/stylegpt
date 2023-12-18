@@ -87,6 +87,7 @@ const buildDmg = async (type, options) =>{
                 "y": 172, 
                 "type": "file", 
                 "path": EXT_README_ABSOLUTE_PATH,
+                "name": "README.md"
             }
         ]
     }, null, 2))
