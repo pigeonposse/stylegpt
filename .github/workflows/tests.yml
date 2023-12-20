@@ -10,8 +10,8 @@ name: Run tests
 
 on:
     schedule:
-        - cron: '0 0 * * *'  # Ejecuta todos los días a la medianoche (UTC)
-
+        - cron: '0 0 * * *'  # Execute all day at midnight (UTC)
+    workflow_dispatch:
 
 ###############################################################################
 # JOBS
@@ -22,7 +22,7 @@ jobs:
   build:
 
     name: ⚡️ Run tests
-    runs-on: ubuntu-latest
+    runs-on: macos-13
     permissions:
       contents: write
       issues: write 
@@ -40,9 +40,11 @@ jobs:
         - name: 🛎 Checkout
           uses: actions/checkout@v3
 
-        - name: 🏗 Install pnpm
-          uses: pnpm/action-setup@v2
-          id: pnpm-install
+        # @see https://github.com/LinusU/node-appdmg/issues/234
+        - name: 🛠️ Install SYSTEM tools
+          run: |
+            python3 -m pip install setuptools
+            npm install -g pnpm@^8
 
         - name: 👨🏻‍💻 Install pkg dependencies
           run: |
