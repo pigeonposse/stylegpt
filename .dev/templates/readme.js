@@ -167,7 +167,7 @@ Updated functions:
 
 ${storeImgLinks(pkg)}
 
-### Manual Installation Links:
+### Manual Installation Links
 
 ${releaseImgLinks(pkg)}
 
