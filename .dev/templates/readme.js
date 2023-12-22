@@ -143,11 +143,22 @@ ${storeVersionImgLinks(pkg)}
 
 ${pkg.data.description}
 
-You can also hide the options menu and history, prioritizing the conversation and gaining quick access to new tools we have implemented to improve the experience.
-
-Make ChatGPT website more corporate.
+Discover the aesthetic evolution with styleGPT, the extension that redefines the appearance of ChatGPT. 🚀 Immerse yourself in a unique experience by blending elegance and functionality in every interaction. Explore the magic of artificial intelligence through an interface that transcends the ordinary. Illuminate your conversations and elevate your interaction with ChatGPT to a new aesthetic level. ✨💬 Join the revolution of the user experience with styleGPT and experience an unparalleled visual standard.✨💻🌈
 
 [View demo](${pkg.data.extra.demoUrl})
+
+![HEADER](docs/demo/preview.png)
+
+Updated functions:
+✅ Improved interface.
+✅ Interactive menu.
+✅ Hide/show menu button.
+✅ Dark mode button.
+✅ New chat button.
+✅ Customize chat menu.
+✅ Color, text and background choice options for user or AI.
+✅ Change styles to the code editor
+✅ Change styles to sidebar
 
 ## 🧩 Download links
 
