@@ -161,11 +161,13 @@ Updated functions:
 - ✅ Change styles to the code editor
 - ✅ Change styles to sidebar
 
-## 🧩 Download links
+## 🧩 Download
+
+### Browser stores:
 
 ${storeImgLinks(pkg)}
 
-### Manual
+### Manual Installation Links:
 
 ${releaseImgLinks(pkg)}
 
