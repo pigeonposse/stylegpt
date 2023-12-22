@@ -163,7 +163,7 @@ Updated functions:
 
 ## 🧩 Download
 
-### Browser stores:
+### Browser stores
 
 ${storeImgLinks(pkg)}
 

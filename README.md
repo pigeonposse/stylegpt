@@ -85,7 +85,7 @@ Updated functions:
 [![Edge Store](https://img.shields.io/badge/Edge%20Store-grey?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/stylegpt/)
 [![Mozilla Store](https://img.shields.io/badge/Mozilla%20Store-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
 
-### Manual Installation Links:
+### Manual Installation Links
 
 [![Chrome](https://img.shields.io/badge/Chrome-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/chrome-stylegpt-1.3.5.zip)
 [![Edge](https://img.shields.io/badge/Edge-grey?style=for-the-badge&logo=microsoftedge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases/download/1.3.5/edge-stylegpt-1.3.5.zip)
