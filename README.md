@@ -66,15 +66,16 @@ Discover the aesthetic evolution with styleGPT, the extension that redefines the
 ![HEADER](docs/demo/preview.png)
 
 Updated functions:
-✅ Improved interface.
-✅ Interactive menu.
-✅ Hide/show menu button.
-✅ Dark mode button.
-✅ New chat button.
-✅ Customize chat menu.
-✅ Color, text and background choice options for user or AI.
-✅ Change styles to the code editor
-✅ Change styles to sidebar
+
+- ✅ Improved interface.
+- ✅ Interactive menu.
+- ✅ Hide/show menu button.
+- ✅ Dark mode button.
+- ✅ New chat button.
+- ✅ Customize chat menu.
+- ✅ Color, text and background choice options for user or AI.
+- ✅ Change styles to the code editor
+- ✅ Change styles to sidebar
 
 ## 🧩 Download links
 
