@@ -116,7 +116,8 @@ export const storeImgLinks = (pkg) => constructorLinks(dataStoreLinks(pkg), 'img
 export const releaseImgLinks = (pkg) => constructorLinks(dataReleasesLinks(pkg), 'img' )
 export const storeVersionImgLinks = (pkg) => {
 	return `${imgUrl({ ...pkg.data.extra.store.mozilla, color: 'blue', type: `amo/v/${pkg.data.extra.store.mozilla.id}` })}
-${imgUrl({ ...pkg.data.extra.store.chrome, color: 'blue', type: `chrome-web-store/v/${pkg.data.extra.store.chrome.id}` })}`
+${imgUrl({ ...pkg.data.extra.store.chrome, color: 'blue', type: `chrome-web-store/v/${pkg.data.extra.store.chrome.id}` })}
+${imgUrl({ ...pkg.data.extra.store.edge, color: 'blue',type: `badge/dynamic/json?label=microsoft%20edge%20store&query=%24.version&url=https://microsoftedge.microsoft.com/addons/getproductdetailsbycrxid/${pkg.data.extra.store.edge.id}` })}`
 }
 const imgUrl = ( {name, color = 'black', url, logo = false, type = false} ) => {
 	
@@ -139,6 +140,7 @@ ${webImgLinks(pkg)}
 
 ${imgUrl({name:'License', color: 'green', type: `github/license/pigeonposse/stylegpt`,url: `/LICENSE`})}
 ${imgUrl({name:'Github Releases', color: 'blue', type: `github/package-json/v/${collective.name.toLowerCase()}/${pkg.data.name.toLowerCase()}`,url: pkg.data.extra.releaseUrl})}
+
 ${storeVersionImgLinks(pkg)}
 
 ${pkg.data.description}

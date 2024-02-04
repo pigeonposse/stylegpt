@@ -54,8 +54,10 @@ DEVELOPED BY PIGEONPOSSE 🐦🌈
 
 [![License](https://img.shields.io/github/license/pigeonposse/stylegpt?color=green&style=for-the-badge&logoColor=white)](/LICENSE)
 [![Github Releases](https://img.shields.io/github/package-json/v/pigeonposse/stylegpt?color=blue&style=for-the-badge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases)
+
 [![Mozilla Store](https://img.shields.io/amo/v/{8f0f11ab-1cc1-4db9-81a3-251de69235d9}?color=blue&style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
 [![Chrome Store](https://img.shields.io/chrome-web-store/v/khoggafmiibmeihpkpbkllkkdfhmokoj?color=blue&style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
+[![Edge Store](https://img.shields.io/badge/dynamic/json?label=microsoft%20edge%20store&query=%24.version&url=https://microsoftedge.microsoft.com/addons/getproductdetailsbycrxid/gkcagmallcghkmmidopechceeibnojmb?color=blue&style=for-the-badge&logo=microsoftstore&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/gkcagmallcghkmmidopechceeibnojmb)
 
 🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. 🐦🌈
 
@@ -82,7 +84,7 @@ Updated functions:
 ### Browser stores
 
 [![Chrome Store](https://img.shields.io/badge/Chrome%20Store-grey?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj)
-[![Edge Store](https://img.shields.io/badge/Edge%20Store-grey?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/stylegpt/)
+[![Edge Store](https://img.shields.io/badge/Edge%20Store-grey?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/gkcagmallcghkmmidopechceeibnojmb)
 [![Mozilla Store](https://img.shields.io/badge/Mozilla%20Store-grey?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/firefox/addon/stylegpt/)
 
 ### Manual Installation Links
