@@ -60,9 +60,9 @@ export class StyleSuper extends MenuCore {
 	]
 	
 	// impares
-	userSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div:not([type="button"]) > div:not([type="button"])'
+	userSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div[dir="auto"] > div:not([type="button"])'
 	// par
-	aiSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"])'
+	aiSectionQuery = '.flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div[dir="auto"] > div:not([type="button"])'
 	// bg
 	bgSectionQuery = '#__next'
 

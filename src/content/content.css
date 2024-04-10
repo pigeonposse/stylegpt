@@ -17,10 +17,10 @@ html {
     --pigeon-gradient: linear-gradient( 300deg, #3f8cce, #35b2cb, #22af50, #d7bf33, #ce2351, #8150fd, #4d4497);
     --pigeon-gradient-2: linear-gradient(90deg, rgba(253,236,210,1) 0%, rgba(255,211,233,1) 100%);
     --pigeon-border-gradient: linear-gradient(300deg, #3f8cce, #35b2cb, #22af50, #d7bf33, #ce2351, #8150fd, #4d4497) 1;
-    --pigeon-bg-color: #202123;
-    --pigeon-bg-color-2: #444655;
-    --pigeon-bg-color-3: #4e4f5f;
-    --pigeon-text-color: white;
+    --pigeon-bg-color: var(--gray-900);
+    --pigeon-bg-color-2: var(--gray-800);
+    --pigeon-bg-color-3:  var(--gray-700);
+    --pigeon-text-color: var(--text-primary);
     --pigeon-info-color: #3f8cce;
     --pigeon-warm-color: #edd85e;
     --pigeon-success-color: #359960;
@@ -32,13 +32,13 @@ html {
     /* dynamics */
     --pigeon-conversation-ai-bg-color: var(--pigeon-bg-color-2);
     --pigeon-conversation-user-bg-color: var(--pigeon-bg-color-3);
-    --pigeon-sidebar-bg-color: #1a1a1a;
+    --pigeon-sidebar-bg-color: var(--pigeon-bg-color);
 }
 
 html.light {
-    --pigeon-bg-color: #f7f7f8;
-    --pigeon-bg-color-2: #ffffff;
-    --pigeon-bg-color-3: #f7f7f8;
+    --pigeon-bg-color: var(--gray-100);
+    --pigeon-bg-color-2: var(--gray-50);
+    --pigeon-bg-color-3: var(--white);
 }
 
 /*****************************************************************/
@@ -81,49 +81,75 @@ html.light {
         }
 
         /* all containers*/
-        .flex-1.overflow-hidden > div > div > div > div > div:not([type="button"]) > div:not([type="button"]){
-            border-radius: var(--pigeon-radius);
-            -webkit-border-radius: var(--pigeon-radius);
-            border: none;
-            padding: 20px;
-            box-sizing: content-box;
+        .flex-1.overflow-hidden > div > div > div > div > div[dir="auto"]{
+
+            /* all */
+            > div:not([type="button"]) {
+                border-radius: var(--pigeon-radius);
+                -webkit-border-radius: var(--pigeon-radius);
+                margin: 5px 0;
+                /* 
+                border: none;
+                padding: 20px; 
+                box-sizing: content-box;
+
+                > div{
+                    overflow-x: scroll;
+                }
+                */
+                div pre {
+                    border: 1px solid var(--gray-600);
+                    border-radius: var(--pigeon-btn-radius);
+                    -webkit-border-radius: var(--pigeon-btn-radius);
+                }
+            }
+            /* USER */
+            > div:not(.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg) {
+                background: var(--pigeon-bg-color-3);
+            }
+            /* AI */
+            > div:has(.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg),
+            > div:is(.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg) {
+                background: var(--pigeon-bg-color-2);
+            }
         }
-        .flex-1.overflow-hidden > div > div > div > div > div:not([type="button"]) > div:not([type="button"]) > div{
-            overflow-x: scroll;
+    
+        .pigeon-styles .flex-1.overflow-hidden > div > div > div > div > div[dir="auto"] {
+            /* USER */
+            > div:not(.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg) {
+                background: var(--pigeon-conversation-user-bg-color);
+                color: var(--pigeon-conversation-user-color);
+                font-family: var(--pigeon-conversation-user-font);
+
+                div > p,
+                div > code,
+                div > p > code,
+                div > ul > li,
+                div > span,
+                div > b,
+                div > i {
+                    color: var(--pigeon-conversation-user-color);
+                }
+            }
+            /* AI */
+            > div:has(.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg),
+            > div:is(.relative.p-1.rounded-sm.h-9.w-9.text-white.flex.items-center.justify-center svg) {
+                background: var(--pigeon-conversation-ai-bg-color);
+                color: var(--pigeon-conversation-ai-color);
+                font-family: var(--pigeon-conversation-ai-font);
+
+                div > p,
+                div > li,
+                div > p > code,
+                div > ul > li,
+                div > span,
+                div > b,
+                div > i {
+                    color: var(--pigeon-conversation-ai-color);
+                }
+            }
         }
 
-        /* AI */
-        .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"]) {
-            background: var(--pigeon-bg-color-2);
-        }
-        .pigeon-styles .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"]) {
-            background: var(--pigeon-conversation-ai-bg-color);
-            color: var(--pigeon-conversation-ai-color);
-            font-family: var(--pigeon-conversation-ai-font);
-        }
-        .pigeon-styles .flex-1.overflow-hidden > div > div > div > div:nth-child(odd) > div:not([type="button"]) > div:not([type="button"]) p {
-            color: var(--pigeon-conversation-ai-color);
-        }
-        
-        /* USER */
-        .flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div:not([type="button"]) > div:not([type="button"]) {
-            background: var(--pigeon-bg-color-3);
-        }
-        .pigeon-styles .flex-1.overflow-hidden > div > div > div > div:nth-child(even) > div:not([type="button"]) > div:not([type="button"]) {
-            background: var(--pigeon-conversation-user-bg-color);
-            color: var(--pigeon-conversation-user-color);
-            font-family: var(--pigeon-conversation-user-font);
-        }
-
-        /* CHAT containers - CODE */
-        code.hljs {
-            color: inherit !important;
-        }
-        .flex-1.overflow-hidden > div > div > div > div pre {
-            border: 1px solid var(--gray-600);
-            border-radius: var(--pigeon-btn-radius);
-            -webkit-border-radius: var(--pigeon-btn-radius);
-        }
 
     /* regenerate btns, textarea, chat icons */
     .btn-neutral,
@@ -139,7 +165,7 @@ html.light {
         padding-left: 20px;
         padding-right: 20px;
     }
-    form button.absolute.p-1.rounded-md.md\:bottom-3.md\:p-2.md\:right-3.dark\:hover\:bg-gray-900.dark\:disabled\:hover\:bg-transparent.right-2.gizmo\:dark\:disabled\:bg-white.gizmo\:disabled\:bg-black.gizmo\:disabled\:opacity-10.disabled\:text-gray-400.enabled\:bg-brand-purple.gizmo\:enabled\:bg-black.text-white.gizmo\:p-0\.5.gizmo\:border.gizmo\:border-black.gizmo\:rounded-lg.gizmo\:dark\:border-white.gizmo\:dark\:bg-white.bottom-1\.5.transition-colors.disabled\:opacity-40{
+    form button {
         border-radius: var(--pigeon-input-radius) !important;
         -webkit-border-radius: var(--pigeon-input-radius) !important;
     }
@@ -171,18 +197,19 @@ html.light {
     .pigeon-styles div:is( > div.h-full > div > div > div > nav),
     .pigeon-styles div:has( > div.h-full > div > div > div > nav) {
         background-color: var(--pigeon-sidebar-bg-color) !important;
-    }
-    .pigeon-styles div:is( > div.h-full > div > div > div > nav) h3,
-    .pigeon-styles div:has( > div.h-full > div > div > div > nav) h3 {
-        background-color: transparent !important;
-        color: var(--pigeon-sidebar-bg-color) !important;
-        filter: brightness(2);
+        h3 {
+            background-color: transparent !important;
+            color: var(--pigeon-sidebar-bg-color) !important;
+            filter: brightness(2); 
+        }
     }
     
     .pigeon-styles nav li > a,
     .pigeon-styles nav div > a,
     .pigeon-styles nav div > button {
         background: transparent !important;
+        border-radius: var(--pigeon-input-radius) !important;
+        -webkit-border-radius: var(--pigeon-input-radius) !important;
     }
     .pigeon-styles nav li > a:hover,
     .pigeon-styles nav div > a:hover,
@@ -283,8 +310,9 @@ html.light {
 
     .pigeon-menu-container-section.line {
         width: 100%;
-        background: var(--pigeon-bg-color-3);
-        height: 2px;
+        background: var(--gray-300);
+        opacity: 0.5;
+        height: 1px;
         margin: 20px 0;
         border: none;
         border-radius: 5px;
