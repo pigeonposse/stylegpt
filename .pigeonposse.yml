@@ -23,7 +23,7 @@ web:
     tags: "{{package.keywords}}"
     logo: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/logo.png"
     banner: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/header.png"
-    status: "active"
+    status: "archived"
 
 
 ###############################################################################
