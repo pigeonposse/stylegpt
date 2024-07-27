@@ -9,7 +9,7 @@ import { exec, pkg, joinPath } from './core/main.js'
 
 const execLint = async ( flag = '' ) => {
 
-	await exec( `eslint ${joinPath( pkg.dir, 'src' )} --ext .js ${flag}` )
+	await exec( `eslint ${joinPath( pkg.dir, 'src' )} ${flag}` )
 
 }
 

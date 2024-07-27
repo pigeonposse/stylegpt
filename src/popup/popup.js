@@ -34,12 +34,14 @@ const matchUrl = async () => {
 
 		utils.brwsr.tabs.query( { active: true, currentWindow: true }, ( tabs ) => {
 
-			const url = tabs[0].url
-			const match = utils.pkg.extra.chatWebMatch.some(pattern => {
-				const exp = new RegExp(pattern)
-				return exp.test(url)
-			})
-			resolve( url.match( utils.pkg.extra.chatWebMatch ) !== null )
+			const url   = tabs[0].url
+			const match = utils.pkg.extra.chatWebMatch.some( pattern => {
+
+				const exp = new RegExp( pattern )
+				return exp.test( url )
+			
+			} )
+			resolve( match )
 		
 		} )
 	
