@@ -145,6 +145,9 @@ ${storeVersionImgLinks(pkg)}
 
 ${pkg.data.description}
 
+> [!IMPORTANT]  
+> Due to numerous changes on the ChatGPT web platform, StyleGPT will be archived until further notice. This means its functionality will be disabled to prevent future incompatibilities. If you wish, you can uninstall the extension.
+
 Discover the aesthetic evolution with styleGPT, the extension that redefines the appearance of ChatGPT. 🚀 Immerse yourself in a unique experience by blending elegance and functionality in every interaction. Explore the magic of artificial intelligence through an interface that transcends the ordinary. Illuminate your conversations and elevate your interaction with ChatGPT to a new aesthetic level. ✨💬 Join the revolution of the user experience with styleGPT and experience an unparalleled visual standard.✨💻🌈
 
 [View demo](${pkg.data.extra.demoUrl})
