@@ -101,11 +101,14 @@ Updated functions:
 
 [![All](https://img.shields.io/badge/All-black?style=for-the-badge&logoColor=white)](https://github.com/pigeonposse/stylegpt/releases)
 
+> [!IMPORTANT]  
+> Due to numerous changes on the ChatGPT web platform, StyleGPT will be archived until further notice. This means its functionality will be disabled to prevent future incompatibilities. If you wish, you can uninstall the extension.
+
 <!-- PIGEONPOSSE END HEADER -->
 
 ## ⚙️ Usage
 
-1. Go to _<https://chat.openai.com/>_
+1. Go to _<https://chatgpt.com/>_
 2. You will see a right menu on page
 
 | ![Explanation](docs/demo/explanation.png) | ![Explanation 1](docs/demo/explanation-1.png) |

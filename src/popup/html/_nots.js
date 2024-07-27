@@ -71,9 +71,14 @@ export class HtmlNots extends HtmlBody{
 
 	async addNotActivated() {
 
+		// return this.addNot( 
+		// 	this.utils.HtmlParser.parseAndCreate( this.utils.brwsr.i18n.getMessage( 'notificationActivated' ) ), 
+		// 	'success',
+		// )
+
 		return this.addNot( 
-			this.utils.HtmlParser.parseAndCreate( this.utils.brwsr.i18n.getMessage( 'notificationActivated' ) ), 
-			'success',
+			this.utils.HtmlParser.parseAndCreate( this.utils.brwsr.i18n.getMessage( 'notificationArchived' ) ), 
+			'info',
 		)
 
 	}
@@ -81,9 +86,10 @@ export class HtmlNots extends HtmlBody{
 	async addNotMatch() {
 
 		let element 
-
-		element = this.utils.HtmlParser.parseAndCreate( this.utils.brwsr.i18n.getMessage( 'notificationNotMatch' ) )
-		element.appendChild( this.createLink( this.headerSection.link.href,this.headerSection.link.name ) )
+		
+		// element = this.utils.HtmlParser.parseAndCreate( this.utils.brwsr.i18n.getMessage( 'notificationNotMatch' ) )
+		element = this.utils.HtmlParser.parseAndCreate( this.utils.brwsr.i18n.getMessage( 'notificationArchived' ) )
+		// element.appendChild( this.createLink( this.headerSection.link.href,this.headerSection.link.name ) )
 		
 		return this.addNot( 
 			element, 

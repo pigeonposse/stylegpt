@@ -58,6 +58,10 @@
 		"message": "No estàs a la pàgina de chatGPT.",
 		"description": "Notificacions emergents - Missatge que la pàgina web de chatGPT no coincideix."
 	},
+	"notificationArchived": {
+		"message": "Degut als nombrosos canvis en la plataforma web de ChatGPT, StyleGPT quedarà arxivat fins a nou avís. Això significa que la seva funcionalitat estarà deshabilitada per evitar futures incompatibilitats. Si ho desitja, pot desinstal·lar l'extensió.",
+		"description": "Popup notifications - chatGPT web archived"
+	},
 	"notificationGeneralError_title": {
 		"message": "Atenció!",
 		"description": "Notificacions emergents - Missatge d'error general."

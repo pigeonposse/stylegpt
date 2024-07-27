@@ -18,23 +18,6 @@
 		],
 		"persistent": true
 	},
-	"content_scripts": [
-		{
-			"js": [
-				"../../content/content.js"
-			],
-			"css": [
-				"../../content/content.css"
-			],
-			"matches": [
-				"https://chat.openai.com/*"
-			],
-			"exclude_matches": [
-				"https://chat.openai.com/share/*"
-			],
-			"run_at": "document_end"
-		}
-	],
 	"permissions": [
 		"storage",
 		"activeTab",

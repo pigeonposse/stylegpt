@@ -58,6 +58,10 @@
 		"message": "You are not in chatGPT page.",
 		"description": "Popup notifications - chatGPT web not match message."
 	},
+	"notificationArchived": {
+		"message": "Due to numerous changes on the ChatGPT web platform, StyleGPT will be archived until further notice. This means its functionality will be disabled to prevent future incompatibilities. If you wish, you can uninstall the extension.",
+		"description": "Popup notifications - chatGPT web archived"
+	},
 	"notificationGeneralError_title": {
 		"message": "Attention!",
 		"description": "Popup notifications - General error part message."
