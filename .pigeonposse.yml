@@ -1,0 +1,21 @@
+web:
+  stylegpt:
+    name: "StyleGPT"
+    type:
+      - "browser-extension"
+      - "chrome-extension"
+      - "chromium-extension"
+      - "firefox-extension"
+      - "safari-extension"
+      - "edge-extension"
+      - "brave-extension"
+      - "opera-extension"
+      - "operagx-extension"
+      - "yandex-extension"
+    status: "active"
+    version: "1.4.1"
+    desc: "🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. 🐦🌈"
+    homepage: "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj"
+    logo: "https://raw.githubusercontent.com/pigeonposse/stylegpt/main/docs/logo.png"
+    banner: "https://raw.githubusercontent.com/pigeonposse/stylegpt/main/docs/banner.png"
+    status: archived
