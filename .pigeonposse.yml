@@ -12,7 +12,6 @@ web:
       - "opera-extension"
       - "operagx-extension"
       - "yandex-extension"
-    status: "active"
     version: "1.4.1"
     desc: "🤖🧩 StyleGPT is an extension that will provide you with tools to customize the appearance of ChatGPT according to your preferences. 🐦🌈"
     homepage: "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj"
